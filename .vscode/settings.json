@@ -1,7 +1,17 @@
 {
   "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": true
+    "source.fixAll.eslint": true,
+    "source.fixAll.stylelint": true
   },
   "editor.formatOnSave": false,
-  "editor.defaultFormatter": "esbenp.prettier-vscode",  
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "scss.validate": false,
+  "stylelint.useLocal": true,
+  "stylelint.autoFixOnSave": true,
+  "cSpell.language": "en,ru",
+  "cSpell.words": [
+    "keyframes",
+    "reduxjs",
+    "stylelint"
+  ],
 }
