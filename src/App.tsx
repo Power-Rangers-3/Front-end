@@ -1,9 +1,12 @@
-import React from 'react';
+import { Provider } from 'react-redux';
+import { RouterProvider } from 'react-router';
+import { router } from 'router';
+import { store } from 'store';
 
-import styles from './styles.module.scss';
-
-function App() {
-  return <div className={styles.New}>TEST</div>;
+export function App() {
+  return (
+    <Provider store={store}>
+      <RouterProvider router={router} />
+    </Provider>
+  );
 }
-
-export default App;
