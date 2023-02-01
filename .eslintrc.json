@@ -44,6 +44,7 @@
     "import/newline-after-import": "warn",
     "import/no-duplicates": "warn",
     "quotes": "off",
-    "react/react-in-jsx-scope": "off"
+    "react/react-in-jsx-scope": "off",
+    "react/function-component-definition": "off"
   }
 }
