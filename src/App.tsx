@@ -3,10 +3,8 @@ import { RouterProvider } from 'react-router';
 import { router } from 'router';
 import { store } from 'store';
 
-export function App() {
-  return (
-    <Provider store={store}>
-      <RouterProvider router={router} />
-    </Provider>
-  );
-}
+export const App = () => (
+  <Provider store={store}>
+    <RouterProvider router={router} />
+  </Provider>
+);
