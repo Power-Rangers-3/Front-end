@@ -10,14 +10,11 @@ export const schema = Yup.object().shape({
     .required('Обязательное для заполнения поле'),
   email: Yup.string()
     .min(4, 'Число символов должно быть не менее 4')
-    .max(16, 'Число символов должно быть не более 16')
+    .max(25, 'Число символов должно быть не более 25')
     .matches(EMAIL_PATTERN, 'Некорректный email')
     .required('Обязательное для заполнения поле'),
-  password: Yup.string()
-    .min(4, 'Число символов должно быть не менее 4')
-    .max(32)
-    .required('Обязательное для заполнения поле'),
+  password: Yup.string().min(4, 'Число символов должно быть не менее 4').required('Обязательное для заполнения поле'),
   confirmPassword: Yup.string()
-    .oneOf([Yup.ref('password'), null, ''], 'Пароли должны совпадать')
+    .oneOf([Yup.ref('password'), null], 'Пароли должны совпадать')
     .required('Обязательное для заполнения поле'),
 });

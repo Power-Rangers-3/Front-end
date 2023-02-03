@@ -1,23 +1,33 @@
+/* eslint-disable no-param-reassign */
 import { createSlice } from '@reduxjs/toolkit';
 
 interface IUserSlice {
-  name: string | null;
-  surname: string | null;
+  email: string | null;
   id: string | null;
-  isAuth: boolean;
 }
 
 const initialState: IUserSlice = {
-  name: null,
-  surname: null,
+  email: null,
   id: null,
-  isAuth: false,
 };
 
 const userSlice = createSlice({
   name: 'user',
   initialState,
-  reducers: {},
+  reducers: {
+    setUser: (state, action) => {
+      state.email = action.payload.email;
+      state.id = action.payload.id;
+    },
+    exitFromAccount: (state) => {
+      state.email = null;
+      state.id = null;
+    },
+  },
+  extraReducers() {},
 });
 
-export default userSlice.reducer;
+export const {
+  reducer: userReducer,
+  actions: { setUser, exitFromAccount },
+} = userSlice;

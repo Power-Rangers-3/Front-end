@@ -1,6 +1,6 @@
 import { Visibility, VisibilityOff } from '@mui/icons-material';
 import MailOutline from '@mui/icons-material/MailOutline';
-import { FormControl, TextField, InputAdornment, IconButton } from '@material-ui/core';
+import { Button, TextField, InputAdornment, IconButton } from '@material-ui/core';
 
 import { useForm } from 'react-hook-form';
 
@@ -10,6 +10,10 @@ import { yupResolver } from '@hookform/resolvers/yup';
 
 import React, { useState } from 'react';
 
+import { useAppDispatch } from 'store';
+
+import { setUser } from 'store/features/userSlice';
+
 import styles from './registrationForm.styles.module.scss';
 
 import { FormDataType } from './registrationForm.types';
@@ -18,7 +22,6 @@ import { schema } from './data/registrationScheme';
 export const RegistrationForm = () => {
   const [isShowPassword, setIsShowPassword] = useState<boolean>(false);
   const [isShowConfirmPassword, setIsShowConfirmPassword] = useState<boolean>(false);
-
   const {
     register,
     handleSubmit,
@@ -29,14 +32,17 @@ export const RegistrationForm = () => {
     resolver: yupResolver(schema),
   });
 
+  const dispatch = useAppDispatch();
+
   const onSubmit: SubmitHandler<FormDataType> = (data) => {
     console.log(data);
     console.log(errors);
+    dispatch(setUser(data));
     reset();
   };
 
   return (
-    <FormControl className={styles.form} onSubmit={handleSubmit(onSubmit)}>
+    <form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
       <h3>Registration</h3>
 
       <TextField
@@ -105,7 +111,7 @@ export const RegistrationForm = () => {
           ),
         }}
       />
-      <button type="submit">Зарегистрироваться</button>
-    </FormControl>
+      <Button type="submit">Зарегистрироваться</Button>
+    </form>
   );
 };
