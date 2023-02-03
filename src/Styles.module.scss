@@ -1,4 +1,7 @@
-.new-1 {
-  font-size: 20px;
+.global {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
 }
-

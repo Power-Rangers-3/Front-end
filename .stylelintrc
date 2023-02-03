@@ -4,13 +4,10 @@
     "stylelint-order",
     "stylelint-scss",
     "stylelint-high-performance-animation",
-    "stylelint-group-selectors",
-    "stylelint-images"
+    "stylelint-group-selectors"
   ],
   "ignoreFiles": ["**/*.js", "**/*.jsx", "**/*.ts", "**/*.tsx"],
   "rules": {
-    "images/broken": true,
-    "images/prefer-data-uri": 256,
     "plugin/stylelint-group-selectors": true,
     "plugin/no-low-performance-animation-properties": true,
     "at-rule-empty-line-before": [

@@ -43,8 +43,11 @@
     "import/first": "warn",
     "import/newline-after-import": "warn",
     "import/no-duplicates": "warn",
+    "react/jsx-props-no-spreading": "off",
     "quotes": "off",
     "react/react-in-jsx-scope": "off",
-    "react/function-component-definition": "off"
+    "react/function-component-definition": "off",
+    "jsx-a11y/no-static-element-interactions": "off",
+    "no-useless-escape":"off"
   }
 }
