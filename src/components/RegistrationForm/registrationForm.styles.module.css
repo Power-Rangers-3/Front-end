@@ -1,0 +1,1 @@
+.form{display:flex;flex-direction:column;gap:.5rem;width:25rem;height:100%;padding:1rem;background-color:#9e9999;border-radius:1rem}.form .userNameField input{font-size:1rem}.form *,.form *::before,.form *::after{box-sizing:border-box}

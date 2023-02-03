@@ -1,0 +1,20 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+  width: 25rem;
+  height: 100%;
+  padding: 1rem;
+  background-color: rgb(158, 153, 153);
+  border-radius: 1rem;
+
+  .userNameField {
+    input {
+      font-size: 1rem;
+    }
+  }
+
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+}
