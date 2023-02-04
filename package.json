@@ -21,7 +21,6 @@
     "react-router-dom": "^6.8.0",
     "react-scripts": "5.0.1",
     "stylelint": "^14.16.1",
-    "stylelint-images": "^2.0.1",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
