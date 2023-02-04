@@ -1,3 +1,5 @@
+import styles from './styles.module.scss';
+
 export function HomePage() {
-  return <div>HomePage</div>;
+  return <div className={styles.test}>HomePage</div>;
 }
