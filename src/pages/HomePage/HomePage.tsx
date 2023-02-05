@@ -1,7 +1,3 @@
-import { Header } from "components";
-
 export function HomePage() {
-  return (
-    <Header />
-  )
+  return <div>HomePage</div>;
 }
