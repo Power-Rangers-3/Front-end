@@ -1,6 +1,6 @@
 import { css } from '@emotion/react';
 
-import { ThemeVariant } from 'store/features/theme/theme.slice';
+import { ThemeVariant } from 'store/features/themeSlice';
 
 import { Breakpoints } from './shared/breakpoints';
 
@@ -12,7 +12,6 @@ export const getGlobalStyles = (themeVariant: ThemeVariant) => css`
       'Liberation Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
     --font-family: SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
     --max-width: ${Breakpoints.Desktop};
-    --min-width: 20rem;
     --font-color-base: ${appTheme[themeVariant].colors.fontBase};
     --font-color-hover: ${appTheme[themeVariant].colors.fontBase};
     --font-color-disable: ${appTheme[themeVariant].colors.fontBase};
@@ -29,7 +28,7 @@ export const getGlobalStyles = (themeVariant: ThemeVariant) => css`
     --background-color-border: ${appTheme[themeVariant].colors.borderBase};
     --background-color-hover: ${appTheme[themeVariant].colors.borderHover};
     --background-color-focused: ${appTheme[themeVariant].colors.borderFocused};
-    --background-color-disable: ${appTheme[themeVariant].colors.borderDisable};
+    --background-color-disable: ${appTheme[themeVariant].colors.borderDisabled};
     --additional-color: ${appTheme[themeVariant].colors.additional};
     --body-font-family: var(--font-family);
 
