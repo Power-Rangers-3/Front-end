@@ -10,6 +10,6 @@ export const router = createBrowserRouter(
       <Route path={ROUTE.PROFILE} />
       <Route path={ROUTE.SIGN_IN} />
       <Route path={ROUTE.SIGN_IN} />
-    </Route>,
+    </Route>
   ),
 );
