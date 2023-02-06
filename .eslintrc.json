@@ -22,7 +22,7 @@
     "project": "./tsconfig.json"
   },
   "plugins": ["react", "@typescript-eslint", "prettier"],
-  "rules": {
+  "rules": {    
     "prettier/prettier": "warn",
     "camelcase": "off",
     "import/prefer-default-export": "off",
@@ -46,8 +46,6 @@
     "react/jsx-props-no-spreading": "off",
     "quotes": "off",
     "react/react-in-jsx-scope": "off",
-    "react/function-component-definition": "off",
-    "jsx-a11y/no-static-element-interactions": "off",
-    "no-useless-escape":"off"
+    "react/function-component-definition": "off"   
   }
 }

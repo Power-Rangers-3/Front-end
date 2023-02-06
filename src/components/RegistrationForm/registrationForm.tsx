@@ -15,9 +15,7 @@ import { yupResolver } from '@hookform/resolvers/yup';
 
 import React, { useState } from 'react';
 
-import { useAppDispatch } from 'store';
-
-import { setUser } from 'store/features/userSlice';
+import { useAppDispatch, setUser } from 'store';
 
 import styles from './registrationForm.styles.module.scss';
 
