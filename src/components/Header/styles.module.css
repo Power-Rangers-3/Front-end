@@ -1,0 +1,21 @@
+.header__container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 16px 100px;
+  gap: 10px;
+  width: 1440px;
+  height: 88px;
+}
+.header__nav-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 40px;
+}
+
+.logo {
+  width: 164px;
+  height: 36px;
+}/*# sourceMappingURL=styles.module.css.map */
