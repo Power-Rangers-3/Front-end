@@ -1,6 +1,11 @@
 import { Visibility, VisibilityOff } from '@mui/icons-material';
 import MailOutline from '@mui/icons-material/MailOutline';
-import { Button, TextField, InputAdornment, IconButton } from '@material-ui/core';
+import {
+  Button,
+  TextField,
+  InputAdornment,
+  IconButton,
+} from '@material-ui/core';
 
 import { useForm } from 'react-hook-form';
 
@@ -18,15 +23,18 @@ import styles from './registrationForm.styles.module.scss';
 
 import { FormDataType } from './registrationForm.types';
 import { schema } from './data/registrationScheme';
+import { userRegistration } from './api/userRegistration';
 
 export const RegistrationForm = () => {
   const [isShowPassword, setIsShowPassword] = useState<boolean>(false);
-  const [isShowConfirmPassword, setIsShowConfirmPassword] = useState<boolean>(false);
+  const [isShowConfirmPassword, setIsShowConfirmPassword] =
+    useState<boolean>(false);
   const {
     register,
     handleSubmit,
     formState: { errors },
     reset,
+    getValues,
   } = useForm<FormDataType>({
     mode: 'onChange',
     resolver: yupResolver(schema),
@@ -35,9 +43,14 @@ export const RegistrationForm = () => {
   const dispatch = useAppDispatch();
 
   const onSubmit: SubmitHandler<FormDataType> = (data) => {
-    console.log(data);
-    console.log(errors);
     dispatch(setUser(data));
+    const formData = getValues();
+    userRegistration(formData)
+      .then(() => {
+        console.log('Регистрация прошла успешно');
+        dispatch(setUser(data));
+      })
+      .catch();
     reset();
   };
 
@@ -81,7 +94,11 @@ export const RegistrationForm = () => {
         InputProps={{
           endAdornment: (
             <InputAdornment position="end">
-              <IconButton onClick={() => setIsShowPassword(true)} onMouseUp={() => setIsShowPassword(false)} edge="end">
+              <IconButton
+                onClick={() => setIsShowPassword(true)}
+                onMouseUp={() => setIsShowPassword(false)}
+                edge="end"
+              >
                 {isShowPassword ? <Visibility /> : <VisibilityOff />}
               </IconButton>
             </InputAdornment>
@@ -96,7 +113,9 @@ export const RegistrationForm = () => {
         variant="outlined"
         placeholder="Повторите пароль"
         type={isShowConfirmPassword ? 'text' : 'password'}
-        helperText={errors.confirmPassword ? errors.confirmPassword?.message : null}
+        helperText={
+          errors.confirmPassword ? errors.confirmPassword?.message : null
+        }
         InputProps={{
           endAdornment: (
             <InputAdornment position="end">

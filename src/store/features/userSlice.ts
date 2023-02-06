@@ -24,7 +24,6 @@ const userSlice = createSlice({
       state.id = null;
     },
   },
-  extraReducers() {},
 });
 
 export const {
