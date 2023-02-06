@@ -1,3 +1,3 @@
-import styles from './styles.module.scss';
+import { RegistrationForm } from 'components';
 
-export const HomePage = () => <div className={styles.test}>HomePage</div>;
+export const HomePage = () => <RegistrationForm />;

@@ -1,11 +1,6 @@
 import { Visibility, VisibilityOff } from '@mui/icons-material';
 import MailOutline from '@mui/icons-material/MailOutline';
-import {
-  Button,
-  TextField,
-  InputAdornment,
-  IconButton,
-} from '@material-ui/core';
+import { TextField, InputAdornment, IconButton } from '@material-ui/core';
 
 import { useForm } from 'react-hook-form';
 
@@ -17,16 +12,20 @@ import React, { useState } from 'react';
 
 import { useAppDispatch, setUser } from 'store';
 
+import { ReactComponent as Facebook } from './assets/icons/Facebook.svg';
+import { ReactComponent as Google } from './assets/icons/Google.svg';
+import { ReactComponent as VK } from './assets/icons/VK.svg';
+
 import styles from './registrationForm.styles.module.scss';
 
 import { FormDataType } from './registrationForm.types';
 import { schema } from './data/registrationScheme';
 import { userRegistration } from './api/userRegistration';
+import { FormButton } from './UI/FormButton/FormButton';
 
 export const RegistrationForm = () => {
   const [isShowPassword, setIsShowPassword] = useState<boolean>(false);
-  const [isShowConfirmPassword, setIsShowConfirmPassword] =
-    useState<boolean>(false);
+
   const {
     register,
     handleSubmit,
@@ -45,7 +44,6 @@ export const RegistrationForm = () => {
     const formData = getValues();
     userRegistration(formData)
       .then(() => {
-        console.log('Регистрация прошла успешно');
         dispatch(setUser(data));
       })
       .catch();
@@ -54,19 +52,9 @@ export const RegistrationForm = () => {
 
   return (
     <form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
-      <h3>Registration</h3>
-
+      <h3>Регистрация</h3>
       <TextField
-        className={styles.userNameField}
-        {...register('username')}
-        id="username"
-        variant="outlined"
-        placeholder="User name"
-        helperText={errors.username ? errors.username?.message : null}
-      />
-
-      <TextField
-        className={styles.userNameField}
+        className={styles.form__field}
         {...register('email')}
         id="email"
         variant="outlined"
@@ -80,9 +68,16 @@ export const RegistrationForm = () => {
           ),
         }}
       />
-
       <TextField
-        className={styles.userNameField}
+        className={styles.form__field}
+        {...register('username')}
+        id="username"
+        variant="outlined"
+        placeholder="Имя и фамилия"
+        helperText={errors.username ? errors.username?.message : null}
+      />
+      <TextField
+        className={styles.form__field}
         {...register('password')}
         id="password"
         variant="outlined"
@@ -103,32 +98,30 @@ export const RegistrationForm = () => {
           ),
         }}
       />
-
-      <TextField
-        className={styles.userNameField}
-        {...register('confirmPassword')}
-        id="confirmPassword"
-        variant="outlined"
-        placeholder="Повторите пароль"
-        type={isShowConfirmPassword ? 'text' : 'password'}
-        helperText={
-          errors.confirmPassword ? errors.confirmPassword?.message : null
-        }
-        InputProps={{
-          endAdornment: (
-            <InputAdornment position="end">
-              <IconButton
-                onClick={() => setIsShowConfirmPassword(true)}
-                onMouseUp={() => setIsShowConfirmPassword(false)}
-                edge="end"
-              >
-                {isShowConfirmPassword ? <Visibility /> : <VisibilityOff />}
-              </IconButton>
-            </InputAdornment>
-          ),
-        }}
-      />
-      <Button type="submit">Зарегистрироваться</Button>
+      <FormButton type="submit" invert>
+        Зарегистрироваться
+      </FormButton>
+      <p className={styles.form__sideCenter}>или</p>
+      <div className={styles.form__socialWrapper}>
+        <FormButton>
+          <Facebook />
+          Facebook
+        </FormButton>
+        <FormButton>
+          <Google /> Google
+        </FormButton>
+        <FormButton>
+          <VK /> VK
+        </FormButton>
+      </div>
+      <p>
+        Нажимая “Зарегистрироваться”, Вы соглашаетесь с условиями{' '}
+        <a href="/">лицензионного договора, политикой конфиденциальности</a> и
+        предоставляете согласие на обработку персональных данных
+      </p>
+      <p className={styles.form__enter}>
+        Уже есть аккаунт? <a href="/">Войти</a>
+      </p>
     </form>
   );
 };

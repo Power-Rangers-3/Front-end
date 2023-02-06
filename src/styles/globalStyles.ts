@@ -14,8 +14,8 @@ export const getGlobalStyles = () => css`
       'Courier New', monospace;
     --max-width: ${Breakpoints.Desktop};
     --font-color-base: ${colors.fontBase};
-    --font-color-hover: ${colors.fontBase};
-    --font-color-disable: ${colors.fontBase};
+    --font-color-hover: ${colors.fontHover};
+    --font-color-disabled: ${colors.fontDisabled};
     --font-color-invert: ${colors.fontInvert};
     --font-color-second: ${colors.fontSecond};
     --font-color-error: ${colors.fontError};
@@ -24,12 +24,15 @@ export const getGlobalStyles = () => css`
     --background-color-bright: ${colors.backgroundBright};
     --background-color-fields: ${colors.backgroundFields};
     --background-color-warning: ${colors.backgroundWarning};
+    --background-color-button: ${colors.backgroundButton};
+    --background-color-button-invert: ${colors.backgroundButtonInvert};
     --background-color-button-hover: ${colors.backgroundButtonHover};
-    --background-color-disabled: ${colors.backgroundButtonDisabled};
-    --background-color-border: ${colors.borderBase};
-    --background-color-hover: ${colors.borderHover};
-    --background-color-focused: ${colors.borderFocused};
-    --background-color-disable: ${colors.borderDisabled};
+    --background-color-button-disabled: ${colors.backgroundButtonDisabled};
+    --border-color: ${colors.borderBase};
+    --border-color-invert: ${colors.borderInvert};
+    --border-color-hover: ${colors.borderHover};
+    --border-color-focused: ${colors.borderFocused};
+    --border-color-disabled: ${colors.borderDisabled};
     --additional-color: ${colors.additional};
     --body-font-family: var(--font-family);
 
@@ -70,7 +73,7 @@ export const getGlobalStyles = () => css`
     --largeRegular-font-weight: ${TYPOGRAPHY.desktop.largeRegular.fontWeight};
     --normalBold-font-size: ${TYPOGRAPHY.desktop.normalBold.fontSize};
     --normalBold-line-height: ${TYPOGRAPHY.desktop.normalBold.lineHeight};
-    --lnormalBold-font-weight: ${TYPOGRAPHY.desktop.normalBold.fontWeight};
+    --normalBold-font-weight: ${TYPOGRAPHY.desktop.normalBold.fontWeight};
     --normalRegular-font-size: ${TYPOGRAPHY.desktop.normalRegular.fontSize};
     --normalRegular-line-height: ${TYPOGRAPHY.desktop.normalRegular.lineHeight};
     --normalRegular-font-weight: ${TYPOGRAPHY.desktop.normalRegular.fontWeight};

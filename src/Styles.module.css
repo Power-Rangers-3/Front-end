@@ -1,1 +1,2 @@
-.global *,.global *::before,.global *::after{box-sizing:border-box}
+.global *,.global *::before,.global *::after{box-sizing:border-box;
+font-family: "Montserrat";}

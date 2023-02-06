@@ -8,4 +8,7 @@
 *.json
 *.html
 *.css
+*.ttf
+*.woff
+*.woff2
 /node_modules
