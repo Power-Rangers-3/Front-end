@@ -12,10 +12,7 @@ import { Link, NavLink } from 'react-router-dom';
 
 import { ROUTE } from 'router';
 
-import { ReactComponent as Facebook } from './assets/icons/Facebook.svg';
-import { ReactComponent as Google } from './assets/icons/Google.svg';
-import { ReactComponent as VK } from './assets/icons/VK.svg';
-import { ReactComponent as Mail } from './assets/icons/Mail.svg';
+import { Facebook, Google, VK, Mail } from './assets';
 
 import styles from './registrationForm.styles.module.scss';
 import buttonStyles from './UI/buttonStyles/button.styles.module.scss';
