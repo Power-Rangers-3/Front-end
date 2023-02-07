@@ -1,5 +1,8 @@
-import { Header } from "components";
 
-export function HomePage() {
-  return <Header />;
+const HomePage = () => {
+  return (
+    <div>HomePage</div>
+  )
 }
+
+export default HomePage
