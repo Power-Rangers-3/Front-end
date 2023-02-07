@@ -1,8 +1,4 @@
+import styles from './styles.module.scss';
 
-const HomePage = () => {
-  return (
-    <div>HomePage</div>
-  )
-}
+export const HomePage = () => <div className={styles.test}>HomePage</div>;
 
-export default HomePage

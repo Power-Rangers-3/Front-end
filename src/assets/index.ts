@@ -1,2 +1,2 @@
-import logoSrc from './icons/logo.svg';
-export { logoSrc };
+import logoIcon from './icons/logo.svg';
+export { logoIcon };

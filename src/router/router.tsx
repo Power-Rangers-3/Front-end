@@ -1,4 +1,4 @@
-import HomePage from 'pages/HomePage/HomePage';
+import { HomePage } from 'pages';
 import { MainLayout } from 'pages/MainLayout/MainLayout';
 import { createBrowserRouter, createRoutesFromElements, Route } from 'react-router-dom';
 

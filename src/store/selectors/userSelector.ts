@@ -1,3 +1,3 @@
 import { RootState } from "store/types/types";
 
-export const getUserAuth = (state: RootState) => state.user;
+export const getUser = (state: RootState) => state.user;

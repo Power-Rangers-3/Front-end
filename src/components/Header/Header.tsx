@@ -1,13 +1,13 @@
-import { logoSrc } from 'assets';
+import { logoIcon } from 'assets';
 import { Link, useNavigate } from 'react-router-dom';
 import { ROUTE } from 'router';
 import { useAppSelector } from 'store';
-import { getUserAuth } from 'store/selectors/userSelector';
+import { getUser } from 'store/selectors/userSelector';
 
 import styles from './styles.module.scss';
 
 export const Header = () => {
-  const { isAuth } = useAppSelector(getUserAuth);
+  const { isAuth } = useAppSelector(getUser);
   const navigate = useNavigate();
   const handleEnter = () => {
     navigate(ROUTE.PROFILE);
@@ -20,7 +20,7 @@ export const Header = () => {
     <header>
       <div className={styles.header__container}>
         <Link to={ROUTE.HOME}>
-          <img src={logoSrc} className={styles.logo} alt={logoSrc} />
+          <img src={logoIcon} className={styles.logo} alt={logoIcon} />
         </Link>
         <nav className={styles.header__nav}>
           <ul>
