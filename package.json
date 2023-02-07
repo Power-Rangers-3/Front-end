@@ -34,7 +34,7 @@
     "lint": "eslint .",
     "lint:fix": "eslint --fix .",
     "stylelint": "stylelint .",
-    "stylelint:fix": "stylelint --fix",
+    "stylelint:fix": "stylelint --fix .",
     "format": "prettier . --write",
     "prepare": "husky install"
   },
