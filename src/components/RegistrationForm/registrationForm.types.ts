@@ -1,9 +1,5 @@
 export interface RegisterUserType {
-  username: string;
   email: string;
+  username: string;
   password: string;
-}
-
-export interface FormDataType extends RegisterUserType {
-  confirmPassword: string;
 }

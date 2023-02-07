@@ -18,10 +18,10 @@ import { ReactComponent as VK } from './assets/icons/VK.svg';
 
 import styles from './registrationForm.styles.module.scss';
 
-import { FormDataType } from './registrationForm.types';
 import { schema } from './data/registrationScheme';
 import { userRegistration } from './api/userRegistration';
 import { FormButton } from './UI/FormButton/FormButton';
+import { RegisterUserType } from './registrationForm.types';
 
 export const RegistrationForm = () => {
   const [isShowPassword, setIsShowPassword] = useState<boolean>(false);
@@ -32,14 +32,14 @@ export const RegistrationForm = () => {
     formState: { errors },
     reset,
     getValues,
-  } = useForm<FormDataType>({
+  } = useForm<RegisterUserType>({
     mode: 'onChange',
     resolver: yupResolver(schema),
   });
 
   const dispatch = useAppDispatch();
 
-  const onSubmit: SubmitHandler<FormDataType> = (data) => {
+  const onSubmit: SubmitHandler<RegisterUserType> = (data) => {
     dispatch(setUser(data));
     const formData = getValues();
     userRegistration(formData)
