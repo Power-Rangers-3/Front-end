@@ -3,25 +3,25 @@ import { createSlice } from '@reduxjs/toolkit';
 
 interface IUserSlice {
   email: string | null;
-  id: string | null;
+  name: string | null;
 }
 
 const initialState: IUserSlice = {
   email: null,
-  id: null,
+  name: null,
 };
 
 const userSlice = createSlice({
   name: 'user',
   initialState,
   reducers: {
-    setUser: (state, action) => {
-      state.email = action.payload.email;
-      state.id = action.payload.id;
+    setUser: (state, { payload: { email, name } }) => {
+      state.email = email;
+      state.name = name;
     },
     exitFromAccount: (state) => {
       state.email = null;
-      state.id = null;
+      state.name = null;
     },
   },
 });
