@@ -8,7 +8,7 @@ import { Header } from 'components';
 export const MainLayout = () => (
   <div>
     <Global styles={getGlobalStyles(useAppSelector(themeSelector))} />
-    <Header/>
+    <Header />
     <Outlet />
   </div>
 );

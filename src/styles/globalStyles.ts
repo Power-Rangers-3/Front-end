@@ -13,7 +13,7 @@ export const getGlobalStyles = (themeVariant: ThemeVariant) => css`
     --font-family: SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
     --max-width: ${Breakpoints.Desktop};
     --font-color-base: ${appTheme[themeVariant].colors.fontBase};
-    --font-color-hover: ${appTheme[themeVariant].colors.fontBase};
+    --font-color-hover: ${appTheme[themeVariant].colors.fontHover};
     --font-color-disable: ${appTheme[themeVariant].colors.fontBase};
     --font-color-invert: ${appTheme[themeVariant].colors.fontInvert};
     --font-color-second: ${appTheme[themeVariant].colors.fontSecond};
@@ -200,7 +200,7 @@ export const getGlobalStyles = (themeVariant: ThemeVariant) => css`
     padding: 0;
     list-style: none;
   }
-  
+
   ol,
   ul,
   dl {
