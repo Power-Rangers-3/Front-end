@@ -1,0 +1,96 @@
+.header {
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 100px;
+    gap: 10px;
+    width: 1440px;
+    height: 88px;
+  }
+
+  &__nav {
+    display: flex;
+    align-items: center;
+    padding: 0px;
+    gap: 40px;
+  }
+
+  &__buttonWrapper {
+    display: flex;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 20px;
+  }
+}
+
+.logo {
+  width: 164px;
+  height: 36px;
+}
+
+.enter {
+  width: 105px;
+  height: 56px;
+  align-items: center;
+  padding: 16px 32px;
+  gap: 12px;
+  border: 1px solid #000000;
+  width: 105px;
+  height: 56px;
+  background-color: white;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  :active
+  &:hover {
+    cursor: pointer;
+    border: 1px solid #B3B3B3;
+    color: #B3B3B3;
+
+  }
+  &:disabled {
+    border: 1px solid #B3B3B3;
+    color: #B3B3B3;
+  }
+}
+
+.registration {
+  align-items: center;
+  padding: 16px 32px;
+  gap: 12px;
+  width: 172px;
+  height: 56px;
+  background-color: #000000;
+  color: white;
+  border: none;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  &:hover {
+    cursor: pointer;
+    background: #4C4C4C;
+  }
+  &:disabled {
+    background:  #B3B3B3;
+  }
+}
+
+ul {
+  display: flex;
+  gap: 40px;
+}
+
+.links {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: #000000;
+  &:hover {
+    cursor: pointer;
+    color: #B3B3B3;
+  }
+}
