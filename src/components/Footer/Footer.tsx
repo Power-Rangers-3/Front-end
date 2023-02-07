@@ -1,10 +1,6 @@
 import styles from './Styles.module.scss';
 
-import facebookLight from '../../assets/icons/footer_facebook-light.svg';
-import instagramLight from '../../assets/icons/footer_instagram-light.svg';
-import vkLight from '../../assets/icons/footer_vk-light.svg';
-import youTubeLight from '../../assets/icons/footer_youtube-light.svg';
-import telegramLight from '../../assets/icons/footer_telegram-light.svg';
+import { telegramLight, facebookLight, instagramLight, vkLight, youTubeLight } from '../../assets';
 
 export const Footer = () => (
   <div className={styles.footer_container}>
