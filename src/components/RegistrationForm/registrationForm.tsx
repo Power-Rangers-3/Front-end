@@ -1,37 +1,36 @@
-import { Visibility, VisibilityOff } from '@mui/icons-material';
-import MailOutline from '@mui/icons-material/MailOutline';
-import { TextField, InputAdornment, IconButton } from '@material-ui/core';
-
 import { useForm } from 'react-hook-form';
 
 import { SubmitHandler } from 'react-hook-form/dist/types';
 
 import { yupResolver } from '@hookform/resolvers/yup';
 
-import React, { useState } from 'react';
+import React from 'react';
 
 import { useAppDispatch, setUser } from 'store';
+
+import { Link, NavLink } from 'react-router-dom';
+
+import { ROUTE } from 'router';
 
 import { ReactComponent as Facebook } from './assets/icons/Facebook.svg';
 import { ReactComponent as Google } from './assets/icons/Google.svg';
 import { ReactComponent as VK } from './assets/icons/VK.svg';
+import { ReactComponent as Mail } from './assets/icons/Mail.svg';
 
 import styles from './registrationForm.styles.module.scss';
+import buttonStyles from './UI/buttonStyles/button.styles.module.scss';
 
 import { schema } from './data/registrationScheme';
-import { userRegistration } from './api/userRegistration';
-import { FormButton } from './UI/FormButton/FormButton';
+// import { userRegistration } from './api/userRegistration';
 import { RegisterUserType } from './registrationForm.types';
+import { Input } from './UI/Input/Input';
 
 export const RegistrationForm = () => {
-  const [isShowPassword, setIsShowPassword] = useState<boolean>(false);
-
   const {
     register,
     handleSubmit,
     formState: { errors },
     reset,
-    getValues,
   } = useForm<RegisterUserType>({
     mode: 'onChange',
     resolver: yupResolver(schema),
@@ -41,86 +40,72 @@ export const RegistrationForm = () => {
 
   const onSubmit: SubmitHandler<RegisterUserType> = (data) => {
     dispatch(setUser(data));
-    const formData = getValues();
-    userRegistration(formData)
-      .then(() => {
-        dispatch(setUser(data));
-      })
-      .catch();
+    // request for backend
+    // userRegistration(data)
+    //   .then(() => {
+    //     dispatch(setUser(data));
+    //   })
+    //   .catch();
     reset();
   };
 
   return (
     <form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
       <h3>Регистрация</h3>
-      <TextField
-        className={styles.form__field}
-        {...register('email')}
-        id="email"
-        variant="outlined"
-        placeholder="Email"
-        helperText={errors.email ? errors.email?.message : null}
-        InputProps={{
-          startAdornment: (
-            <InputAdornment position="start">
-              <MailOutline />
-            </InputAdornment>
-          ),
-        }}
-      />
-      <TextField
-        className={styles.form__field}
-        {...register('username')}
-        id="username"
-        variant="outlined"
-        placeholder="Имя и фамилия"
-        helperText={errors.username ? errors.username?.message : null}
-      />
-      <TextField
-        className={styles.form__field}
-        {...register('password')}
-        id="password"
-        variant="outlined"
-        placeholder="Пароль"
-        type={isShowPassword ? 'text' : 'password'}
-        helperText={errors.password ? errors.password?.message : null}
-        InputProps={{
-          endAdornment: (
-            <InputAdornment position="end">
-              <IconButton
-                onClick={() => setIsShowPassword(true)}
-                onMouseUp={() => setIsShowPassword(false)}
-                edge="end"
-              >
-                {isShowPassword ? <Visibility /> : <VisibilityOff />}
-              </IconButton>
-            </InputAdornment>
-          ),
-        }}
-      />
-      <FormButton type="submit" invert>
+      <div className={styles.inputGroupWrapper}>
+        <Input
+          register={register}
+          id="email"
+          Icon={<Mail />}
+          iconStart
+          placeholder="Email"
+          error={errors.email ? errors.email?.message : ''}
+        />
+
+        <Input
+          register={register}
+          id="username"
+          placeholder="Имя и фамилия"
+          error={errors.username ? errors.username?.message : ''}
+        />
+
+        <Input
+          register={register}
+          id="password"
+          placeholder="Пароль"
+          type="password"
+          error={errors.password ? errors.password?.message : ''}
+        />
+      </div>
+      <button
+        className={`${buttonStyles.button} ${buttonStyles.invertButton}`}
+        type="submit"
+        disabled={!!(errors.email || errors.password || errors.username)}
+      >
         Зарегистрироваться
-      </FormButton>
-      <p className={styles.form__sideCenter}>или</p>
-      <div className={styles.form__socialWrapper}>
-        <FormButton>
+      </button>
+      <p className={styles.sideCenter}>или</p>
+      <div className={styles.socialWrapper}>
+        <button className={buttonStyles.button} type="button">
           <Facebook />
           Facebook
-        </FormButton>
-        <FormButton>
+        </button>
+        <button className={buttonStyles.button} type="button">
           <Google /> Google
-        </FormButton>
-        <FormButton>
+        </button>
+        <button className={buttonStyles.button} type="button">
           <VK /> VK
-        </FormButton>
+        </button>
       </div>
       <p>
         Нажимая “Зарегистрироваться”, Вы соглашаетесь с условиями{' '}
-        <a href="/">лицензионного договора, политикой конфиденциальности</a> и
-        предоставляете согласие на обработку персональных данных
+        <NavLink to="/">
+          лицензионного договора, политикой конфиденциальности
+        </NavLink>{' '}
+        и предоставляете согласие на обработку персональных данных
       </p>
-      <p className={styles.form__enter}>
-        Уже есть аккаунт? <a href="/">Войти</a>
+      <p className={styles.enter}>
+        Уже есть аккаунт? <Link to={ROUTE.SIGN_IN}>Войти</Link>
       </p>
     </form>
   );

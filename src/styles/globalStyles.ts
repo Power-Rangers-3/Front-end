@@ -6,12 +6,10 @@ import { colors, SPACING, TYPOGRAPHY } from './shared/variables';
 
 export const getGlobalStyles = () => css`
   :root {
-    --font-sans-serif: 'Monstserrat', system-ui, -apple-system, 'Segoe UI',
-      Roboto, 'Helvetica Neue', Arial, 'Noto Sans', 'Liberation Sans',
-      sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',
+    --font-family: 'Monstserrat', system-ui, -apple-system, 'Segoe UI', Roboto,
+      'Helvetica Neue', Arial, 'Noto Sans', 'Liberation Sans', sans-serif,
+      'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',
       'Noto Color Emoji';
-    --font-family: SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono',
-      'Courier New', monospace;
     --max-width: ${Breakpoints.Desktop};
     --font-color-base: ${colors.fontBase};
     --font-color-hover: ${colors.fontHover};
@@ -19,6 +17,7 @@ export const getGlobalStyles = () => css`
     --font-color-invert: ${colors.fontInvert};
     --font-color-second: ${colors.fontSecond};
     --font-color-error: ${colors.fontError};
+    --font-color-warning: ${colors.fontWarning};
     --background-color: ${colors.background};
     --background-color-invert: ${colors.backgroundInvert};
     --background-color-bright: ${colors.backgroundBright};
@@ -31,8 +30,11 @@ export const getGlobalStyles = () => css`
     --border-color: ${colors.borderBase};
     --border-color-invert: ${colors.borderInvert};
     --border-color-hover: ${colors.borderHover};
+    --border-color-hover-input: ${colors.borderHoverInput};
+    --border-color-focused-input: ${colors.borderFocusedInput};
     --border-color-focused: ${colors.borderFocused};
     --border-color-disabled: ${colors.borderDisabled};
+    --border-color-warning: ${colors.borderWarning};
     --additional-color: ${colors.additional};
     --body-font-family: var(--font-family);
 
@@ -77,6 +79,12 @@ export const getGlobalStyles = () => css`
     --normalRegular-font-size: ${TYPOGRAPHY.desktop.normalRegular.fontSize};
     --normalRegular-line-height: ${TYPOGRAPHY.desktop.normalRegular.lineHeight};
     --normalRegular-font-weight: ${TYPOGRAPHY.desktop.normalRegular.fontWeight};
+    --smallBold-font-size: ${TYPOGRAPHY.desktop.smallBold.fontSize};
+    --smallBold-line-height: ${TYPOGRAPHY.desktop.smallBold.lineHeight};
+    --smallBold-font-weight: ${TYPOGRAPHY.desktop.smallBold.fontWeight};
+    --smallRegular-font-size: ${TYPOGRAPHY.desktop.smallRegular.fontSize};
+    --smallRegular-line-height: ${TYPOGRAPHY.desktop.smallRegular.lineHeight};
+    --smallRegular-font-weight: ${TYPOGRAPHY.desktop.smallRegular.fontWeight};
 
     --spacing-1: ${SPACING.desktop.L1};
     --spacing-2: ${SPACING.desktop.L2};
@@ -181,6 +189,18 @@ export const getGlobalStyles = () => css`
   }
   input {
     border: 0;
+    padding: 0;
+    margin: 0;
+    outline: none;
+    font-size: var(--largeRegular-font-size);
+    font-weight: var(--largeRegular-font-weight);
+    line-height: var(--largeRegular-line-height);
+  }
+
+  input::placeholder {
+    font-size: var(--largeRegular-font-size);
+    font-weight: var(--largeRegular-font-weight);
+    line-height: var(--largeRegular-line-height);
   }
   input[type='number'] {
     -moz-appearance: textfield;

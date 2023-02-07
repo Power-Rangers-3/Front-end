@@ -16,7 +16,4 @@ export const schema = Yup.object().shape({
   password: Yup.string()
     .min(4, 'Число символов должно быть не менее 4')
     .required('Обязательное для заполнения поле'),
-  confirmPassword: Yup.string()
-    .oneOf([Yup.ref('password'), null], 'Пароли должны совпадать')
-    .required('Обязательное для заполнения поле'),
 });

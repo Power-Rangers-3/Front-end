@@ -13,7 +13,7 @@ export const router = createBrowserRouter(
     <Route path={ROUTE.HOME} element={<MainLayout />}>
       <Route index element={<HomePage />} />
       <Route path={ROUTE.PROFILE} />
-      <Route path={ROUTE.SIGN_IN} />
+      <Route path={ROUTE.SIGN_UP} />
       <Route path={ROUTE.SIGN_IN} />
     </Route>,
   ),

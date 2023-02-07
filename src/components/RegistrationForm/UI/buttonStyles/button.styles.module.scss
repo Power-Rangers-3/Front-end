@@ -29,24 +29,17 @@
   }
 
   &:disabled {
-    color: var(--font-color-disabled);
+    background-color: var(--background-color-button-disabled);
     border-color: var(--border-color-disabled);
   }
 }
 
 .invertButton {
-  display: flex;
-  justify-content: center;
-  width: 100%;
-  padding: var(--spacing-7);
-  font-size: var(--largeRegular-font-size);
-  font-weight: var(--largeBold-font-weight);
-  line-height: var(--largeRegular-line-height);
   color: var(--font-color-invert);
   background-color: var(--background-color-button-invert);
-  border-radius: 4px;
 
   &:hover, &:active, &:focus {
+    color: var(--font-color-invert);
     background-color: var(--background-color-button-hover);
     border-color: var(--border-color-hover);
   }
@@ -56,4 +49,3 @@
     border-color: var(--border-color-disabled);
   }
 }
-
