@@ -20,7 +20,7 @@ export const Header = () => {
     <header>
       <div className={styles.header__container}>
         <Link to={ROUTE.HOME}>
-          <img src={logoIcon} className={styles.logo} alt={logoIcon} />
+          <img src={logoIcon} className={styles.logo} alt="Townsend logo" />
         </Link>
         <nav className={styles.header__nav}>
           <ul>
