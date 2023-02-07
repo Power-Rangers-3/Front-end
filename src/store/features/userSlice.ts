@@ -11,13 +11,19 @@ const initialState: IUserSlice = {
   name: null,
   surname: null,
   id: null,
-  isAuth: false,
+  isAuth: true,
 };
 
 const userSlice = createSlice({
   name: 'user',
   initialState,
-  reducers: {},
+  reducers: {
+    logout: (state) => {
+      state.isAuth = false;
+      state.name = null;
+      state.surname = null;
+    },
+  },
 });
 
 export const { reducer: userReducer, actions: userActions } = userSlice;
