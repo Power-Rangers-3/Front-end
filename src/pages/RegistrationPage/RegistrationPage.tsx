@@ -1,3 +1,3 @@
 import { RegistrationForm } from 'modules';
 
-export const HomePage = () => <RegistrationForm />;
+export const RegistrationPage = () => <RegistrationForm />;

@@ -220,7 +220,9 @@ export const getGlobalStyles = () => css`
   ol,
   ul {
     padding: 0;
+    list-style: none;
   }
+
   ol,
   ul,
   dl {
