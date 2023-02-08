@@ -12,7 +12,7 @@ import { Link, NavLink } from 'react-router-dom';
 
 import { ROUTE } from 'router';
 
-import { Facebook, Google, VK, Mail } from './assets';
+import { FacebookIcon, GoogleIcon, VKIcon, MailIcon } from './assets';
 
 import styles from './registrationForm.styles.module.scss';
 import buttonStyles from './UI/buttonStyles/button.styles.module.scss';
@@ -53,7 +53,7 @@ export const RegistrationForm = () => {
         <Input
           register={register}
           id="email"
-          Icon={<Mail />}
+          Icon={<MailIcon />}
           iconStart
           placeholder="Email"
           error={errors.email ? errors.email?.message : ''}
@@ -84,14 +84,14 @@ export const RegistrationForm = () => {
       <p className={styles.sideCenter}>или</p>
       <div className={styles.socialWrapper}>
         <button className={buttonStyles.button} type="button">
-          <Facebook />
+          <FacebookIcon />
           Facebook
         </button>
         <button className={buttonStyles.button} type="button">
-          <Google /> Google
+          <GoogleIcon /> Google
         </button>
         <button className={buttonStyles.button} type="button">
-          <VK /> VK
+          <VKIcon /> VK
         </button>
       </div>
       <p>

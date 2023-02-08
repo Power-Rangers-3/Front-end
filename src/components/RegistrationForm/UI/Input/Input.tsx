@@ -9,10 +9,8 @@ import styles from './input.styles.module.scss';
 
 import { InputType } from './input.type';
 
-import { ReactComponent as WarningIcon } from '../../assets/icons/Warning.svg';
+import { WarningIcon, VisibilityIcon, VisibilityOffIcon } from '../../assets';
 
-import { ReactComponent as Visibility } from '../../assets/icons/EyeOpen.svg';
-import { ReactComponent as VisibilityOff } from '../../assets/icons/EyeClose.svg';
 // import { RegisterUserType } from '../registrationForm.types';
 
 export const Input = ({
@@ -70,7 +68,7 @@ export const Input = ({
             onMouseDown={handleClick}
             onMouseUp={handleClick}
           >
-            {isShowPassword ? <Visibility /> : <VisibilityOff />}
+            {isShowPassword ? <VisibilityIcon /> : <VisibilityOffIcon />}
           </span>
         ) : null}
 
