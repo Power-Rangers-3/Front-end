@@ -25,9 +25,7 @@ export const Input = ({
   type = 'text',
   ...otherProps
 }: InputType) => {
-  const [isShowPassword, setIsShowPassword] = useState<boolean>(
-    type !== 'password',
-  );
+  const [isShowPassword, setIsShowPassword] = useState<boolean>(type !== 'password');
 
   const handleClick = () => {
     setIsShowPassword(!isShowPassword);
@@ -36,17 +34,9 @@ export const Input = ({
   return (
     <div className={styles.wrapper}>
       {children}
-      {label ? <label htmlFor={id}>{label}</label> : null}
-      <div
-        className={
-          error
-            ? `${styles.inputWrapper} ${styles.warningInput}`
-            : styles.inputWrapper
-        }
-      >
-        {Icon && iconStart ? (
-          <span className={styles.marginRight}>{Icon}</span>
-        ) : null}
+      {label && <label htmlFor={id}>{label}</label>}
+      <div className={error ? `${styles.inputWrapper} ${styles.warningInput}` : styles.inputWrapper}>
+        {Icon && iconStart && <span className={styles.marginRight}>{Icon}</span>}
         <input
           className={styles.input}
           id={id}
@@ -59,15 +49,9 @@ export const Input = ({
           {...otherProps}
           {...register(id || { email: '', username: '', password: '' })}
         />
-        {Icon && !iconStart ? (
-          <span className={styles.marginLeft}>{Icon}</span>
-        ) : null}
+        {Icon && !iconStart && <span className={styles.marginLeft}>{Icon}</span>}
         {type === 'password' ? (
-          <span
-            className={styles.iconEnd}
-            onMouseDown={handleClick}
-            onMouseUp={handleClick}
-          >
+          <span className={styles.iconEnd} onMouseDown={handleClick} onMouseUp={handleClick}>
             {isShowPassword ? <VisibilityIcon /> : <VisibilityOffIcon />}
           </span>
         ) : null}

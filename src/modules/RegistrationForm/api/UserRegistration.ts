@@ -7,8 +7,6 @@ interface UserRegistrationType {
   password: string;
 }
 
-export async function userRegistration(
-  querryParams: UserRegistrationType,
-): Promise<AxiosResponse> {
+export async function userRegistration(querryParams: UserRegistrationType): Promise<AxiosResponse> {
   return axios.post(apiPath, querryParams);
 }

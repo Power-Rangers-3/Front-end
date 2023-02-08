@@ -1,10 +1,6 @@
 import { HomePage } from 'pages';
 import { MainLayout } from 'pages/MainLayout/MainLayout';
-import {
-  createBrowserRouter,
-  createRoutesFromElements,
-  Route,
-} from 'react-router-dom';
+import { createBrowserRouter, createRoutesFromElements, Route } from 'react-router-dom';
 
 import { ROUTE } from './routes';
 

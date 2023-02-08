@@ -74,6 +74,9 @@ export const RegistrationForm = () => {
           error={errors.password ? errors.password?.message : ''}
         />
       </div>
+      <Link to="/" className={styles.remindPassword}>
+        Напомнить пароль
+      </Link>
       <button
         className={`${buttonStyles.button} ${buttonStyles.invertButton}`}
         type="submit"

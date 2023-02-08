@@ -6,10 +6,8 @@ import { colors, SPACING, TYPOGRAPHY } from './shared/variables';
 
 export const getGlobalStyles = () => css`
   :root {
-    --font-family: 'Monstserrat', system-ui, -apple-system, 'Segoe UI', Roboto,
-      'Helvetica Neue', Arial, 'Noto Sans', 'Liberation Sans', sans-serif,
-      'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',
-      'Noto Color Emoji';
+    --font-family: 'Monstserrat', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+      'Liberation Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
     --max-width: ${Breakpoints.Desktop};
     --font-color-base: ${colors.fontBase};
     --font-color-hover: ${colors.fontHover};
@@ -57,16 +55,11 @@ export const getGlobalStyles = () => css`
     --H6-line-height: ${TYPOGRAPHY.desktop.heading6.lineHeight};
     --H6-font-weight: ${TYPOGRAPHY.desktop.heading6.fontWeight};
     --extraLargeBold-font-size: ${TYPOGRAPHY.desktop.extraLargeBold.fontSize};
-    --extraLargeBold-line-height: ${TYPOGRAPHY.desktop.extraLargeBold
-      .lineHeight};
-    --extraLargeBold-font-weight: ${TYPOGRAPHY.desktop.extraLargeBold
-      .fontWeight};
-    --extraLargeRegular-font-size: ${TYPOGRAPHY.desktop.extraLargeRegular
-      .fontSize};
-    --extraLargeRegular-line-height: ${TYPOGRAPHY.desktop.extraLargeRegular
-      .lineHeight};
-    --extraLargeRegular-font-weight: ${TYPOGRAPHY.desktop.extraLargeRegular
-      .fontWeight};
+    --extraLargeBold-line-height: ${TYPOGRAPHY.desktop.extraLargeBold.lineHeight};
+    --extraLargeBold-font-weight: ${TYPOGRAPHY.desktop.extraLargeBold.fontWeight};
+    --extraLargeRegular-font-size: ${TYPOGRAPHY.desktop.extraLargeRegular.fontSize};
+    --extraLargeRegular-line-height: ${TYPOGRAPHY.desktop.extraLargeRegular.lineHeight};
+    --extraLargeRegular-font-weight: ${TYPOGRAPHY.desktop.extraLargeRegular.fontWeight};
     --largeBold-font-size: ${TYPOGRAPHY.desktop.largeBold.fontSize};
     --largeBold-line-height: ${TYPOGRAPHY.desktop.largeBold.lineHeight};
     --largeBold-font-weight: ${TYPOGRAPHY.desktop.largeBold.fontWeight};
