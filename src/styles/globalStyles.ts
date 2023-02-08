@@ -1,35 +1,39 @@
 import { css } from '@emotion/react';
 
-import { ThemeVariant } from 'store/features/themeSlice';
-
 import { Breakpoints } from './shared/breakpoints';
 
-import { appTheme, SPACING, TYPOGRAPHY } from './shared/variables';
+import { colors, SPACING, TYPOGRAPHY } from './shared/variables';
 
-export const getGlobalStyles = (themeVariant: ThemeVariant) => css`
+export const getGlobalStyles = () => css`
   :root {
-    --font-sans-serif: 'Monstserrat', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+    --font-family: 'Monstserrat', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
       'Liberation Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
-    --font-family: SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
     --max-width: ${Breakpoints.Desktop};
-    --font-color-base: ${appTheme[themeVariant].colors.fontBase};
-    --font-color-hover: ${appTheme[themeVariant].colors.fontHover};
-    --font-color-disable: ${appTheme[themeVariant].colors.fontBase};
-    --font-color-invert: ${appTheme[themeVariant].colors.fontInvert};
-    --font-color-second: ${appTheme[themeVariant].colors.fontSecond};
-    --font-color-error: ${appTheme[themeVariant].colors.fontError};
-    --background-color: ${appTheme[themeVariant].colors.background};
-    --background-color-invert: ${appTheme[themeVariant].colors.backgroundInvert};
-    --background-color-bright: ${appTheme[themeVariant].colors.backgroundBright};
-    --background-color-fields: ${appTheme[themeVariant].colors.backgroundFields};
-    --background-color-warning: ${appTheme[themeVariant].colors.backgroundWarning};
-    --background-color-button-hover: ${appTheme[themeVariant].colors.backgroundButtonHover};
-    --background-color-disabled: ${appTheme[themeVariant].colors.backgroundButtonDisabled};
-    --background-color-border: ${appTheme[themeVariant].colors.borderBase};
-    --background-color-hover: ${appTheme[themeVariant].colors.borderHover};
-    --background-color-focused: ${appTheme[themeVariant].colors.borderFocused};
-    --background-color-disable: ${appTheme[themeVariant].colors.borderDisabled};
-    --additional-color: ${appTheme[themeVariant].colors.additional};
+    --font-color-base: ${colors.fontBase};
+    --font-color-hover: ${colors.fontHover};
+    --font-color-disabled: ${colors.fontDisabled};
+    --font-color-invert: ${colors.fontInvert};
+    --font-color-second: ${colors.fontSecond};
+    --font-color-error: ${colors.fontError};
+    --font-color-warning: ${colors.fontWarning};
+    --background-color: ${colors.background};
+    --background-color-invert: ${colors.backgroundInvert};
+    --background-color-bright: ${colors.backgroundBright};
+    --background-color-fields: ${colors.backgroundFields};
+    --background-color-warning: ${colors.backgroundWarning};
+    --background-color-button: ${colors.backgroundButton};
+    --background-color-button-invert: ${colors.backgroundButtonInvert};
+    --background-color-button-hover: ${colors.backgroundButtonHover};
+    --background-color-button-disabled: ${colors.backgroundButtonDisabled};
+    --border-color: ${colors.borderBase};
+    --border-color-invert: ${colors.borderInvert};
+    --border-color-hover: ${colors.borderHover};
+    --border-color-hover-input: ${colors.borderHoverInput};
+    --border-color-focused-input: ${colors.borderFocusedInput};
+    --border-color-focused: ${colors.borderFocused};
+    --border-color-disabled: ${colors.borderDisabled};
+    --border-color-warning: ${colors.borderWarning};
+    --additional-color: ${colors.additional};
     --body-font-family: var(--font-family);
 
     --H1-font-size: ${TYPOGRAPHY.desktop.heading1.fontSize};
@@ -64,10 +68,16 @@ export const getGlobalStyles = (themeVariant: ThemeVariant) => css`
     --largeRegular-font-weight: ${TYPOGRAPHY.desktop.largeRegular.fontWeight};
     --normalBold-font-size: ${TYPOGRAPHY.desktop.normalBold.fontSize};
     --normalBold-line-height: ${TYPOGRAPHY.desktop.normalBold.lineHeight};
-    --lnormalBold-font-weight: ${TYPOGRAPHY.desktop.normalBold.fontWeight};
+    --normalBold-font-weight: ${TYPOGRAPHY.desktop.normalBold.fontWeight};
     --normalRegular-font-size: ${TYPOGRAPHY.desktop.normalRegular.fontSize};
     --normalRegular-line-height: ${TYPOGRAPHY.desktop.normalRegular.lineHeight};
     --normalRegular-font-weight: ${TYPOGRAPHY.desktop.normalRegular.fontWeight};
+    --smallBold-font-size: ${TYPOGRAPHY.desktop.smallBold.fontSize};
+    --smallBold-line-height: ${TYPOGRAPHY.desktop.smallBold.lineHeight};
+    --smallBold-font-weight: ${TYPOGRAPHY.desktop.smallBold.fontWeight};
+    --smallRegular-font-size: ${TYPOGRAPHY.desktop.smallRegular.fontSize};
+    --smallRegular-line-height: ${TYPOGRAPHY.desktop.smallRegular.lineHeight};
+    --smallRegular-font-weight: ${TYPOGRAPHY.desktop.smallRegular.fontWeight};
 
     --spacing-1: ${SPACING.desktop.L1};
     --spacing-2: ${SPACING.desktop.L2};
@@ -172,6 +182,18 @@ export const getGlobalStyles = (themeVariant: ThemeVariant) => css`
   }
   input {
     border: 0;
+    padding: 0;
+    margin: 0;
+    outline: none;
+    font-size: var(--largeRegular-font-size);
+    font-weight: var(--largeRegular-font-weight);
+    line-height: var(--largeRegular-line-height);
+  }
+
+  input::placeholder {
+    font-size: var(--largeRegular-font-size);
+    font-weight: var(--largeRegular-font-weight);
+    line-height: var(--largeRegular-line-height);
   }
   input[type='number'] {
     -moz-appearance: textfield;
