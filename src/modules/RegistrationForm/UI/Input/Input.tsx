@@ -51,7 +51,7 @@ export const Input = ({
         />
         {Icon && !iconStart && <span className={styles.marginLeft}>{Icon}</span>}
         {type === 'password' ? (
-          <span className={styles.iconEnd} onMouseDown={handleClick} onMouseUp={handleClick}>
+          <span className={`${styles.iconEnd} ${styles.iconColor}`} onMouseDown={handleClick} onMouseUp={handleClick}>
             {isShowPassword ? <VisibilityIcon /> : <VisibilityOffIcon />}
           </span>
         ) : null}

@@ -9,7 +9,7 @@
   position: relative;
   display: flex;
   align-items: center;
-  padding: var(--spacing-7) var(--spacing-6);
+  padding: 0 var(--spacing-6);
   background-color: var(--background-color-fields);
   border: 1px solid var(--background-color-fields);
   border-radius: var(--spacing-9);
@@ -23,9 +23,16 @@
     border: 1px solid var(--border-color-hover-input);
   }
 
-  &:active, &:focus {
+  &:active, &:focus-within {
     border: 1px solid var(--border-color-focused-input);
+
+    .iconColor {
+      & path {
+        fill: var(--additional-color);
+      }
+    }
   }
+
 
   &:disabled input {
     color: var(--font-color-disabled);
@@ -42,10 +49,15 @@
 
 .input {
   width: 100%;
-  padding: 0;
+  padding: var(--spacing-7) 0;
   margin: 0;
   background-color: inherit;
   outline: none;
+}
+
+
+.input:active, .input:focus .iconColor path {
+  fill: var(--additional-color);
 }
 
 .warningInput {
@@ -64,3 +76,4 @@
   line-height: var(--smallRegular-line-height);
   color: var(--font-color-warning);
 }
+
