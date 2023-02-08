@@ -7,12 +7,12 @@
     "@reduxjs/toolkit": "^1.9.1",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
-    "@testing-library/user-event": "^13.5.0",
-    "@types/jest": "^27.5.2",
-    "@types/node": "^16.18.11",
-    "@types/react": "^18.0.26",
+    "@testing-library/user-event": "^14.4.3",
+    "@types/jest": "^29.4.0",
+    "@types/node": "^18.11.19",
+    "@types/react": "^18.0.27",
     "@types/react-dom": "^18.0.10",
-    "firebase": "^9.16.0",
+    "firebase": "^9.17.1",
     "postcss-scss": "^4.0.6",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -21,9 +21,10 @@
     "react-router": "^6.8.0",
     "react-router-dom": "^6.8.0",
     "react-scripts": "5.0.1",
+    "scss": "^0.2.4",
     "stylelint": "^14.16.1",
     "stylelint-images": "^2.0.1",
-    "web-vitals": "^2.1.4"
+    "web-vitals": "^3.1.1"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -69,25 +70,25 @@
     }
   },
   "devDependencies": {
-    "@typescript-eslint/eslint-plugin": "^5.48.1",
-    "eslint": "^8.31.0",
+    "@typescript-eslint/eslint-plugin": "^5.50.0",
+    "eslint": "^8.33.0",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-config-airbnb-typescript": "^17.0.0",
     "eslint-config-prettier": "^8.6.0",
-    "eslint-config-standard-with-typescript": "^26.0.0",
-    "eslint-plugin-import": "^2.26.0",
+    "eslint-config-standard-with-typescript": "^34.0.0",
+    "eslint-plugin-import": "^2.27.5",
     "eslint-plugin-n": "^15.6.1",
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-promise": "^6.1.1",
-    "eslint-plugin-react": "^7.31.11",
+    "eslint-plugin-react": "^7.32.2",
     "husky": "^8.0.3",
-    "node-sass": "^7.0.3",
-    "prettier": "^2.8.2",
+    "prettier": "^2.8.3",
     "react-css-modules": "^4.7.11",
+    "sass": "^1.58.0",
     "stylelint-group-selectors": "^1.0.9",
     "stylelint-high-performance-animation": "^1.7.0",
     "stylelint-order": "^6.0.1",
     "stylelint-scss": "^4.3.0",
-    "typescript": "^4.9.4"
+    "typescript": "^4.9.5"
   }
 }

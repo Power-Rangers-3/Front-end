@@ -198,7 +198,9 @@ export const getGlobalStyles = (themeVariant: ThemeVariant) => css`
   ol,
   ul {
     padding: 0;
+    list-style: none;
   }
+  
   ol,
   ul,
   dl {
