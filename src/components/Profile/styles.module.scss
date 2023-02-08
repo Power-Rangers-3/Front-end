@@ -5,66 +5,66 @@
   align-items: center;
   font-size: var(--normalBold-font-size);
   font-weight: var(--normalBold-font-weight);
+}
 
-  &__icon {
-    padding: var(--spacing-8);
-    padding-right: var(--spacing-7);
-    padding-left: var(--spacing-7);
-    text-align: center;
-    background-color: var(--background-color-bright);
-    border-radius: 100%;
+.icon {
+  padding: var(--spacing-8);
+  padding-right: var(--spacing-7);
+  padding-left: var(--spacing-7);
+  text-align: center;
+  background-color: var(--background-color-bright);
+  border-radius: 100%;
 
-    &:hover {
-      cursor: pointer;
-    }
+  &:hover {
+    cursor: pointer;
   }
+}
 
-  &__email {
-    font-size: var(--normalBold-font-size);
-    font-weight: var(--normalBold-font-weight);
+.dropdown {
+  position: absolute;
+  top: var(--spacing-5);
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-8);
+  align-items: center;
+  padding: var(--spacing-9);
+  padding-right: var(--spacing-3);
+  padding-left: var(--spacing-3);
+  background-color: #f5f5f5;
+  border-radius: 5px;
+}
 
-    &:hover {
-      color: var(--font-color-hover);
-      cursor: pointer;
-    }
+.email {
+  font-size: var(--normalBold-font-size);
+  font-weight: var(--normalBold-font-weight);
+
+  &:hover {
+    color: var(--font-color-hover);
+    cursor: pointer;
   }
+}
 
-  &__dropdown {
-    position: absolute;
-    top: var(--spacing-5);
-    right: 0;
-    display: flex;
-    flex-direction: column;
-    gap: var(--spacing-8);
-    align-items: center;
-    padding: var(--spacing-9);
-    padding-right: var(--spacing-3);
-    padding-left: var(--spacing-3);
-    background-color: #f5f5f5;
-    border-radius: 5px;
-  }
+.link {
+  color: var(--font-color-base);
 
-  &__link {
+  &:visited {
     color: var(--font-color-base);
-
-    &:visited {
-      color: var(--font-color-base);
-    }
-
-    &:hover {
-      color: var(--font-color-hover);
-    }
   }
 
-  &__button {
-    font-family: var(--normalBold-font-family);
-    font-size: var(--normalBold-font-size);
-    font-weight: var(--normalBold-font-weight);
-    background-color: inherit;
-    border: none;
+  &:hover {
+    color: var(--font-color-hover);
+  }
+}
 
-    &:hover {
-      color: var(--font-color-hover);
-    }
+.button {
+  font-family: var(--normalBold-font-family);
+  font-size: var(--normalBold-font-size);
+  font-weight: var(--normalBold-font-weight);
+  background-color: inherit;
+  border: none;
+
+  &:hover {
+    color: var(--font-color-hover);
   }
 }

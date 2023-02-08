@@ -20,21 +20,21 @@ export const Profile = ({ name, email }: IProps) => {
   };
   return (
     <div className={styles.profile}>
-      <div className={styles.profile__icon} onClick={handleName}>
+      <div className={styles.icon} onClick={handleName}>
         {name[0]}
       </div>
       {dropDownIsActive && (
-        <p className={styles.profile__email} onClick={handleName}>
+        <p className={styles.email} onClick={handleName}>
           {' '}
           {email}
         </p>
       )}
       {dropDownIsActive && (
-        <div className={styles.profile__dropdown}>
-          <Link className={styles.profile__link} to={ROUTE.PROFILE}>
+        <div className={styles.dropdown}>
+          <Link className={styles.link} to={ROUTE.PROFILE}>
             Личный кабинет
           </Link>
-          <button className={styles.profile__button} type="button" onClick={handleLogout}>
+          <button className={styles.button} type="button" onClick={handleLogout}>
             Выйти
           </button>
         </div>
