@@ -4,7 +4,8 @@ import { Global } from '@emotion/react';
 
 export const MainLayout = () => (
   <div>
-    <Global styles={getGlobalStyles()} />
+    <Global styles={getGlobalStyles(useAppSelector(themeSelector))} />
+    <Header />
     <Outlet />
   </div>
 );

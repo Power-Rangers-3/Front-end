@@ -1,4 +1,5 @@
 import { logoIcon } from 'assets';
+import { Profile } from 'components';
 import { Link, useNavigate } from 'react-router-dom';
 import { ROUTE } from 'router';
 import { useAppSelector } from 'store';
@@ -42,7 +43,7 @@ export const Header = () => {
           </ul>
         </nav>
         {isAuth ? (
-          'Profile'
+          <Profile name="Pavel" email="pavel.chernenko97@gmail.com" />
         ) : (
           <div className={styles.header__buttonWrapper}>
             <button type="button" className={styles.enter} onClick={handleEnter}>
