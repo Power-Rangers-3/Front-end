@@ -1,3 +1,1 @@
-import { RegistrationForm } from 'components';
-
-export const HomePage = () => <RegistrationForm />;
+export const HomePage = () => <div>Home Page</div>;
