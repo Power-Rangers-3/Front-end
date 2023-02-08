@@ -4,11 +4,13 @@ import { createSlice } from '@reduxjs/toolkit';
 interface IUserSlice {
   email: string | null;
   name: string | null;
+  isAuth: boolean;
 }
 
 const initialState: IUserSlice = {
   email: null,
   name: null,
+  isAuth: false,
 };
 
 const userSlice = createSlice({
@@ -18,15 +20,17 @@ const userSlice = createSlice({
     setUser: (state, { payload: { email, username } }) => {
       state.email = email;
       state.name = username;
+      state.isAuth = true;
     },
-    exitFromAccount: (state) => {
+    logout: (state) => {
       state.email = null;
       state.name = null;
+      state.isAuth = false;
     },
   },
 });
 
 export const {
   reducer: userReducer,
-  actions: { setUser, exitFromAccount },
+  actions: { setUser, logout },
 } = userSlice;
