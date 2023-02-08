@@ -14,7 +14,7 @@ export const Header = () => {
     navigate(ROUTE.PROFILE);
   };
   const handleRegistration = () => {
-    navigate(ROUTE.SIGN_IN);
+    navigate(ROUTE.SIGN_UP);
   };
 
   return (
@@ -26,17 +26,17 @@ export const Header = () => {
         <nav className={styles.header__nav}>
           <ul>
             <li>
-              <Link to={ROUTE.SIGN_IN} className={styles.links}>
+              <Link to={ROUTE.SIGN_UP} className={styles.links}>
                 О сервисе
               </Link>
             </li>
             <li>
-              <Link to={ROUTE.SIGN_IN} className={styles.links}>
+              <Link to={ROUTE.SIGN_UP} className={styles.links}>
                 Тарифы
               </Link>
             </li>
             <li>
-              <Link to={ROUTE.SIGN_IN} className={styles.links}>
+              <Link to={ROUTE.SIGN_UP} className={styles.links}>
                 Статьи
               </Link>
             </li>

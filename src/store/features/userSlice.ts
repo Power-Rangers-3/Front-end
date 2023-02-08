@@ -10,10 +10,7 @@ interface IUserSlice {
 const initialState: IUserSlice = {
   email: null,
   name: null,
-  surname: null,
-  id: null,
   isAuth: true,
-
 };
 
 const userSlice = createSlice({

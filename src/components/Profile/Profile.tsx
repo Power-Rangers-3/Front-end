@@ -1,7 +1,7 @@
 import { useToogle } from 'hooks';
 import { Link } from 'react-router-dom';
 import { ROUTE } from 'router';
-import { useAppDispatch, userActions } from 'store';
+import { logout, useAppDispatch } from 'store';
 
 import styles from './styles.module.scss';
 
@@ -15,7 +15,7 @@ export const Profile = ({ name, email }: IProps) => {
   const [dropDownIsActive, toogleDropDown] = useToogle();
   const handleName = () => toogleDropDown();
   const handleLogout = () => {
-    dispatch(userActions.logout());
+    dispatch(logout());
     toogleDropDown();
   };
   return (
