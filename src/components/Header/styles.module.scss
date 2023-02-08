@@ -1,26 +1,26 @@
 .header {
   &__container {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 16px 100px;
     gap: 10px;
+    align-items: center;
+    justify-content: space-between;
     width: 1440px;
     height: 88px;
+    padding: 16px 100px;
   }
 
   &__nav {
     display: flex;
-    align-items: center;
-    padding: 0px;
     gap: 40px;
+    align-items: center;
+    padding: 0;
   }
 
   &__buttonWrapper {
     display: flex;
-    align-items: flex-start;
-    padding: 0px;
     gap: 20px;
+    align-items: flex-start;
+    padding: 0;
   }
 }
 
@@ -30,51 +30,51 @@
 }
 
 .enter {
-  width: 105px;
-  height: 56px;
-  align-items: center;
-  padding: 16px 32px;
   gap: 12px;
-  border: 1px solid #000000;
+  align-items: center;
   width: 105px;
   height: 56px;
-  background-color: white;
+  padding: 16px 32px;
+  font-size: 16px;
   font-style: normal;
   font-weight: 400;
-  font-size: 16px;
   line-height: 24px;
-  :active
-  &:hover {
-    cursor: pointer;
-    border: 1px solid #B3B3B3;
-    color: #B3B3B3;
+  background-color: #ffffff;
+  border: 1px solid #000000;
 
+  :active &:hover {
+    color: #b3b3b3;
+    cursor: pointer;
+    border: 1px solid #b3b3b3;
   }
+
   &:disabled {
-    border: 1px solid #B3B3B3;
-    color: #B3B3B3;
+    color: #b3b3b3;
+    border: 1px solid #b3b3b3;
   }
 }
 
 .registration {
-  align-items: center;
-  padding: 16px 32px;
   gap: 12px;
+  align-items: center;
   width: 172px;
   height: 56px;
-  background-color: #000000;
-  color: white;
-  border: none;
+  padding: 16px 32px;
+  font-size: 16px;
   font-style: normal;
   font-weight: 400;
-  font-size: 16px;
   line-height: 24px;
+  color: #ffffff;
+  background-color: #000000;
+  border: none;
+
   &:hover {
     cursor: pointer;
-    background: #4C4C4C;
+    background: #4c4c4c;
   }
+
   &:disabled {
-    background:  #B3B3B3;
+    background: #b3b3b3;
   }
 }
 
@@ -84,13 +84,14 @@ ul {
 }
 
 .links {
+  font-size: 16px;
   font-style: normal;
   font-weight: 400;
-  font-size: 16px;
   line-height: 24px;
   color: #000000;
+
   &:hover {
+    color: #b3b3b3;
     cursor: pointer;
-    color: #B3B3B3;
   }
 }

@@ -11,10 +11,10 @@ export const Header = () => {
   const navigate = useNavigate();
   const handleEnter = () => {
     navigate(ROUTE.PROFILE);
-  }
+  };
   const handleRegistration = () => {
-    navigate(ROUTE.SIGN_IN)
-  }
+    navigate(ROUTE.SIGN_IN);
+  };
 
   return (
     <header>
@@ -25,13 +25,19 @@ export const Header = () => {
         <nav className={styles.header__nav}>
           <ul>
             <li>
-              <Link to={ROUTE.SIGN_IN} className={styles.links}>О сервисе</Link>
+              <Link to={ROUTE.SIGN_IN} className={styles.links}>
+                О сервисе
+              </Link>
             </li>
             <li>
-              <Link to={ROUTE.SIGN_IN} className={styles.links}>Тарифы</Link>
+              <Link to={ROUTE.SIGN_IN} className={styles.links}>
+                Тарифы
+              </Link>
             </li>
             <li>
-              <Link to={ROUTE.SIGN_IN} className={styles.links}>Статьи</Link>
+              <Link to={ROUTE.SIGN_IN} className={styles.links}>
+                Статьи
+              </Link>
             </li>
           </ul>
         </nav>
@@ -40,10 +46,10 @@ export const Header = () => {
         ) : (
           <div className={styles.header__buttonWrapper}>
             <button type="button" className={styles.enter} onClick={handleEnter}>
-                Вход
+              Вход
             </button>
             <button type="button" className={styles.registration} onClick={handleRegistration}>
-                Регистрация
+              Регистрация
             </button>
           </div>
         )}

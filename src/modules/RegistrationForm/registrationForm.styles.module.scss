@@ -1,0 +1,64 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-7);
+  width: 100%;
+  max-width: 480px;
+  padding: 1rem;
+  border: none;
+
+  .inputGroupWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-6);
+  }
+
+  .remindPassword {
+    color: var(--additional-color);
+    text-align: end;
+  }
+
+  .socialWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-7);
+  }
+
+  .sideCenter {
+    overflow: hidden;
+    font-size: var(--normalBold-font-size);
+    font-weight: var(--normalBold-font-weight);
+    text-align: center;
+
+    &::before,
+    &::after {
+      position: relative;
+      display: inline-block;
+      width: 100%;
+      height: 1px;
+      vertical-align: middle;
+      content: '';
+      background-color: var(--background-color-invert);
+    }
+
+    &::before {
+      left: -14px;
+      margin-left: -100%;
+    }
+
+    &::after {
+      right: -14px;
+      margin-right: -100%;
+    }
+  }
+
+  .license {
+    color: var(--additional-color);
+  }
+
+  .enter {
+    font-size: var(--largeRegular-font-size);
+    line-height: var(--largeRegular-line-height);
+  }
+}
+
