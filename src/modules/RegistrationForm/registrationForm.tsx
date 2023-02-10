@@ -21,25 +21,33 @@ import { RegisterUserType } from './types/registerUserType';
 import { Input } from './UI/Input/Input';
 import { userRegistration } from './api/UserRegistration';
 import { RegistrationErrorType } from './types/registrationErrorType';
+import { isFormFilled } from './utils/isFormFilled';
 
 export const RegistrationForm = () => {
   const {
     register,
     handleSubmit,
     formState: { errors },
+    getValues,
   } = useForm<RegisterUserType>({
     mode: 'onChange',
     resolver: yupResolver(schema),
   });
 
   const [registrationError, setRegistrationError] = useState<RegistrationErrorType>();
+  const [isLoading, setIsLoading] = useState<boolean>(false);
   const navigate = useNavigate();
 
   const onSubmit: SubmitHandler<RegisterUserType> = (data) => {
+    setIsLoading(true);
     userRegistration(data)
-      .then(() => navigate(ROUTE.SIGN_IN))
+      .then(() => {
+        navigate(ROUTE.SIGN_IN);
+        setIsLoading(false);
+      })
       .catch((error) => {
         setRegistrationError(error.message);
+        setIsLoading(false);
       });
   };
 
@@ -79,14 +87,14 @@ export const RegistrationForm = () => {
       <button
         className={`${buttonStyles.button} ${buttonStyles.invertButton}`}
         type="submit"
-        disabled={!!(errors.email || errors.password || errors.username)}
+        disabled={!!(Object.keys(errors).length || isLoading || isFormFilled(getValues()))}
       >
         Зарегистрироваться
       </button>
       {registrationError && (
         <p className={styles.registrationError}>
           <ErrorIcon />
-          {registrationError.message || 'ghbdtn'}
+          {registrationError.message}
         </p>
       )}
       <p className={styles.sideCenter}>или</p>
