@@ -7,4 +7,3 @@ import logoIcon from './icons/logo.svg';
 
 export { telegramLight, facebookLight, instagramLight, vkLight, youTubeLight };
 export { logoIcon };
-
