@@ -4,46 +4,51 @@ import { SubmitHandler } from 'react-hook-form/dist/types';
 
 import { yupResolver } from '@hookform/resolvers/yup';
 
-import React from 'react';
-
-import { useAppDispatch, setUser } from 'store';
-
-import { Link, NavLink } from 'react-router-dom';
+import { Link, NavLink, useNavigate } from 'react-router-dom';
 
 import { ROUTE } from 'router';
 
-import { FacebookIcon, GoogleIcon, VKIcon, MailIcon } from './assets';
+import { useState } from 'react';
+
+import { FacebookIcon, GoogleIcon, VKIcon, MailIcon, ErrorIcon, UserIcon } from './assets';
 
 import styles from './registrationForm.styles.module.scss';
 import buttonStyles from './UI/buttonStyles/button.styles.module.scss';
 
 import { schema } from './data/registrationScheme';
-// import { userRegistration } from './api/userRegistration';
-import { RegisterUserType } from './registrationForm.types';
+
+import { RegisterUserType } from './types/registerUserType';
 import { Input } from './UI/Input/Input';
+import { userRegistration } from './api/UserRegistration';
+import { RegistrationErrorType } from './types/registrationErrorType';
+import { isFormFilled } from './utils/isFormFilled';
 
 export const RegistrationForm = () => {
   const {
     register,
     handleSubmit,
     formState: { errors },
-    reset,
+    getValues,
   } = useForm<RegisterUserType>({
     mode: 'onChange',
     resolver: yupResolver(schema),
   });
 
-  const dispatch = useAppDispatch();
+  const [registrationError, setRegistrationError] = useState<RegistrationErrorType>();
+  const [isLoading, setIsLoading] = useState<boolean>(false);
+  const navigate = useNavigate();
 
   const onSubmit: SubmitHandler<RegisterUserType> = (data) => {
-    dispatch(setUser(data));
-    // request for backend
-    // userRegistration(data)
-    //   .then(() => {
-    //     dispatch(setUser(data));
-    //   })
-    //   .catch();
-    reset();
+    setIsLoading(true);
+    userRegistration(data)
+      .then(() => {
+        navigate(ROUTE.SIGN_IN);
+        setIsLoading(false);
+      })
+      .catch((error) => {
+        setRegistrationError(error.message);
+        setIsLoading(false);
+      });
   };
 
   return (
@@ -62,6 +67,8 @@ export const RegistrationForm = () => {
         <Input
           register={register}
           id="username"
+          Icon={<UserIcon />}
+          iconStart
           placeholder="Имя и фамилия"
           error={errors.username ? errors.username?.message : ''}
         />
@@ -80,10 +87,16 @@ export const RegistrationForm = () => {
       <button
         className={`${buttonStyles.button} ${buttonStyles.invertButton}`}
         type="submit"
-        disabled={!!(errors.email || errors.password || errors.username)}
+        disabled={!!(Object.keys(errors).length || isLoading || isFormFilled(getValues()))}
       >
         Зарегистрироваться
       </button>
+      {registrationError && (
+        <p className={styles.registrationError}>
+          <ErrorIcon />
+          {registrationError.message}
+        </p>
+      )}
       <p className={styles.sideCenter}>или</p>
       <div className={styles.socialWrapper}>
         <button className={buttonStyles.button} type="button">
@@ -99,8 +112,10 @@ export const RegistrationForm = () => {
       </div>
       <p>
         Нажимая “Зарегистрироваться”, Вы соглашаетесь с условиями{' '}
-        <NavLink to="/">лицензионного договора, политикой конфиденциальности</NavLink> и предоставляете согласие на
-        обработку персональных данных
+        <NavLink to="/" className={styles.license}>
+          лицензионного договора, политикой конфиденциальности
+        </NavLink>{' '}
+        и предоставляете согласие на обработку персональных данных
       </p>
       <p className={styles.enter}>
         Уже есть аккаунт? <Link to={ROUTE.SIGN_IN}>Войти</Link>

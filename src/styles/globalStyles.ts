@@ -166,7 +166,8 @@ export const getGlobalStyles = () => css`
     font-weight: var(--H6-font-weight);
     line-height: var(--H6-line-height);
   }
-  p {
+  p,
+  a {
     margin: 0;
     font-size: var(--normalRegular-font-size);
     font-weight: var(--normalRegular-font-weight);
