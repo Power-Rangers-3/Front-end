@@ -81,8 +81,8 @@ export const TYPOGRAPHY = {
 
 export const SPACING = {
   desktop: {
-    L1: '64px',
-    L2: '56px',
+    L1: '74px',
+    L2: '60px',
     L3: '48px',
     L4: '40px',
     L5: '32px',

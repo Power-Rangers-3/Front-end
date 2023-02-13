@@ -106,6 +106,8 @@ export const getGlobalStyles = () => css`
   }
   html {
     min-height: 100vh;
+    display: flex;
+    justify-content: center;
   }
   body {
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
@@ -139,7 +141,7 @@ export const getGlobalStyles = () => css`
   h1 {
     font-size: var(--H1-font-size);
     font-weight: var(--H1-font-weight);
-    line-height: var(--H1-1-line-height);
+    line-height: var(--H1-line-height);
   }
   h2 {
     font-size: var(--H2-font-size);

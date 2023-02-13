@@ -1,0 +1,1 @@
+.wrapper{display:flex}.wrapper>div{display:flex;flex:1;align-items:center;justify-content:center}.about{padding:var(--spacing-6);padding-left:var(--spacing-1);background:center/cover no-repeat url("./assets/images/background.png")}
