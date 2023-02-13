@@ -10,8 +10,9 @@ import { ROUTE } from 'router';
 
 import { useState } from 'react';
 
-import styles from './registrationForm.styles.module.scss';
-import buttonStyles from './UI/buttonStyles/button.styles.module.scss';
+import buttonStyles from '../UI/buttonStyles/button.styles.module.scss';
+
+import styles from '../styles.module.scss';
 
 import { FacebookIcon, GoogleIcon, VKIcon, MailIcon, ErrorIcon } from '../assets';
 
@@ -20,9 +21,8 @@ import { isFormFilled } from '../utils/isFormFilled';
 import { schema } from '../data/signInScheme';
 
 import { Input } from '../UI/Input/Input';
-import { userRegistration } from '../api/UserRegistration';
-import { SignInUserType } from '../types/signInUserType copy';
-import { AuthErrorType } from '../types/authErrorType';
+import { SignInUserType, AuthErrorType } from '../types';
+import { userSignIn } from '../api/userSignIn';
 
 export const SignInForm = () => {
   const {
@@ -41,7 +41,7 @@ export const SignInForm = () => {
 
   const onSubmit: SubmitHandler<SignInUserType> = (data) => {
     setIsLoading(true);
-    userRegistration(data)
+    userSignIn(data)
       .then(() => {
         navigate(ROUTE.HOME);
         setIsLoading(false);
@@ -54,7 +54,7 @@ export const SignInForm = () => {
 
   return (
     <form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
-      <h3>Регистрация</h3>
+      <h3>Войти</h3>
       <div className={styles.inputGroupWrapper}>
         <Input
           register={register}
@@ -81,7 +81,7 @@ export const SignInForm = () => {
         type="submit"
         disabled={!!(Object.keys(errors).length || isLoading || isFormFilled(getValues()))}
       >
-        Зарегистрироваться
+        Войти
       </button>
       {signInError && (
         <p className={styles.registrationError}>

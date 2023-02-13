@@ -12,15 +12,14 @@ import { useState } from 'react';
 
 import { FacebookIcon, GoogleIcon, VKIcon, MailIcon, ErrorIcon, UserIcon } from '../assets';
 
-import styles from '../registrationForm.styles.module.scss';
+import styles from '../styles.module.scss';
 import buttonStyles from '../UI/buttonStyles/button.styles.module.scss';
 
 import { schema } from '../data/registrationScheme';
 
-import { RegisterUserType } from '../types/registerUserType';
+import { RegisterUserType, AuthErrorType } from '../types';
 import { Input } from '../UI/Input/Input';
-import { userRegistration } from '../api/UserRegistration';
-import { AuthErrorType } from '../types/authErrorType';
+import { userRegistration } from '../api/userRegistration';
 import { isFormFilled } from '../utils/isFormFilled';
 
 export const RegistrationForm = () => {
