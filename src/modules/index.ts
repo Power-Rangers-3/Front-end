@@ -1,2 +1,2 @@
-export * from './RegistrationForm/registrationForm';
-export * from './RegistrationForm/data/registrationScheme';
+export * from './Auth/RegistrationForm/RegistrationForm';
+export * from './Auth/SignInForm/SignInForm';

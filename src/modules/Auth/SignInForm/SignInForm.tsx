@@ -4,49 +4,50 @@ import { SubmitHandler } from 'react-hook-form/dist/types';
 
 import { yupResolver } from '@hookform/resolvers/yup';
 
-import { Link, NavLink, useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 import { ROUTE } from 'router';
 
 import { useState } from 'react';
 
-import { FacebookIcon, GoogleIcon, VKIcon, MailIcon, ErrorIcon, UserIcon } from './assets';
-
 import styles from './registrationForm.styles.module.scss';
 import buttonStyles from './UI/buttonStyles/button.styles.module.scss';
 
-import { schema } from './data/registrationScheme';
+import { FacebookIcon, GoogleIcon, VKIcon, MailIcon, ErrorIcon } from '../assets';
 
-import { RegisterUserType } from './types/registerUserType';
-import { Input } from './UI/Input/Input';
-import { userRegistration } from './api/UserRegistration';
-import { RegistrationErrorType } from './types/registrationErrorType';
-import { isFormFilled } from './utils/isFormFilled';
+import { isFormFilled } from '../utils/isFormFilled';
 
-export const RegistrationForm = () => {
+import { schema } from '../data/signInScheme';
+
+import { Input } from '../UI/Input/Input';
+import { userRegistration } from '../api/UserRegistration';
+import { SignInUserType } from '../types/signInUserType copy';
+import { AuthErrorType } from '../types/authErrorType';
+
+export const SignInForm = () => {
   const {
     register,
     handleSubmit,
     formState: { errors },
     getValues,
-  } = useForm<RegisterUserType>({
+  } = useForm<SignInUserType>({
     mode: 'onChange',
     resolver: yupResolver(schema),
   });
 
-  const [registrationError, setRegistrationError] = useState<RegistrationErrorType>();
+  const [signInError, setSignInError] = useState<AuthErrorType>();
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const navigate = useNavigate();
 
-  const onSubmit: SubmitHandler<RegisterUserType> = (data) => {
+  const onSubmit: SubmitHandler<SignInUserType> = (data) => {
     setIsLoading(true);
     userRegistration(data)
       .then(() => {
-        navigate(ROUTE.SIGN_IN);
+        navigate(ROUTE.HOME);
         setIsLoading(false);
       })
       .catch((error) => {
-        setRegistrationError(error.message);
+        setSignInError(error.message);
         setIsLoading(false);
       });
   };
@@ -62,15 +63,6 @@ export const RegistrationForm = () => {
           iconStart
           placeholder="Email"
           error={errors.email ? errors.email?.message : ''}
-        />
-
-        <Input
-          register={register}
-          id="username"
-          Icon={<UserIcon />}
-          iconStart
-          placeholder="Имя и фамилия"
-          error={errors.username ? errors.username?.message : ''}
         />
 
         <Input
@@ -91,10 +83,10 @@ export const RegistrationForm = () => {
       >
         Зарегистрироваться
       </button>
-      {registrationError && (
+      {signInError && (
         <p className={styles.registrationError}>
           <ErrorIcon />
-          {registrationError.message}
+          {signInError.message}
         </p>
       )}
       <p className={styles.sideCenter}>или</p>
@@ -110,15 +102,8 @@ export const RegistrationForm = () => {
           <VKIcon /> VK
         </button>
       </div>
-      <p>
-        Нажимая “Зарегистрироваться”, Вы соглашаетесь с условиями{' '}
-        <NavLink to="/" className={styles.license}>
-          лицензионного договора, политикой конфиденциальности
-        </NavLink>{' '}
-        и предоставляете согласие на обработку персональных данных
-      </p>
       <p className={styles.enter}>
-        Уже есть аккаунт? <Link to={ROUTE.SIGN_IN}>Войти</Link>
+        <Link to={ROUTE.HOME}>Вернуться на главную страницу</Link>
       </p>
     </form>
   );
