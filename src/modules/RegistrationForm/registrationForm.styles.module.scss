@@ -60,5 +60,14 @@
     font-size: var(--largeRegular-font-size);
     line-height: var(--largeRegular-line-height);
   }
+
+  .registrationError {
+    display: flex;
+    gap: var(--spacing-9);
+    align-items: center;
+    font-size: var(--smallRegular-font-size);
+    line-height: var(--smallRegular-line-height);
+    color: var(--font-color-warning);
+  }
 }
 

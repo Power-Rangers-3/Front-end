@@ -5,5 +5,17 @@ import { ReactComponent as MailIcon } from './icons/mail.svg';
 import { ReactComponent as VisibilityOffIcon } from './icons/eye-close.svg';
 import { ReactComponent as VisibilityIcon } from './icons/eye-open.svg';
 import { ReactComponent as WarningIcon } from './icons/warning.svg';
+import { ReactComponent as ErrorIcon } from './icons/error.svg';
+import { ReactComponent as UserIcon } from './icons/user.svg';
 
-export { FacebookIcon, GoogleIcon, VKIcon, MailIcon, VisibilityOffIcon, VisibilityIcon, WarningIcon };
+export {
+  FacebookIcon,
+  GoogleIcon,
+  VKIcon,
+  MailIcon,
+  VisibilityOffIcon,
+  VisibilityIcon,
+  WarningIcon,
+  ErrorIcon,
+  UserIcon,
+};
