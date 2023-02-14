@@ -1,1 +1,1 @@
-.wrapper{max-width:var(--max-width)}
+.main{display:flex;align-items:center}.wrapper{max-width:var(--max-width);display:flex;flex-direction:column}

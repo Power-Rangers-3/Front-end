@@ -74,7 +74,78 @@ export const TYPOGRAPHY = {
     },
   },
 
-  tablet: {},
+  tablet: {
+    heading1: {
+      fontSize: '2.5rem',
+      fontWeight: FontWeight.Bold,
+      lineHeight: '3.25rem',
+    },
+    heading2: {
+      fontSize: '2rem',
+      fontWeight: FontWeight.Bold,
+      lineHeight: '2.6rem',
+    },
+    heading3: {
+      fontSize: '1.75rem',
+      fontWeight: FontWeight.Bold,
+      lineHeight: '2.45rem',
+    },
+    heading4: {
+      fontSize: '1.5rem',
+      fontWeight: FontWeight.Bold,
+      lineHeight: '1.95rem',
+    },
+    heading5: {
+      fontSize: '1rem',
+      fontWeight: FontWeight.Bold,
+      lineHeight: '1.3rem',
+    },
+    heading6: {
+      fontSize: '0.75rem',
+      fontWeight: FontWeight.Bold,
+      lineHeight: '1rem',
+    },
+    extraLargeBold: {
+      fontSize: '1.125rem',
+      fontWeight: FontWeight.Bold,
+      lineHeight: '1.63rem',
+    },
+    extraLargeRegular: {
+      fontSize: '1.125rem',
+      fontWeight: FontWeight.Regular,
+      lineHeight: '1.63rem',
+    },
+    largeBold: {
+      fontSize: '1rem',
+      fontWeight: FontWeight.Semibold,
+      lineHeight: '1.45rem',
+    },
+    largeRegular: {
+      fontSize: '1rem',
+      fontWeight: FontWeight.Regular,
+      lineHeight: '1.45rem',
+    },
+    normalBold: {
+      fontSize: '0.875rem',
+      fontWeight: FontWeight.Bold,
+      lineHeight: '1.138rem',
+    },
+    normalRegular: {
+      fontSize: '0.875rem',
+      fontWeight: FontWeight.Regular,
+      lineHeight: '1.138rem',
+    },
+    smallBold: {
+      fontSize: '0.75rem',
+      fontWeight: FontWeight.Bold,
+      lineHeight: '1rem',
+    },
+    smallRegular: {
+      fontSize: '0.75rem',
+      fontWeight: FontWeight.Regular,
+      lineHeight: '1rem',
+    },
+  },
 
   mobile: {},
 };

@@ -89,10 +89,64 @@ export const getGlobalStyles = () => css`
     --spacing-8: ${SPACING.desktop.L8};
     --spacing-9: ${SPACING.desktop.L9};
     --spacing-10: ${SPACING.desktop.L10};
-  }
-  @media (max-width: ${Breakpoints.Tablet}) {
-  }
-  @media (max-width: ${Breakpoints.Mobile}) {
+
+    @media (max-width: ${Breakpoints.Tablet}) {
+      --H1-font-size: ${TYPOGRAPHY.tablet.heading1.fontSize};
+      --H1-line-height: ${TYPOGRAPHY.tablet.heading1.lineHeight};
+      --H1-font-weight: ${TYPOGRAPHY.tablet.heading1.fontWeight};
+      --H2-font-size: ${TYPOGRAPHY.tablet.heading2.fontSize};
+      --H2-line-height: ${TYPOGRAPHY.tablet.heading2.lineHeight};
+      --H2-font-weight: ${TYPOGRAPHY.tablet.heading2.fontWeight};
+      --H3-font-size: ${TYPOGRAPHY.tablet.heading3.fontSize};
+      --H3-line-height: ${TYPOGRAPHY.tablet.heading3.lineHeight};
+      --H3-font-weight: ${TYPOGRAPHY.tablet.heading3.fontWeight};
+      --H4-font-size: ${TYPOGRAPHY.tablet.heading4.fontSize};
+      --H4-line-height: ${TYPOGRAPHY.tablet.heading4.lineHeight};
+      --H4-font-weight: ${TYPOGRAPHY.tablet.heading4.fontWeight};
+      --H5-font-size: ${TYPOGRAPHY.tablet.heading5.fontSize};
+      --H5-line-height: ${TYPOGRAPHY.tablet.heading5.lineHeight};
+      --H5-font-weight: ${TYPOGRAPHY.tablet.heading5.fontWeight};
+      --H6-font-size: ${TYPOGRAPHY.tablet.heading6.fontSize};
+      --H6-line-height: ${TYPOGRAPHY.tablet.heading6.lineHeight};
+      --H6-font-weight: ${TYPOGRAPHY.tablet.heading6.fontWeight};
+      --extraLargeBold-font-size: ${TYPOGRAPHY.tablet.extraLargeBold.fontSize};
+      --extraLargeBold-line-height: ${TYPOGRAPHY.tablet.extraLargeBold.lineHeight};
+      --extraLargeBold-font-weight: ${TYPOGRAPHY.tablet.extraLargeBold.fontWeight};
+      --extraLargeRegular-font-size: ${TYPOGRAPHY.tablet.extraLargeRegular.fontSize};
+      --extraLargeRegular-line-height: ${TYPOGRAPHY.tablet.extraLargeRegular.lineHeight};
+      --extraLargeRegular-font-weight: ${TYPOGRAPHY.tablet.extraLargeRegular.fontWeight};
+      --largeBold-font-size: ${TYPOGRAPHY.tablet.largeBold.fontSize};
+      --largeBold-line-height: ${TYPOGRAPHY.tablet.largeBold.lineHeight};
+      --largeBold-font-weight: ${TYPOGRAPHY.tablet.largeBold.fontWeight};
+      --largeRegular-font-size: ${TYPOGRAPHY.tablet.largeRegular.fontSize};
+      --largeRegular-line-height: ${TYPOGRAPHY.tablet.largeRegular.lineHeight};
+      --largeRegular-font-weight: ${TYPOGRAPHY.tablet.largeRegular.fontWeight};
+      --normalBold-font-size: ${TYPOGRAPHY.tablet.normalBold.fontSize};
+      --normalBold-line-height: ${TYPOGRAPHY.tablet.normalBold.lineHeight};
+      --normalBold-font-weight: ${TYPOGRAPHY.tablet.normalBold.fontWeight};
+      --normalRegular-font-size: ${TYPOGRAPHY.tablet.normalRegular.fontSize};
+      --normalRegular-line-height: ${TYPOGRAPHY.tablet.normalRegular.lineHeight};
+      --normalRegular-font-weight: ${TYPOGRAPHY.tablet.normalRegular.fontWeight};
+      --smallBold-font-size: ${TYPOGRAPHY.tablet.smallBold.fontSize};
+      --smallBold-line-height: ${TYPOGRAPHY.tablet.smallBold.lineHeight};
+      --smallBold-font-weight: ${TYPOGRAPHY.tablet.smallBold.fontWeight};
+      --smallRegular-font-size: ${TYPOGRAPHY.tablet.smallRegular.fontSize};
+      --smallRegular-line-height: ${TYPOGRAPHY.tablet.smallRegular.lineHeight};
+      --smallRegular-font-weight: ${TYPOGRAPHY.tablet.smallRegular.fontWeight};
+
+      --spacing-1: ${SPACING.tablet.L1};
+      --spacing-2: ${SPACING.tablet.L2};
+      --spacing-3: ${SPACING.tablet.L3};
+      --spacing-4: ${SPACING.tablet.L4};
+      --spacing-5: ${SPACING.tablet.L5};
+      --spacing-6: ${SPACING.tablet.L6};
+      --spacing-7: ${SPACING.tablet.L7};
+      --spacing-8: ${SPACING.tablet.L8};
+      --spacing-9: ${SPACING.tablet.L9};
+      --spacing-10: ${SPACING.tablet.L10};
+    }
+    @media (max-width: ${Breakpoints.Mobile}) {
+    }
   }
   *,
   *::before,
@@ -106,8 +160,6 @@ export const getGlobalStyles = () => css`
   }
   html {
     min-height: 100vh;
-    display: flex;
-    justify-content: center;
   }
   body {
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
@@ -119,6 +171,12 @@ export const getGlobalStyles = () => css`
     height: 100%;
     margin: 0;
   }
+
+  main {
+    display: flex;
+    justify-content: center;
+  }
+
   hr {
     margin: 0;
     color: inherit;
