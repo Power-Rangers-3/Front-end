@@ -8,9 +8,11 @@ import { Link, useNavigate } from 'react-router-dom';
 
 import { ROUTE } from 'router';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
-import buttonStyles from '../UI/buttonStyles/button.styles.module.scss';
+import { getUser, signInAction, useAppDispatch, useAppSelector } from 'store';
+
+import { buttonStyles, Input } from '../UI';
 
 import styles from '../styles.module.scss';
 
@@ -20,9 +22,8 @@ import { isFormFilled } from '../utils/isFormFilled';
 
 import { schema } from '../data/signInScheme';
 
-import { Input } from '../UI/Input/Input';
-import { SignInUserType, AuthErrorType } from '../types';
-import { userSignIn } from '../api/userSignIn';
+import { getTokens } from '../api/getToken';
+import { SignInUserType } from '../types';
 
 export const SignInForm = () => {
   const {
@@ -35,22 +36,30 @@ export const SignInForm = () => {
     resolver: yupResolver(schema),
   });
 
-  const [signInError, setSignInError] = useState<AuthErrorType>();
+  const [tokenError, setTokenError] = useState<string>();
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const navigate = useNavigate();
+  const { isAuth } = useAppSelector(getUser);
+  const dispatch = useAppDispatch();
 
   const onSubmit: SubmitHandler<SignInUserType> = (data) => {
     setIsLoading(true);
-    userSignIn(data)
+    getTokens(data)
       .then(() => {
-        navigate(ROUTE.HOME);
+        dispatch(signInAction());
         setIsLoading(false);
       })
       .catch((error) => {
-        setSignInError(error.message);
+        setTokenError(error.message);
         setIsLoading(false);
       });
   };
+
+  useEffect(() => {
+    if (isAuth) {
+      navigate(`${ROUTE.HOME}`, { replace: true });
+    }
+  }, [isAuth, navigate]);
 
   return (
     <form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
@@ -83,10 +92,10 @@ export const SignInForm = () => {
       >
         Войти
       </button>
-      {signInError && (
+      {tokenError && (
         <p className={styles.registrationError}>
           <ErrorIcon />
-          {signInError.message}
+          {tokenError}
         </p>
       )}
       <p className={styles.sideCenter}>или</p>

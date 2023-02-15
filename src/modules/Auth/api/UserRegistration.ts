@@ -2,7 +2,7 @@ import axios, { AxiosResponse } from 'axios';
 
 const apiPath = `${process.env.REACT_APP_API_AUTH}/auth/registration/`;
 
-interface UserRegistrationType {
+export interface UserRegistrationType {
   email: string;
   password: string;
 }

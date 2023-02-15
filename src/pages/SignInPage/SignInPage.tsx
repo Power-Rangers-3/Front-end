@@ -1,3 +1,3 @@
 import { SignInForm } from 'modules';
 
-export const SignInPage = () => <SignInForm />;
+export const SignInPage = () => <main><SignInForm /></main> ;
