@@ -8,14 +8,9 @@ interface QuerryParamsType {
   password: string;
 }
 
-interface TokensType {
-  token: string;
-}
+export async function getToken(querryParams: QuerryParamsType): Promise<string> {
+  const token: string = await axios.post(apiToken, querryParams).then((response) => response.data.token);
+  localStorage.setItem(LocalStorage.AccessToken, token);
 
-export async function getTokens(querryParams: QuerryParamsType): Promise<TokensType> {
-  return axios.post(apiToken, querryParams).then((response) => {
-    const { token } = response.data;
-    localStorage.setItem(LocalStorage.AccessToken, token);
-    return token;
-  });
+  return token;
 }

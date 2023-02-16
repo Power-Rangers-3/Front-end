@@ -20,10 +20,9 @@ import { FacebookIcon, GoogleIcon, VKIcon, MailIcon, ErrorIcon } from '../assets
 
 import { isFormFilled } from '../utils/isFormFilled';
 
-import { schema } from '../data/signInScheme';
-
-import { getTokens } from '../api/getToken';
+import { getToken } from '../api/getToken';
 import { SignInUserType } from '../types';
+import { schema } from '../data/signInScheme';
 
 export const SignInForm = () => {
   const {
@@ -44,7 +43,7 @@ export const SignInForm = () => {
 
   const onSubmit: SubmitHandler<SignInUserType> = (data) => {
     setIsLoading(true);
-    getTokens(data)
+    getToken(data)
       .then(() => {
         dispatch(signInAction());
         setIsLoading(false);

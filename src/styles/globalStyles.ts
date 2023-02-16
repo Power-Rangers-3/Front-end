@@ -251,6 +251,13 @@ export const getGlobalStyles = () => css`
     line-height: var(--largeRegular-line-height);
   }
 
+  input:-internal-autofill-selected {
+    appearance: menulist-button;
+    background-image: none !important;
+    -webkit-background: none !important;
+    color: #ffffff !important;
+  }
+
   input::placeholder {
     font-size: var(--largeRegular-font-size);
     font-weight: var(--largeRegular-font-weight);

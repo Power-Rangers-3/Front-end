@@ -47,8 +47,8 @@ const userSlice = createSlice({
         state.loadingState = action.meta.requestStatus;
 
         if (action.payload) {
-          state.email = 'email'; // заменить после реализации бэка
-          state.name = 'name'; // заменить после реализации бэка
+          state.email = action.payload.email;
+          state.name = action.payload.username;
           state.isAuth = true;
           state.error = null;
         }
