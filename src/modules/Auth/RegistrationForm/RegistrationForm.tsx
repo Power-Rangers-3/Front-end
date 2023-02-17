@@ -19,8 +19,9 @@ import { schema } from '../data/registrationScheme';
 
 import { RegisterUserType, AuthErrorType } from '../types';
 import { Input } from '../UI/Input/Input';
-import { userRegistration } from '../api/userRegistration';
+
 import { isFormFilled } from '../utils/isFormFilled';
+import { userRegistration } from "../api/userRegistration";
 
 export const RegistrationForm = () => {
   const {

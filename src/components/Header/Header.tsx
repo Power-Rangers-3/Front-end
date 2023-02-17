@@ -8,7 +8,7 @@ import { getUser } from 'store/selectors/userSelector';
 import styles from './styles.module.scss';
 
 export const Header = () => {
-  const { isAuth } = useAppSelector(getUser);
+  const { isAuth, email } = useAppSelector(getUser);
   const navigate = useNavigate();
   const handleEnter = () => {
     navigate(ROUTE.SIGN_IN);
@@ -42,8 +42,8 @@ export const Header = () => {
             </li>
           </ul>
         </nav>
-        {isAuth ? (
-          <Profile name="Pavel" email="pavel.chernenko97@gmail.com" />
+        {isAuth && email ? (
+          <Profile name="Pavel" email={email} />
         ) : (
           <div className={styles.header__buttonWrapper}>
             <button type="button" className={styles.enter} onClick={handleEnter}>

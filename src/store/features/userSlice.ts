@@ -5,6 +5,8 @@ import { signInAction } from '../actions/signInAction';
 
 interface IUserSlice {
   email: string | null;
+  id: number | null;
+  roles: [] | null;
   name: string | null;
   isAuth: boolean;
   loadingState: 'idle' | 'pending' | 'fulfilled' | 'rejected';
@@ -13,8 +15,10 @@ interface IUserSlice {
 
 const initialState: IUserSlice = {
   email: null,
+  id: null,
+  roles: null,
   name: null,
-  isAuth: true,
+  isAuth: false,
   loadingState: 'idle',
   error: null,
 };
@@ -23,11 +27,6 @@ const userSlice = createSlice({
   name: 'user',
   initialState,
   reducers: {
-    setUser: (state, { payload: { email, username } }) => {
-      state.email = email;
-      state.name = username;
-      state.isAuth = true;
-    },
     logout: (state) => {
       state.email = null;
       state.name = null;
@@ -39,16 +38,19 @@ const userSlice = createSlice({
       .addCase(signInAction.pending, (state, action) => {
         state.loadingState = action.meta.requestStatus;
         state.email = null;
+        state.id = null;
+        state.roles = null;
         state.name = null;
         state.isAuth = false;
         state.error = null;
       })
-      .addCase(signInAction.fulfilled, (state, action) => {
-        state.loadingState = action.meta.requestStatus;
+      .addCase(signInAction.fulfilled, (state, { meta, payload: { email, id, roles } }) => {
+        state.loadingState = meta.requestStatus;
 
-        if (action.payload) {
-          state.email = action.payload.email;
-          state.name = action.payload.username;
+        if (email) {
+          state.email = email;
+          state.id = id;
+          state.roles = roles;
           state.isAuth = true;
           state.error = null;
         }
@@ -62,5 +64,5 @@ const userSlice = createSlice({
 
 export const {
   reducer: userReducer,
-  actions: { setUser, logout },
+  actions: { logout },
 } = userSlice;
