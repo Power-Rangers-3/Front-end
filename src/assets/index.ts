@@ -4,7 +4,7 @@ import instagramLight from './icons/footer_instagram-light.svg';
 import vkLight from './icons/footer_vk-light.svg';
 import youTubeLight from './icons/footer_youtube-light.svg';
 import logoIcon from './icons/logo.svg';
+import burgerIcon from './icons/burger_menu.svg';
+import cancelIcon from './icons/cancel.svg';
 
-export { telegramLight, facebookLight, instagramLight, vkLight, youTubeLight };
-export { logoIcon };
-
+export { telegramLight, facebookLight, instagramLight, vkLight, youTubeLight, logoIcon, burgerIcon, cancelIcon };

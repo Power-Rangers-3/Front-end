@@ -1,14 +1,12 @@
 import { css } from '@emotion/react';
 
-import { Breakpoints } from './shared/breakpoints';
-
-import { colors, SPACING, TYPOGRAPHY } from './shared/variables';
+import { colors, SPACING, TYPOGRAPHY, BREAKPOINT } from './shared/variables';
 
 export const getGlobalStyles = () => css`
   :root {
     --font-family: 'Monstserrat', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
       'Liberation Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
-    --max-width: ${Breakpoints.Desktop};
+    --max-width: ${BREAKPOINT.xxl},
     --font-color-base: ${colors.fontBase};
     --font-color-hover: ${colors.fontHover};
     --font-color-disabled: ${colors.fontDisabled};
@@ -90,9 +88,9 @@ export const getGlobalStyles = () => css`
     --spacing-9: ${SPACING.desktop.L9};
     --spacing-10: ${SPACING.desktop.L10};
   }
-  @media (max-width: ${Breakpoints.Tablet}) {
+  @media (max-width: ($breakpoints(md))) {
   }
-  @media (max-width: ${Breakpoints.Mobile}) {
+  @media (max-width: ($breakpoints(xs))) {
   }
   *,
   *::before,

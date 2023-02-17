@@ -1,3 +1,5 @@
+@import '/src/styles/shared/breakpoints.scss';
+
 .profile {
   position: relative;
   display: flex;
@@ -5,6 +7,9 @@
   align-items: center;
   font-size: var(--normalBold-font-size);
   font-weight: var(--normalBold-font-weight);
+  @include breakpoint(xs) {
+    padding: 10px 30px;
+  }
 }
 
 .icon {

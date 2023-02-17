@@ -1,0 +1,142 @@
+@import '/src/styles/shared/breakpoints.scss';
+
+.menu {
+  &__container {
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    @include breakpoint(md) {
+      display: flex;
+    }
+    @include breakpoint(xs) {
+    }
+  }
+
+  &__nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+    @include breakpoint(md) {
+      display: flex;
+      flex-direction: row;
+    }
+    @include breakpoint(xs) {
+      flex-direction: row;
+    }
+  }
+}
+
+.buttonsWrapper {
+  display: flex;
+  gap: 20px;
+  padding: 0;
+  @include breakpoint(md) {
+    padding: 16px 32px;
+    gap: 12px;
+  }
+  @include breakpoint(xs) {
+    padding: 16px 32px;
+    gap: 12px;
+  }
+}
+
+ul {
+  display: flex;
+  flex-direction: column;
+  @include breakpoint(md) {
+    display: flex;
+    flex-direction: row;
+  }
+}
+
+li {
+  @include breakpoint(xs) {
+    padding: 16px;
+  }
+}
+
+.links {
+  font-size: var(--normalBold-font-size);
+  font-style: normal;
+  font-weight: var(--largeRegular-font-weight);
+  line-height: var(--normalRegular-line-height);
+  color: #000000;
+  white-space: nowrap;
+  padding: 0 15px;
+  cursor: pointer;
+
+  &:hover {
+    color: #b3b3b3;
+    cursor: pointer;
+  }
+}
+
+.enter {
+  gap: 12px;
+  align-items: center;
+  width: 105px;
+  height: 56px;
+  padding: 16px 32px;
+  font-size: var(--normalBold-font-size);
+  font-style: normal;
+  font-weight: var(--largeRegular-font-weight);
+  line-height: var(--normalRegular-line-height);
+  background-color: var(--font-color-base);
+  color: var(--font-color-base);
+  border: 1px solid #000000;
+
+  :active &:hover {
+    color: #b3b3b3;
+    cursor: pointer;
+    border: 1px solid #b3b3b3;
+
+    &:disabled {
+      color: #b3b3b3;
+      border: 1px solid #b3b3b3;
+    }
+  }
+
+  @include breakpoint(md) {
+   
+    margin: 15px 16px;
+
+  }
+  @include breakpoint(xs) {
+   
+    margin: 15px 16px;
+
+  }
+}
+
+  .registration {
+    gap: 12px;
+    align-items: center;
+    width: 172px;
+    height: 56px;
+    padding: 16px 32px;
+    font-size: var(--normalBold-font-size);
+    font-style: normal;
+    font-weight: var(--largeRegular-font-weight);
+    line-height: var(--normalRegular-line-height);
+    color: var(--font-color-invert);
+    background-color: #000000;
+    border: none;
+    @include breakpoint(md) {
+     
+    }
+    @include breakpoint(xs) {
+     
+      margin: 15px 16px;
+    }
+
+    &:hover {
+      cursor: pointer;
+      background: #4c4c4c;
+    }
+
+    &:disabled {
+      background: #b3b3b3;
+    }
+  }
+
