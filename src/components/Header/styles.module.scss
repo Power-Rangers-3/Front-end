@@ -1,21 +1,23 @@
 @import '/src/styles/shared/breakpoints.scss';
 
 .header {
-  align-items: center;
   @include breakpoint(md) {
     margin: 16px;
   }
-  @include breakpoint(xs) {
+  @include breakpoint(lg) {
     margin: 16px;
   }
 
   &__wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     @include breakpoint(md) {
       display: flex;
       align-items: center;
       justify-content: space-between;
     }
-    @include breakpoint(xs){
+    @include breakpoint(lg){
       display: flex;
       align-items: center;
       justify-content: space-between;

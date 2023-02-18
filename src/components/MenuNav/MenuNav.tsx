@@ -23,7 +23,7 @@ export const MenuNav = () => {
   return (
     <div className={styles.menu__container}>
       <nav className={styles.menu__nav}>
-        {width && width >= 768 && (
+        {width && width > 768 && (
           <Link to={ROUTE.HOME}>
             <img src={logoIcon} className={styles.logo} alt="Townsend logo" />
           </Link>
