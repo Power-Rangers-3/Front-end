@@ -3,7 +3,7 @@
   flex-direction: column;
   gap: var(--spacing-7);
   width: 100%;
-  min-width: 360px;
+  min-width: 320px;
   max-width: 480px;
   padding: 1rem;
   border: none;
@@ -60,6 +60,12 @@
   .enter {
     font-size: var(--largeRegular-font-size);
     line-height: var(--largeRegular-line-height);
+
+    & > a {
+      font-size: inherit;
+      line-height: inherit;
+      color: var(--additional-color);
+    }
   }
 
   .registrationError {

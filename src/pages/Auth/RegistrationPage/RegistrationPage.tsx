@@ -4,11 +4,11 @@ import { Link } from 'react-router-dom';
 
 import { ROUTE } from 'router';
 
-import { icons } from './data/icons';
+import styles from '../styles.module.scss';
 
-import styles from './styles.module.scss';
+import { icons } from '../data/icons';
 
-import { logoIcon } from '../../assets';
+import { logoIcon } from '../../../assets';
 
 export const RegistrationPage = () => (
   <main className={styles.main}>

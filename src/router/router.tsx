@@ -1,8 +1,7 @@
 import { HomePage } from 'pages';
 import { MainLayout } from 'pages/MainLayout/MainLayout';
-import { RegistrationPage } from 'pages/RegistrationPage/RegistrationPage';
-
-import { SignInPage } from 'pages/SignInPage/SignInPage';
+import { RegistrationPage } from 'pages/Auth/RegistrationPage/RegistrationPage';
+import { SignInPage } from 'pages/Auth/SignInPage/SignInPage';
 import { createBrowserRouter, createRoutesFromElements, Route } from 'react-router-dom';
 
 import { ROUTE } from './routes';

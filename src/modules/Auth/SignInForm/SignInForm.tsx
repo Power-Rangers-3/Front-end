@@ -81,7 +81,7 @@ export const SignInForm = () => {
           error={errors.password ? errors.password?.message : ''}
         />
         <Link to="/" className={styles.remindPassword}>
-          Напомнить пароль
+          Забыли пароль?
         </Link>
       </div>
       <button
@@ -97,21 +97,22 @@ export const SignInForm = () => {
           {tokenError}
         </p>
       )}
-      <p className={styles.sideCenter}>или</p>
+      <p className={styles.sideCenter}>Войти с помощью</p>
       <div className={styles.socialWrapper}>
+        <button className={buttonStyles.button} type="button">
+          <GoogleIcon /> Google
+        </button>
         <button className={buttonStyles.button} type="button">
           <FacebookIcon />
           Facebook
-        </button>
-        <button className={buttonStyles.button} type="button">
-          <GoogleIcon /> Google
         </button>
         <button className={buttonStyles.button} type="button">
           <VKIcon /> VK
         </button>
       </div>
       <p className={styles.enter}>
-        <Link to={ROUTE.HOME}>Вернуться на главную страницу</Link>
+        <span>Нет аккаунта? </span>
+        <Link to={ROUTE.HOME}>Зарегистрироваться</Link>
       </p>
     </form>
   );

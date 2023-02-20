@@ -21,7 +21,7 @@ import { RegisterUserType, AuthErrorType } from '../types';
 import { Input } from '../UI/Input/Input';
 
 import { isFormFilled } from '../utils/isFormFilled';
-import { userRegistration } from "../api/userRegistration";
+import { userRegistration } from '../api/userRegistration';
 
 export const RegistrationForm = () => {
   const {
@@ -100,11 +100,11 @@ export const RegistrationForm = () => {
       <p className={styles.sideCenter}>или</p>
       <div className={styles.socialWrapper}>
         <button className={buttonStyles.button} type="button">
-          <FacebookIcon />
-          Facebook
+          <GoogleIcon /> Google
         </button>
         <button className={buttonStyles.button} type="button">
-          <GoogleIcon /> Google
+          <FacebookIcon />
+          Facebook
         </button>
         <button className={buttonStyles.button} type="button">
           <VKIcon /> VK
