@@ -8,7 +8,7 @@ export const getGlobalStyles = () => css`
   :root {
     --font-family: 'Monstserrat', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
       'Liberation Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
-    --max-width: ${Breakpoints.Desktop};
+    --max-width: ${Breakpoints.xxl};
     --font-color-base: ${colors.fontBase};
     --font-color-hover: ${colors.fontHover};
     --font-color-disabled: ${colors.fontDisabled};
@@ -90,7 +90,7 @@ export const getGlobalStyles = () => css`
     --spacing-9: ${SPACING.desktop.L9};
     --spacing-10: ${SPACING.desktop.L10};
 
-    @media (max-width: ${Breakpoints.Tablet}) {
+    @media (max-width: ${Breakpoints.xl}) {
       --H1-font-size: ${TYPOGRAPHY.tablet.heading1.fontSize};
       --H1-line-height: ${TYPOGRAPHY.tablet.heading1.lineHeight};
       --H1-font-weight: ${TYPOGRAPHY.tablet.heading1.fontWeight};
@@ -145,7 +145,7 @@ export const getGlobalStyles = () => css`
       --spacing-9: ${SPACING.tablet.L9};
       --spacing-10: ${SPACING.tablet.L10};
     }
-    @media (max-width: ${Breakpoints.Mobile}) {
+    @media (max-width: ${Breakpoints.md}) {
     }
   }
   *,

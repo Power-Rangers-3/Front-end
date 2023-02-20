@@ -1,51 +1,74 @@
+@import '../../styles/shared/breakpoints.scss';
+
 .main {
   position: relative;
   min-height: 100vh;
 }
 
 .bg {
+  @include breakpoint(lg) {
+    display: block;
+  }
   position: absolute;
   top: 0;
   left: 0;
-  width: 45%;
+  display: none;
+  width: 50%;
   height: 100%;
   background: left / cover no-repeat url('./assets/images/background.png');
 }
 
-
 .wrapper {
+  @include breakpoint(lg) {
+    flex-direction: row;
+  }
   display: flex;
+  flex-direction: column;
+  align-items: center;
   max-width: var(--max-width);
   min-height: 100vh;
 }
 
-.registration {
+.auth {
+  @include breakpoint(lg) {
+    flex-basis: 50%;
+  }
   display: flex;
-  flex: 3;
+  flex-basis: 100%;
   align-items: center;
   justify-content: center;
 }
 
 .aboutWrapper {
-  flex: 2;
-  min-height: 100%;
+  @include breakpoint(lg) {
+    padding-left: var(--spacing-1);
+  }
+  display: flex;
+  flex-basis: 50%;
+  width: 100%;
+  height: 100%;
   padding: var(--spacing-6);
-  padding-left: var(--spacing-1);
-
-  // background: center / cover no-repeat url('./assets/images/background.png');
+  padding-left: var(--spacing-7);
 }
 
 .about {
   position: relative;
-  display: flex;
+}
+
+.aboutContent {
+  @include breakpoint(lg) {
+    display: flex;
+  }
+  display: none;
   flex-direction: column;
   gap: var(--spacing-4);
   justify-content: center;
   min-height: 100%;
 }
 
+
 .logo {
-  position: absolute;
+  position: relative;
   top: 0;
   left: 0;
 }
