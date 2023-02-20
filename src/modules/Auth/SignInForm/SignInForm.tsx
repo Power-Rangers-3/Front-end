@@ -112,7 +112,7 @@ export const SignInForm = () => {
       </div>
       <p className={styles.enter}>
         <span>Нет аккаунта? </span>
-        <Link to={ROUTE.HOME}>Зарегистрироваться</Link>
+        <Link to={ROUTE.SIGN_UP}>Зарегистрироваться</Link>
       </p>
     </form>
   );

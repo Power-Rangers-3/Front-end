@@ -80,7 +80,7 @@ export const RegistrationForm = () => {
           type="password"
           error={errors.password ? errors.password?.message : ''}
         />
-        <Link to="/" className={styles.remindPassword}>
+        <Link to={ROUTE.RESET_PASSWORD} className={styles.remindPassword}>
           Напомнить пароль
         </Link>
       </div>
