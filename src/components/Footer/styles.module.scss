@@ -9,11 +9,7 @@ h1 h2 {
 }
 
 a {
-  font-size: 12px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 20px;
-  color: #000000;
+  color: var(--fontBase);
   text-decoration: none;
 }
 
@@ -23,10 +19,19 @@ a {
   max-width: 1440px;
   padding: 46.5px 100px;
   margin: auto;
+
+  @media (max-width: 480px) {
+    flex-direction: column;
+    padding: 35px 0 35px 16px;
+  }
 }
 
 .footer_container_left {
   margin-top: 102.5px;
+
+  @media (max-width: 480px) {
+    margin-top: 0;
+  }
 }
 
 .social_block__title {
@@ -34,7 +39,7 @@ a {
   font-style: normal;
   font-weight: 500;
   line-height: 36px;
-  color: #000000;
+  color: var(--fontBase);
 }
 
 .social_block__container {
@@ -47,14 +52,12 @@ a {
 .right_info_container {
   display: flex;
   gap: 184.5px;
-}
 
-.info_container__titles {
-  font-size: 24px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: 130%;
-  color: #000000;
+  @media (max-width: 480px) {
+    flex-direction: column;
+    gap: 45px;
+    margin-top: 40px;
+  }
 }
 
 .info_container__ul {
@@ -110,7 +113,6 @@ a {
   }
 }
 
-
 /* Links inside the dropdown */
 .dropdown_content a {
   display: block;
@@ -120,13 +122,13 @@ a {
   font-style: normal;
   font-weight: 500;
   line-height: 19px;
-  color: #3d3d3d;
+  color: var(--fontHover);
   text-decoration: none;
 }
 
 /* Change color of dropdown links on hover */
 .dropdown_content a:hover {
-  background-color: #f1f1f1;
+  background-color: var(--background);
 }
 
 /* Show the dropdown menu on hover */
