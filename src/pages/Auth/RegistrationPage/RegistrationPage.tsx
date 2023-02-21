@@ -14,11 +14,11 @@ export const RegistrationPage = () => (
   <main className={styles.main}>
     <div className={styles.bg} />
     <div className={styles.wrapper}>
+      <Link to={ROUTE.HOME} className={styles.logo}>
+        <img src={logoIcon} className={styles.logo} alt="Townsend logo" />
+      </Link>
       <div className={styles.aboutWrapper}>
         <div className={styles.about}>
-          <Link to={ROUTE.HOME} className={styles.logo}>
-            <img src={logoIcon} className={styles.logo} alt="Townsend logo" />
-          </Link>
           <div className={styles.aboutContent}>
             <h1>Помогаем автоматизировать бизнес-процессы с помощью чат-ботов</h1>
             <ul className={styles.socialList}>

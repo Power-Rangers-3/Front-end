@@ -7,6 +7,7 @@ import { ReactComponent as VisibilityIcon } from './icons/eye-open.svg';
 import { ReactComponent as WarningIcon } from './icons/warning.svg';
 import { ReactComponent as ErrorIcon } from './icons/error.svg';
 import { ReactComponent as UserIcon } from './icons/user.svg';
+import { ReactComponent as PlaneIcon } from './icons/plane.svg';
 
 export {
   FacebookIcon,
@@ -18,4 +19,5 @@ export {
   WarningIcon,
   ErrorIcon,
   UserIcon,
+  PlaneIcon,
 };

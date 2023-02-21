@@ -206,6 +206,7 @@ export const colors = {
   backgroundButtonInvert: '#000',
   backgroundFields: '#F2F2F2',
   backgroundWarning: '#F8F1E4',
+  backgroundReset: '#F9F8FF',
   backgroundButtonHover: '#4C4C4C',
   backgroundButtonDisabled: '#B3B3B3',
   borderBase: '#000',

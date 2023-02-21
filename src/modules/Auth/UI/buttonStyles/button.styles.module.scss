@@ -1,10 +1,11 @@
 .button {
   display: flex;
+  flex: 1;
   justify-content: center;
   width: 100%;
   padding: var(--spacing-7);
   font-size: var(--largeRegular-font-size);
-  font-weight: var(--largeBold-font-weight);
+  font-weight: var(--largeRegular-font-weight);
   line-height: var(--largeRegular-line-height);
   color: var(--font-color-base);
   background-color: var(--background-color-button);

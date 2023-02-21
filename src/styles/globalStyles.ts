@@ -20,6 +20,7 @@ export const getGlobalStyles = () => css`
     --background-color-invert: ${colors.backgroundInvert};
     --background-color-bright: ${colors.backgroundBright};
     --background-color-fields: ${colors.backgroundFields};
+    --background-color-reset: ${colors.backgroundReset};
     --background-color-warning: ${colors.backgroundWarning};
     --background-color-button: ${colors.backgroundButton};
     --background-color-button-invert: ${colors.backgroundButtonInvert};
@@ -254,7 +255,6 @@ export const getGlobalStyles = () => css`
   input:-internal-autofill-selected {
     appearance: menulist-button;
     background-image: none !important;
-    -webkit-background: none !important;
     color: #ffffff !important;
   }
 

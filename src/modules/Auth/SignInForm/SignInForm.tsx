@@ -80,7 +80,7 @@ export const SignInForm = () => {
           type="password"
           error={errors.password ? errors.password?.message : ''}
         />
-        <Link to="/" className={styles.remindPassword}>
+        <Link to={ROUTE.RESET_PASSWORD} className={styles.remindPassword}>
           Забыли пароль?
         </Link>
       </div>
