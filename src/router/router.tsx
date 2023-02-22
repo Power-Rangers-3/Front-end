@@ -4,7 +4,7 @@ import { RegistrationPage } from 'pages/Auth/RegistrationPage/RegistrationPage';
 import { SignInPage } from 'pages/Auth/SignInPage/SignInPage';
 import { createBrowserRouter, createRoutesFromElements, Route } from 'react-router-dom';
 
-import { ResetPasswordPage } from 'pages/Auth/ResetPasswordPage.ts/ResetPasswordPage';
+import { ResetPasswordPage } from 'pages/Auth/ResetPasswordPage/ResetPasswordPage';
 
 import { ROUTE } from './routes';
 
@@ -17,8 +17,9 @@ export const router = createBrowserRouter(
       </Route>
       <Route path={ROUTE.SIGN_UP} element={<RegistrationPage />} />
       <Route path={ROUTE.SIGN_IN} element={<SignInPage />} />
-      <Route path={ROUTE.RESET_PASSWORD} element={<ResetPasswordPage />} />
-      <Route path={`${ROUTE.SIGN_IN}/:token`} element={<SignInPage />} />
+      <Route path={ROUTE.RESET_PASSWORD} element={<ResetPasswordPage />}>
+        <Route path={`${ROUTE.RESET_PASSWORD}/:token`} element={<SignInPage />} />
+      </Route>
     </>,
   ),
 );

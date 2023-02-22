@@ -10,11 +10,9 @@ authAxiosInstance.interceptors.request.use((requestConfigArgs) => {
   const requestConfig = requestConfigArgs;
   const accessToken = localStorage.getItem(LocalStorage.AccessToken);
   requestConfig.headers = requestConfig.headers || {};
-  console.log('AccessToken', accessToken);
 
   if (accessToken) {
     requestConfig.headers.Authorization = `Bearer ${accessToken}`;
-    console.log('requestConfig.headers.Authorization ', `Bearer ${accessToken}`);
   }
   return requestConfig;
 });
@@ -28,7 +26,6 @@ authAxiosInstance.interceptors.response.use(undefined, async (error: AxiosError)
 
     if (status === 401 && accessToken && refreshQuerryCount < 2) {
       await refreshToken();
-      console.log(refreshQuerryCount);
       refreshQuerryCount += 1;
       return authAxiosInstance(config);
     }

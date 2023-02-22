@@ -44,10 +44,10 @@ const userSlice = createSlice({
         state.isAuth = false;
         state.error = null;
       })
-      .addCase(signInAction.fulfilled, (state, { meta, payload: { email, id, roles } }) => {
-        state.loadingState = meta.requestStatus;
-
-        if (email) {
+      .addCase(signInAction.fulfilled, (state, action) => {
+        state.loadingState = action.meta.requestStatus;
+        if (action?.payload?.email) {
+          const { email, id, roles } = action.payload;
           state.email = email;
           state.id = id;
           state.roles = roles;
