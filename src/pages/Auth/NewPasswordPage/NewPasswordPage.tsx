@@ -2,21 +2,21 @@ import { Link } from 'react-router-dom';
 
 import { ROUTE } from 'router';
 
-import { ResetPasswordForms } from 'modules/Auth/ResetPassword/ResetPasswordForms';
+import { NewPasswordForm } from 'modules/Auth/NewPasswordForm/NewPasswordForm';
 
 import styles from '../styles.module.scss';
 
 import { logoIcon } from '../../../assets';
 import { CatIcon } from '../assets';
 
-export const ResetPasswordPage = () => (
+export const NewPasswordPage = () => (
   <main className={styles.main}>
     <div className={styles.wrapper}>
       <Link to={ROUTE.HOME} className={styles.logo}>
         <img src={logoIcon} className={styles.logo} alt="Townsend logo" />
       </Link>
       <div className={styles.auth}>
-        <ResetPasswordForms />
+        <NewPasswordForm />
       </div>
       <div className={styles.aboutWrapper}>
         <div className={styles.aboutContent}>

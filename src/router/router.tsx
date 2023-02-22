@@ -6,6 +6,8 @@ import { createBrowserRouter, createRoutesFromElements, Route } from 'react-rout
 
 import { ResetPasswordPage } from 'pages/Auth/ResetPasswordPage/ResetPasswordPage';
 
+import { NewPasswordPage } from 'pages/Auth/NewPasswordPage/NewPasswordPage';
+
 import { ROUTE } from './routes';
 
 export const router = createBrowserRouter(
@@ -20,6 +22,7 @@ export const router = createBrowserRouter(
       <Route path={ROUTE.RESET_PASSWORD} element={<ResetPasswordPage />}>
         <Route path={`${ROUTE.RESET_PASSWORD}/:token`} element={<SignInPage />} />
       </Route>
+      <Route path={ROUTE.NEW_PASSWORD} element={<NewPasswordPage />} />
     </>,
   ),
 );

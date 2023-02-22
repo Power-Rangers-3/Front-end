@@ -1,5 +1,4 @@
-import { SignInUserType } from './signInUserType';
-import { RegisterUserType } from './registerUserType';
-import { AuthErrorType } from './authErrorType';
-
-export type { SignInUserType, RegisterUserType, AuthErrorType };
+export * from './signInUserType';
+export * from './registerUserType';
+export * from './authErrorType';
+export * from './newPasswordType';

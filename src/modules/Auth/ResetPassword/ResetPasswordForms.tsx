@@ -2,9 +2,9 @@ import { SubmitHandler, useForm } from 'react-hook-form';
 
 import { yupResolver } from '@hookform/resolvers/yup';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
-import { Link } from 'react-router-dom';
+import { Link, useNavigate, useParams } from 'react-router-dom';
 
 import { ROUTE } from 'router';
 
@@ -18,7 +18,7 @@ import { isFormFilled } from '../utils/isFormFilled';
 
 import { schema } from '../data/emailScheme';
 
-export const EmailForm = () => {
+export const ResetPasswordForms = () => {
   const {
     register,
     handleSubmit,
@@ -32,17 +32,20 @@ export const EmailForm = () => {
   const [tokenError, setTokenError] = useState<string>();
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [isSuccess, setIsSuccess] = useState<boolean>(false);
+  const { token } = useParams<{ token: string }>();
+  const navigate = useNavigate();
 
-  const onSubmit: SubmitHandler<{ email: string }> = ({ email }) => {
-    setIsSuccess(!isSuccess);
+  useEffect(() => {
+    if (token) {
+      navigate(ROUTE.NEW_PASSWORD);
+    }
+  }, [token, navigate]);
+
+  const onSubmit: SubmitHandler<{ email: string }> = () => {
     setIsLoading(false);
-    setTokenError('Тут будут ошибки');
-    console.log(email);
+    setIsSuccess(!isSuccess);
+    setTokenError('Тут будут отображаться ошибки');
   };
-
-  console.log(Object.keys(errors).length);
-  console.log(isLoading);
-  console.log(isFormFilled(getValues()));
 
   return !isSuccess ? (
     <form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
@@ -51,7 +54,6 @@ export const EmailForm = () => {
       <div className={styles.inputGroupWrapper}>
         <Input
           register={register}
-          onChange={() => console.log(getValues())}
           label="Email адрес"
           id="email"
           Icon={<MailIcon />}
@@ -83,7 +85,7 @@ export const EmailForm = () => {
     <form className={styles.form}>
       <h3>Восстановление пароля</h3>
       <p> Проверьте свою электронную почту для получения инструкций о том, как бросить пароль</p>
-      <p>      
+      <p>
         <PlaneIcon /> {getValues().email}
       </p>
 
@@ -91,7 +93,7 @@ export const EmailForm = () => {
         <button
           className={`${buttonStyles.button} ${buttonStyles.invertButton}`}
           type="button"
-          onClick={() => setIsSuccess(!isSuccess)}
+          onClick={handleSubmit(onSubmit)}
         >
           Не видишь этого? Попробовать снова
         </button>
