@@ -17,7 +17,7 @@ import buttonStyles from '../UI/buttonStyles/button.styles.module.scss';
 
 import { schema } from '../data/registrationScheme';
 
-import { RegisterUserType, AuthErrorType } from '../types';
+import { RegisterUserType } from '../types';
 import { Input } from '../UI/Input/Input';
 
 import { isFormFilled } from '../utils/isFormFilled';
@@ -34,7 +34,7 @@ export const RegistrationForm = () => {
     resolver: yupResolver(schema),
   });
 
-  const [registrationError, setRegistrationError] = useState<AuthErrorType>();
+  const [registrationError, setRegistrationError] = useState<string>();
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const navigate = useNavigate();
 
@@ -46,7 +46,7 @@ export const RegistrationForm = () => {
         setIsLoading(false);
       })
       .catch((error) => {
-        setRegistrationError(error.message);
+        setRegistrationError(error.response.data.message);
         setIsLoading(false);
       });
   };
@@ -91,7 +91,7 @@ export const RegistrationForm = () => {
       {registrationError && (
         <p className={styles.registrationError}>
           <ErrorIcon />
-          {registrationError.message}
+          {registrationError}
         </p>
       )}
       <p className={styles.sideCenter}>или</p>
@@ -111,7 +111,7 @@ export const RegistrationForm = () => {
         Нажимая “Зарегистрироваться”, Вы соглашаетесь с условиями{' '}
         <NavLink to="/" className={styles.license}>
           лицензионного договора, политикой конфиденциальности
-        </NavLink>{' '}
+        </NavLink>
         и предоставляете согласие на обработку персональных данных
       </p>
       <p className={styles.enter}>
