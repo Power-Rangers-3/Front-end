@@ -21,7 +21,7 @@ export const Profile = ({ name, email }: IProps) => {
   return (
     <div className={styles.profile}>
       <div className={styles.icon} onClick={handleName}>
-        {name[0]}
+        {name[0].toUpperCase()}
       </div>
       {dropDownIsActive && (
         <p className={styles.email} onClick={handleName}>

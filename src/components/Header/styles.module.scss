@@ -2,10 +2,7 @@
 
 .header {
   @include breakpoint(md) {
-    margin: 16px;
-  }
-  @include breakpoint(lg) {
-    margin: 16px;
+    margin: 16px 0;
   }
 
   &__wrapper {
@@ -13,11 +10,11 @@
     align-items: center;
     justify-content: space-between;
   }
-}
 
-img {
-  margin-right: 30px;
-  @include breakpoint(xs) {
-    padding: 16px;
+  img {
+    @include breakpoint(xs) {
+      padding: 16px 0;
+    }
+    margin-right: 50px;
   }
 }

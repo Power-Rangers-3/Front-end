@@ -1,13 +1,26 @@
 import { Outlet } from 'react-router-dom';
-import { getGlobalStyles } from 'styles/globalStyles';
-import { Global } from '@emotion/react';
 
-import { Header } from '../../components';
+import { signInAction, useAppDispatch } from 'store';
 
-export const MainLayout = () => (
-  <div>
-    <Global styles={getGlobalStyles()} />
-    <Header />
-    <Outlet />
-  </div>
-);
+import { useEffect } from 'react';
+
+import styles from './styles.module.scss';
+
+import { Footer, Header } from '../../components';
+
+export const MainLayout = () => {
+  const dispatch = useAppDispatch();
+  useEffect(() => {
+    dispatch(signInAction());
+  }, [dispatch]);
+
+  return (
+    <div className={styles.main}>
+      <div className={styles.wrapper}>
+        <Header />
+        <Outlet />
+        <Footer />
+      </div>
+    </div>
+  );
+};

@@ -2,57 +2,57 @@
 
 .menu {
   &__container {
-    width: 100%;
+    display: flex;
     align-items: center;
     justify-content: space-between;
+    width: 100%;
   }
 
   &__nav {
-    flex-direction: row;
-  
-    @include breakpoint(lg) {
+    @include breakpoint(md) {
       display: flex;
+      flex: 1;
       align-items: center;
       padding: 0;
     }
+    flex-direction: row;
   }
 }
 
 .buttonsWrapper {
+  @include breakpoint(lg) {
+    display: flex;
+    flex-direction: row;
+    gap: 12px;
+    padding: 0;
+  }
   display: flex;
   flex-direction: column;
   padding: 0 16px;
-
-  @include breakpoint(lg) {
-    display: flex;
-    padding: 0;
-    gap: 12px;
-    flex-direction: row;
-  }
 }
 
 ul {
-  display: flex;
-  flex-direction: column;
-  @include breakpoint(lg) {
+  @include breakpoint(md) {
     flex-direction: row;
   }
+  display: flex;
+  flex-direction: column;
 }
 
 li {
   @include breakpoint(xs) {
-    padding: 16px;
+    // padding: 16px;
   }
 }
 
 .links {
+  padding: 0 15px;
   font-size: var(--normalBold-font-size);
   font-style: normal;
   font-weight: var(--largeRegular-font-weight);
   line-height: var(--normalRegular-line-height);
   color: #000000;
   white-space: nowrap;
-  padding: 0 15px;
   cursor: pointer;
 
   &:hover {
@@ -62,6 +62,13 @@ li {
 }
 
 .enter {
+  @include breakpoint(md) {
+    margin: 15px 16px;
+  }
+
+  @include breakpoint(xs) {
+    margin: 15px 16px;
+  }
   gap: 12px;
   align-items: center;
   width: 105px;
@@ -71,61 +78,46 @@ li {
   font-style: normal;
   font-weight: var(--largeRegular-font-weight);
   line-height: var(--normalRegular-line-height);
-  background-color: var(--font-color-base);
   color: var(--font-color-base);
+  background-color: var(--background-color-base);
   border: 1px solid #000000;
 
-  :active &:hover {
+  &:active,
+  &:hover {
     color: #b3b3b3;
     cursor: pointer;
     border: 1px solid #b3b3b3;
-
-    &:disabled {
-      color: #b3b3b3;
-      border: 1px solid #b3b3b3;
-    }
   }
 
-  @include breakpoint(md) {
-   
-    margin: 15px 16px;
-
-  }
-  @include breakpoint(xs) {
-   
-    margin: 15px 16px;
-
+  &:disabled {
+    color: #b3b3b3;
+    border: 1px solid #b3b3b3;
   }
 }
 
-  .registration {
-    gap: 12px;
-    align-items: center;
-    width: 172px;
-    height: 56px;
-    padding: 16px 32px;
-    font-size: var(--normalBold-font-size);
-    font-style: normal;
-    font-weight: var(--largeRegular-font-weight);
-    line-height: var(--normalRegular-line-height);
-    color: var(--font-color-invert);
-    background-color: #000000;
-    border: none;
-    @include breakpoint(md) {
-     
-    }
-    @include breakpoint(xs) {
-     
-      margin: 15px 16px;
-    }
+.registration {
+  @include breakpoint(xs) {
+    margin: 15px 16px;
+  }
+  gap: 12px;
+  align-items: center;
+  width: 172px;
+  height: 56px;
+  padding: 16px 32px;
+  font-size: var(--normalBold-font-size);
+  font-style: normal;
+  font-weight: var(--largeRegular-font-weight);
+  line-height: var(--normalRegular-line-height);
+  color: var(--font-color-invert);
+  background-color: #000000;
+  border: none;
 
-    &:hover {
-      cursor: pointer;
-      background: #4c4c4c;
-    }
-
-    &:disabled {
-      background: #b3b3b3;
-    }
+  &:hover {
+    cursor: pointer;
+    background: #4c4c4c;
   }
 
+  &:disabled {
+    background: #b3b3b3;
+  }
+}
