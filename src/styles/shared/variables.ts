@@ -219,3 +219,12 @@ export const colors = {
   borderDisabled: '#B3B3B3',
   additional: '#556EFE',
 };
+
+export enum BREAKPOINT {
+  'xs' = '400px',
+  'sm' = '576px',
+  'md' = '768px',
+  'lg' = '950px',
+  'xl' = '1200px',
+  'xxl' = '1440px',
+}

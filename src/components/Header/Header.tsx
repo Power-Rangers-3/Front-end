@@ -1,60 +1,27 @@
-import { logoIcon } from 'assets';
-import { Profile } from 'components';
-import { Link, useNavigate } from 'react-router-dom';
+import { useWindowSise } from 'hooks';
+import { BurgerMenu } from 'components/BurgerMenu/BurgerMenu';
+import { MenuNav } from 'components/MenuNav/MenuNav';
 import { ROUTE } from 'router';
-import { useAppSelector } from 'store';
-import { getUser } from 'store/selectors/userSelector';
+import { logoIcon } from 'assets';
+
+import { Link } from 'react-router-dom';
 
 import styles from './styles.module.scss';
 
 export const Header = () => {
-  const { isAuth, email } = useAppSelector(getUser);
-  const navigate = useNavigate();
-  const handleEnter = () => {
-    navigate(ROUTE.SIGN_IN);
-  };
-  const handleRegistration = () => {
-    navigate(ROUTE.SIGN_UP);
-  };
-
+  const { width } = useWindowSise();
   return (
-    <header>
-      <div className={styles.header__container}>
-        <Link to={ROUTE.HOME}>
-          <img src={logoIcon} className={styles.logo} alt="Townsend logo" />
-        </Link>
-        <nav className={styles.header__nav}>
-          <ul>
-            <li>
-              <Link to={ROUTE.SIGN_UP} className={styles.links}>
-                О сервисе
-              </Link>
-            </li>
-            <li>
-              <Link to={ROUTE.SIGN_UP} className={styles.links}>
-                Тарифы
-              </Link>
-            </li>
-            <li>
-              <Link to={ROUTE.SIGN_UP} className={styles.links}>
-                Статьи
-              </Link>
-            </li>
-          </ul>
-        </nav>
-        {isAuth && email ? (
-          <Profile name="Pavel" email={email} />
-        ) : (
-          <div className={styles.header__buttonWrapper}>
-            <button type="button" className={styles.enter} onClick={handleEnter}>
-              Вход
-            </button>
-            <button type="button" className={styles.registration} onClick={handleRegistration}>
-              Регистрация
-            </button>
-          </div>
-        )}
-      </div>
+    <header className={styles.header}>
+      {width && width <= 768 ? (
+        <div className={styles.header__wrapper}>
+          <Link to={ROUTE.HOME}>
+            <img src={logoIcon} className={styles.logo} alt="Townsend logo" />
+          </Link>
+          <BurgerMenu />
+        </div>
+      ) : (
+        <MenuNav />
+      )}
     </header>
   );
 };

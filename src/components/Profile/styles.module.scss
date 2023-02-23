@@ -1,4 +1,9 @@
+@import '/src/styles/shared/breakpoints.scss';
+
 .profile {
+  @include breakpoint(xs) {
+    padding: 10px 30px;
+  }
   position: relative;
   display: flex;
   gap: var(--spacing-8);

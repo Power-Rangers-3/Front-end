@@ -21,7 +21,8 @@ import { RegisterUserType } from '../types';
 import { Input } from '../UI/Input/Input';
 
 import { isFormFilled } from '../utils/isFormFilled';
-import { userRegistration } from '../api/userRegistration';
+
+import { userRegistration } from '../api';
 
 export const RegistrationForm = () => {
   const {

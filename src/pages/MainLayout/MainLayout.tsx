@@ -15,12 +15,12 @@ export const MainLayout = () => {
   }, [dispatch]);
 
   return (
-    <main className={styles.main}>
+    <div className={styles.main}>
       <div className={styles.wrapper}>
         <Header />
         <Outlet />
         <Footer />
       </div>
-    </main>
+    </div>
   );
 };
