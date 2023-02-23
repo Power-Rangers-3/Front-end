@@ -61,7 +61,7 @@ export const RegistrationForm = () => {
           Icon={<MailIcon />}
           iconStart
           placeholder="Email"
-          error={errors.email ? errors.email?.message : ''}
+          error={errors.email?.message || null}
         />
 
         <Input
@@ -70,7 +70,7 @@ export const RegistrationForm = () => {
           Icon={<UserIcon />}
           iconStart
           placeholder="Имя и фамилия"
-          error={errors.username ? errors.username?.message : ''}
+          error={errors.username?.message || null}
         />
 
         <Input
@@ -78,7 +78,7 @@ export const RegistrationForm = () => {
           id="password"
           placeholder="Пароль"
           type="password"
-          error={errors.password ? errors.password?.message : ''}
+          error={errors.password?.message || null}
         />
       </div>
       <button

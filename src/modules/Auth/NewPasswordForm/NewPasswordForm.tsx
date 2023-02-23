@@ -49,7 +49,7 @@ export const NewPasswordForm = () => {
           label="Пароль"
           placeholder="******"
           type="password"
-          error={errors?.password ? errors?.password?.message : null}
+          error={errors?.password?.message || null}
         />
         <Input
           register={register}
@@ -57,7 +57,7 @@ export const NewPasswordForm = () => {
           label="Подтвердите пароль"
           placeholder="******"
           type="password"
-          error={errors?.confirmPassword ? errors?.confirmPassword?.message : null}
+          error={errors?.confirmPassword?.message || null}
         />
       </div>
       <button

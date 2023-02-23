@@ -71,7 +71,7 @@ export const SignInForm = () => {
           Icon={<MailIcon />}
           iconStart
           placeholder="Email"
-          error={errors.email ? errors.email?.message : ''}
+          error={errors.email?.message || null}
         />
 
         <Input
@@ -79,7 +79,7 @@ export const SignInForm = () => {
           id="password"
           placeholder="Пароль"
           type="password"
-          error={errors.password ? errors.password?.message : ''}
+          error={errors.password?.message || null}
         />
         <Link to={ROUTE.RESET_PASSWORD} className={styles.remindPassword}>
           Забыли пароль?

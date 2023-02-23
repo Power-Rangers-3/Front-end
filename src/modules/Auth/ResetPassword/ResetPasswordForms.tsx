@@ -59,7 +59,7 @@ export const ResetPasswordForms = () => {
           Icon={<MailIcon />}
           iconStart
           placeholder="Email"
-          error={errors.email ? errors.email?.message : ''}
+          error={errors.email?.message || null}
         />
       </div>
       <div className={styles.buttonWrapper}>
