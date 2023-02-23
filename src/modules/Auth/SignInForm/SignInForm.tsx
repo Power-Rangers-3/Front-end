@@ -49,8 +49,9 @@ export const SignInForm = () => {
         setIsLoading(false);
       })
       .catch((error) => {
-        setTokenError(error.message);
+        setTokenError(error.response.data.message);
         setIsLoading(false);
+        console.log(error);
       });
   };
 
