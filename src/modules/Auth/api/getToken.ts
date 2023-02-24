@@ -9,7 +9,12 @@ interface QuerryParamsType {
 }
 
 export async function getToken(querryParams: QuerryParamsType): Promise<string> {
-  const token: string = await axios.post(apiToken, querryParams).then((response) => response.data);
+  const params = {
+    email: querryParams.email.trim(),
+    password: querryParams.password.trim(),
+  };
+
+  const token: string = await axios.post(apiToken, params).then((response) => response.data.value);
   localStorage.setItem(LocalStorage.AccessToken, token);
 
   return token;
