@@ -10,5 +10,12 @@ export interface UserRegistrationType {
 }
 
 export async function userRegistration(querryParams: UserRegistrationType): Promise<AxiosResponse> {
-  return axios.post(apiPath, querryParams);
+  const params = {
+    email: querryParams.email.trim(),
+    name: querryParams.name.trim(),
+    fullname: querryParams.fullname.trim(),
+    password: querryParams.password.trim(),
+  };
+
+  return axios.post(apiPath, params);
 }
