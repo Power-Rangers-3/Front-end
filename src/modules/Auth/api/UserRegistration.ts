@@ -4,6 +4,8 @@ const apiPath = `${process.env.REACT_APP_API_AUTH}/auth/registration`;
 
 export interface UserRegistrationType {
   email: string;
+  name: string;
+  fullname: string;
   password: string;
 }
 

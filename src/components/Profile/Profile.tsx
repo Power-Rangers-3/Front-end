@@ -1,6 +1,7 @@
 import { useToogle } from 'hooks';
 import { Link } from 'react-router-dom';
 import { ROUTE } from 'router';
+import { LocalStorage } from 'shared/localStorage/loalStorage';
 import { logout, useAppDispatch } from 'store';
 
 import styles from './styles.module.scss';
@@ -16,6 +17,7 @@ export const Profile = ({ name, email }: IProps) => {
   const handleName = () => toogleDropDown();
   const handleLogout = () => {
     dispatch(logout());
+    localStorage.removeItem(LocalStorage.AccessToken);
     toogleDropDown();
   };
   return (
@@ -25,7 +27,6 @@ export const Profile = ({ name, email }: IProps) => {
       </div>
       {dropDownIsActive && (
         <p className={styles.email} onClick={handleName}>
-          {' '}
           {email}
         </p>
       )}

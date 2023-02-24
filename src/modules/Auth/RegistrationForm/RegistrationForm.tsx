@@ -67,11 +67,19 @@ export const RegistrationForm = () => {
 
         <Input
           register={register}
-          id="username"
+          id="name"
           Icon={<UserIcon />}
           iconStart
-          placeholder="Имя и фамилия"
-          error={errors.username?.message || null}
+          placeholder="Имя"
+          error={errors.name?.message || null}
+        />
+        <Input
+          register={register}
+          id="fullname"
+          Icon={<UserIcon />}
+          iconStart
+          placeholder="Фамилия"
+          error={errors.fullname?.message || null}
         />
 
         <Input
