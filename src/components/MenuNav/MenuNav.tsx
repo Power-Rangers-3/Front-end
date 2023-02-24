@@ -13,7 +13,7 @@ export const MenuNav = () => {
   const { isAuth } = useAppSelector(getUser);
   const navigate = useNavigate();
   const handleEnter = () => {
-    navigate(ROUTE.PROFILE);
+    navigate(ROUTE.SIGN_IN);
   };
   const handleRegistration = () => {
     navigate(ROUTE.SIGN_UP);
