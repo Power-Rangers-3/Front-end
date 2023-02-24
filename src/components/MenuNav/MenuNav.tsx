@@ -10,7 +10,7 @@ import { getUser } from 'store/selectors/userSelector';
 import styles from './styles.module.scss';
 
 export const MenuNav = () => {
-  const { isAuth } = useAppSelector(getUser);
+  const { isAuth, email, name } = useAppSelector(getUser);
   const navigate = useNavigate();
   const handleEnter = () => {
     navigate(ROUTE.SIGN_IN);
@@ -47,7 +47,7 @@ export const MenuNav = () => {
         </ul>
       </nav>
       {isAuth ? (
-        <Profile name="Pavel" email="pavel.chernenko97@gmail.com" />
+        <Profile name={name || 'User'} email={email || ''} />
       ) : (
         <div className={styles.buttonsWrapper}>
           <button type="button" className={styles.enter} onClick={handleEnter}>

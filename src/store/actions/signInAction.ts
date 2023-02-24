@@ -4,7 +4,8 @@ import { userSignIn } from '../../modules';
 
 interface UserInfo {
   email: string;
-  username: string;
+  name: string;
+  fullname: string;
   id: number;
   roles: [] | null;
 }
