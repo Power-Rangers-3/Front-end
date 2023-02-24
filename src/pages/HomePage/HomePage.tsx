@@ -1,12 +1,13 @@
-import styles from './styles.module.scss';
+import { MainSection } from './components/mainSection/mainSection';
 
-import buttonStyles from '../../styles/shared/button.style.module.scss';
+import { AdvantagesSection } from './components/advantagesSection/advantagesSection';
+
+import { OpportunitySection } from './components/opportunitySection/opportunitySection';
 
 export const HomePage = () => (
-  <div className={styles.test}>
-    HomePage
-    <button className={buttonStyles.buttonDark} type="button">
-      ghghghg
-    </button>
+  <div>
+    <MainSection />
+    <AdvantagesSection />
+    <OpportunitySection />
   </div>
 );

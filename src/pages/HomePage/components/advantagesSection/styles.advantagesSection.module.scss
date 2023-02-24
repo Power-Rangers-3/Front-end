@@ -1,0 +1,57 @@
+.advantagesSection {
+  display: flex;
+  justify-content: center;
+  padding-bottom: var(--spacing-1);
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-1);
+  width: 100%;
+  max-width: var(--max-width);
+  padding: 0 var(--spacing-7);
+}
+
+.advantagesCardTitle {
+  display: flex;
+  justify-content: center;
+  padding-bottom: var(--spacing-2);
+}
+
+.advantagesCardTitle h2 {
+  font-size: var(--H3-font-size);
+  font-weight: var(--H3-font-weight);
+  line-height: var(--H3-line-height);
+}
+
+.advantageCardInfo {
+  display: flex;
+  gap: var(--spacing-1);
+  justify-content: center;
+}
+
+.advantagesCardImage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.advantagesCardImage img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.advantagesListElement {
+  display: flex;
+  gap: var(--spacing-8);
+  align-items: center;
+  padding-bottom: var(--spacing-5);
+}
+
+.advantagesListElement p {
+  font-size: var(--extraLargeRegular-font-size);
+  font-weight: var(--extraLargeRegular-font-weight);
+  line-height: var(--extraLargeRegular-height);
+}
