@@ -4,10 +4,12 @@ import { AdvantagesSection } from './components/advantagesSection/advantagesSect
 
 import { OpportunitySection } from './components/opportunitySection/opportunitySection';
 
+import styles from './styles.module.scss';
+
 export const HomePage = () => (
-  <div>
+  <main className={styles.main}>
     <MainSection />
     <AdvantagesSection />
     <OpportunitySection />
-  </div>
+  </main>
 );

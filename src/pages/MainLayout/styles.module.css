@@ -1,0 +1,11 @@
+.main {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+.wrapper {
+  max-width: var(--max-width);
+  display: flex;
+  flex-direction: column;
+}

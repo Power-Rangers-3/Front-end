@@ -8,7 +8,7 @@ import chat from './assets/chat.svg';
 
 import { ROUTE } from '../../../../router';
 
-import buttonStyle from '../../../../styles/shared/button.style.module.scss';
+import buttonStyle from '../../../../styles/button.style.module.scss';
 
 export const MainSection = () => (
   <section className={styles.mainSection}>

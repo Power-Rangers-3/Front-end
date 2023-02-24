@@ -1,4 +1,8 @@
-.opportunitySection {
+main {
+  flex-direction: column;
+}
+
+.section {
   display: flex;
   justify-content: center;
   padding-bottom: var(--spacing-3);
@@ -14,41 +18,38 @@
   padding: 0 var(--spacing-7);
 }
 
-.opportunityCard {
+.card {
   display: flex;
   justify-content: center;
 }
 
-.opportunityCardImage {
+.cardImage {
   display: flex;
   align-items: center;
   justify-content: center;
+
+  img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
 }
 
-.opportunityCardImage img {
-  width: 100%;
-  height: auto;
-  object-fit: cover;
-}
-
-.opportunityCardInfo {
+.cardInfo {
   display: flex;
   flex: 1;
   flex-direction: column;
+
+  h4 {
+    text-transform: uppercase;
+  }
 }
 
-.opportunityCardInfo h2 {
-  font-size: var(--H4-font-size);
-  font-weight: var(--H4-font-weight);
-  line-height: var(--H4-line-height);
-  text-transform: uppercase;
-}
-
-.opportunityCardInfo p {
-  font-size: var(--normalRegular-font-size);
-  font-weight: var(--normalRegular-font-weight);
-  line-height: var(--normalRegular-line-height);
-}
+// .opportunityCardInfo p {
+//   font-size: var(--normalRegular-font-size);
+//   font-weight: var(--normalRegular-font-weight);
+//   line-height: var(--normalRegular-line-height);
+// }
 
 @media (max-width: 980px) {
   .opportunityCard {

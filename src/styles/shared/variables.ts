@@ -74,15 +74,86 @@ export const TYPOGRAPHY = {
     },
   },
 
-  tablet: {},
+  tablet: {
+    heading1: {
+      fontSize: '2.5rem',
+      fontWeight: FontWeight.Bold,
+      lineHeight: '3.25rem',
+    },
+    heading2: {
+      fontSize: '2rem',
+      fontWeight: FontWeight.Bold,
+      lineHeight: '2.6rem',
+    },
+    heading3: {
+      fontSize: '1.75rem',
+      fontWeight: FontWeight.Bold,
+      lineHeight: '2.45rem',
+    },
+    heading4: {
+      fontSize: '1.5rem',
+      fontWeight: FontWeight.Bold,
+      lineHeight: '1.95rem',
+    },
+    heading5: {
+      fontSize: '1rem',
+      fontWeight: FontWeight.Bold,
+      lineHeight: '1.3rem',
+    },
+    heading6: {
+      fontSize: '0.75rem',
+      fontWeight: FontWeight.Bold,
+      lineHeight: '1rem',
+    },
+    extraLargeBold: {
+      fontSize: '1.125rem',
+      fontWeight: FontWeight.Bold,
+      lineHeight: '1.63rem',
+    },
+    extraLargeRegular: {
+      fontSize: '1.125rem',
+      fontWeight: FontWeight.Regular,
+      lineHeight: '1.63rem',
+    },
+    largeBold: {
+      fontSize: '1rem',
+      fontWeight: FontWeight.Semibold,
+      lineHeight: '1.45rem',
+    },
+    largeRegular: {
+      fontSize: '1rem',
+      fontWeight: FontWeight.Regular,
+      lineHeight: '1.45rem',
+    },
+    normalBold: {
+      fontSize: '0.875rem',
+      fontWeight: FontWeight.Bold,
+      lineHeight: '1.138rem',
+    },
+    normalRegular: {
+      fontSize: '0.875rem',
+      fontWeight: FontWeight.Regular,
+      lineHeight: '1.138rem',
+    },
+    smallBold: {
+      fontSize: '0.75rem',
+      fontWeight: FontWeight.Bold,
+      lineHeight: '1rem',
+    },
+    smallRegular: {
+      fontSize: '0.75rem',
+      fontWeight: FontWeight.Regular,
+      lineHeight: '1rem',
+    },
+  },
 
   mobile: {},
 };
 
 export const SPACING = {
   desktop: {
-    L1: '64px',
-    L2: '56px',
+    L1: '74px',
+    L2: '60px',
     L3: '48px',
     L4: '40px',
     L5: '32px',
@@ -135,6 +206,7 @@ export const colors = {
   backgroundButtonInvert: '#000',
   backgroundFields: '#F2F2F2',
   backgroundWarning: '#F8F1E4',
+  backgroundReset: '#F9F8FF',
   backgroundButtonHover: '#4C4C4C',
   backgroundButtonDisabled: '#B3B3B3',
   borderBase: '#000',
@@ -147,3 +219,12 @@ export const colors = {
   borderDisabled: '#B3B3B3',
   additional: '#556EFE',
 };
+
+export enum BREAKPOINT {
+  'xs' = '400px',
+  'sm' = '576px',
+  'md' = '768px',
+  'lg' = '950px',
+  'xl' = '1200px',
+  'xxl' = '1440px',
+}

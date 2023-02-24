@@ -8,37 +8,41 @@ import { DataOpportunityType } from './types/dataOpportunityType';
 
 import { ROUTE } from '../../../../router';
 
-import buttonStyle from '../../../../styles/shared/button.style.module.scss';
+import buttonStyle from '../../../../styles/button.style.module.scss';
 
 export const OpportunityCardEven = ({ title, description, picture }: DataOpportunityType) => (
-  <div className={styles.opportunityCard}>
-    <div className={styles.opportunityCardImage}>
+  <div className={styles.card}>
+    <div className={styles.cardImage}>
       <img src={picture} alt="opportunity" />
     </div>
-    <div className={styles.opportunityCardInfo}>
-      <h2>{title}</h2>
+    <div className={styles.cardInfo}>
+      <h4>{title}</h4>
       <p>{description}</p>
     </div>
   </div>
 );
 
 export const OpportunityCardOdd = ({ title, description, picture }: DataOpportunityType) => (
-  <div className={styles.opportunityCard}>
-    <div className={styles.opportunityCardInfo}>
-      <h2>{title}</h2>
+  <div className={styles.card}>
+    <div className={styles.cardInfo}>
+      <h4>{title}</h4>
       <p>{description}</p>
     </div>
-    <div className={styles.opportunityCardImage}>
+    <div className={styles.cardImage}>
       <img src={picture} alt="opportunity" />
     </div>
   </div>
 );
 
 export const OpportunitySection = () => (
-  <section className={styles.opportunitySection}>
+  <section className={styles.section}>
     <div className={styles.wrapper}>
       {dataArray.map((article: DataOpportunityType, i) =>
-        i % 2 === 0 ? <OpportunityCardEven {...article} /> : <OpportunityCardOdd {...article} />,
+        i % 2 === 0 ? (
+          <OpportunityCardEven {...article} key={article.id} />
+        ) : (
+          <OpportunityCardOdd {...article} key={article.id} />
+        ),
       )}
       <div className={styles.infoButton}>
         <Link to={ROUTE.SIGN_UP} className={buttonStyle.buttonBright} type="button">
