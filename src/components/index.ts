@@ -4,4 +4,4 @@ export * from './Footer/Footer';
 export * from './BurgerMenu/BurgerMenu';
 export * from './Portal/Portal';
 export * from './MenuNav/MenuNav';
-export * from './ProfileLayout/ProfileLayout';
+export * from '../pages/ProfileLayout/ProfileLayout';
