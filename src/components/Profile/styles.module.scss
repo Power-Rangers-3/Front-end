@@ -5,20 +5,30 @@
     padding: 10px 30px;
   }
   position: relative;
-  display: flex;
   gap: var(--spacing-8);
-  align-items: center;
   font-size: var(--normalBold-font-size);
   font-weight: var(--normalBold-font-weight);
+
+  &.open {
+    @include breakpoint(xl) {
+      width: 250px;
+    }
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 210px;
+  }
 }
 
 .icon {
-  padding: var(--spacing-8);
-  padding-right: var(--spacing-7);
-  padding-left: var(--spacing-7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
   text-align: center;
   background-color: var(--background-color-bright);
-  border-radius: 100%;
+  border-radius: 50%;
 
   &:hover {
     cursor: pointer;
@@ -27,7 +37,7 @@
 
 .dropdown {
   position: absolute;
-  top: var(--spacing-5);
+  top: 100%;
   right: 0;
   display: flex;
   flex-direction: column;
@@ -43,6 +53,7 @@
 .email {
   font-size: var(--normalBold-font-size);
   font-weight: var(--normalBold-font-weight);
+  text-transform: capitalize;
 
   &:hover {
     color: var(--font-color-hover);

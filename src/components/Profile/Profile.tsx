@@ -21,15 +21,15 @@ export const Profile = ({ name, email }: IProps) => {
     toogleDropDown();
   };
   return (
-    <div className={styles.profile}>
+    <div className={`${styles.profile} ${dropDownIsActive && styles.open}`}>
+      {dropDownIsActive && (
+        <p className={styles.email} onClick={handleName}>
+          {name || email}
+        </p>
+      )}
       <div className={styles.icon} onClick={handleName}>
         {name[0].toUpperCase()}
       </div>
-      {dropDownIsActive && (
-        <p className={styles.email} onClick={handleName}>
-          {email}
-        </p>
-      )}
       {dropDownIsActive && (
         <div className={styles.dropdown}>
           <Link className={styles.link} to={ROUTE.PROFILE}>
