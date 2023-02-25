@@ -1,16 +1,20 @@
 import { logoIcon } from 'assets';
-import { Profile } from 'components/Profile/Profile';
-
 import { useWindowSise } from 'hooks';
+import { ReactNode } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import { getUser, useAppSelector } from 'store';
 import { ROUTE } from 'router';
-import { useAppSelector } from 'store';
-import { getUser } from 'store/selectors/userSelector';
 
 import styles from './styles.module.scss';
 
-export const MenuNav = () => {
-  const { isAuth, email, name } = useAppSelector(getUser);
+interface IProps {
+  // eslint-disable-next-line react/require-default-props
+  children?: ReactNode;
+}
+
+export const MenuNav = ({ children }: IProps) => {
+  const { width } = useWindowSise();
+  const { isAuth } = useAppSelector(getUser);
   const navigate = useNavigate();
   const handleEnter = () => {
     navigate(ROUTE.SIGN_IN);
@@ -18,8 +22,6 @@ export const MenuNav = () => {
   const handleRegistration = () => {
     navigate(ROUTE.SIGN_UP);
   };
-  const { width } = useWindowSise();
-
   return (
     <div className={styles.menu__container}>
       <nav className={styles.menu__nav}>
@@ -46,9 +48,7 @@ export const MenuNav = () => {
           </li>
         </ul>
       </nav>
-      {isAuth ? (
-        <Profile name={name || 'User'} email={email || ''} />
-      ) : (
+      {!isAuth && (
         <div className={styles.buttonsWrapper}>
           <button type="button" className={styles.enter} onClick={handleEnter}>
             Вход
@@ -58,6 +58,7 @@ export const MenuNav = () => {
           </button>
         </div>
       )}
+      {children}
     </div>
   );
 };
