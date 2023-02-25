@@ -23,12 +23,12 @@
   @include breakpoint(lg) {
     display: flex;
     flex-direction: row;
-    gap: 12px;
+    gap: var(--spacing-8);
     padding: 0;
   }
   display: flex;
   flex-direction: column;
-  padding: 0 16px;
+  padding: 0 var(--spacing-7);
 }
 
 ul {
@@ -51,73 +51,73 @@ li {
   font-style: normal;
   font-weight: var(--largeRegular-font-weight);
   line-height: var(--normalRegular-line-height);
-  color: #000000;
+  color: var(--font-color-base);
   white-space: nowrap;
   cursor: pointer;
 
   &:hover {
-    color: #b3b3b3;
+    color: var(--font-color-hover);
     cursor: pointer;
   }
 }
 
 .enter {
   @include breakpoint(md) {
-    margin: 15px 16px;
+    margin: 15px var(--spacing-7);
   }
 
   @include breakpoint(xs) {
-    margin: 15px 16px;
+    margin: 15px var(--spacing-7);
   }
-  gap: 12px;
+  gap: var(--spacing-8);
   align-items: center;
   width: 105px;
   height: 56px;
-  padding: 16px 32px;
+  padding: var(--spacing-7) var(--spacing-5);
   font-size: var(--normalBold-font-size);
   font-style: normal;
   font-weight: var(--largeRegular-font-weight);
   line-height: var(--normalRegular-line-height);
   color: var(--font-color-base);
   background-color: var(--background-color-base);
-  border: 1px solid #000000;
+  border: 1px solid var(--font-color-base);
 
   &:active,
   &:hover {
-    color: #b3b3b3;
+    color: var(--font-color-hover);
     cursor: pointer;
-    border: 1px solid #b3b3b3;
+    border: 1px solid var(--font-color-hover);
   }
 
   &:disabled {
-    color: #b3b3b3;
-    border: 1px solid #b3b3b3;
+    color: var(--font-color-disabled);
+    border: 1px solid var(--font-color-disabled);
   }
 }
 
 .registration {
   @include breakpoint(xs) {
-    margin: 15px 16px;
+    margin: 15px var(--spacing-7);
   }
-  gap: 12px;
+  gap: var(--spacing-8);
   align-items: center;
   width: 172px;
   height: 56px;
-  padding: 16px 32px;
+  padding: var(--spacing-7) var(--spacing-5);
   font-size: var(--normalBold-font-size);
   font-style: normal;
   font-weight: var(--largeRegular-font-weight);
   line-height: var(--normalRegular-line-height);
   color: var(--font-color-invert);
-  background-color: #000000;
+  background-color: var(--font-color-base);
   border: none;
 
   &:hover {
     cursor: pointer;
-    background: #4c4c4c;
+    background: var(--font-color-hover);
   }
 
   &:disabled {
-    background: #b3b3b3;
+    background: var(--font-color-disabled);
   }
 }
