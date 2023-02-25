@@ -6,7 +6,8 @@ const apiPath = `${process.env.REACT_APP_API_AUTH}/users/info/`;
 
 interface UserInfo {
   email: string;
-  username: string;
+  name: string;
+  fullname: string;
   id: number;
   roles: [] | null;
 }

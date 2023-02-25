@@ -1,8 +1,7 @@
 export interface RegisterUserType {
   email: string;
-  username: string;
-  currentPassword: string;
+  name: string;
+  fullname: string;
   password: string;
-  passwordConfirm: string;
 };
 
