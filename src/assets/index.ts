@@ -14,8 +14,10 @@ import settingsIcon from './icons/settings.svg';
 import walletIcon from './icons/wallet.svg';
 import avatarIcon from './icons/avatar.svg';
 import uploadedIcon from './icons/uploaded.svg';
+import girl from './images/girl.png';
 
 export {
+  girl,
   telegramLight,
   facebookLight,
   instagramLight,
