@@ -31,5 +31,5 @@ export {
   settingsIcon,
   walletIcon,
   avatarIcon,
-  uploadedIcon
+  uploadedIcon,
 };

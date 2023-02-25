@@ -1,7 +1,8 @@
 .container {
-  margin: 35px 0;
   width: 510px;
+  margin: 35px 0;
 }
+
 .settings {
   display: flex;
   translate: 10%;
@@ -11,19 +12,19 @@
   }
 
   &__title {
-    font-weight: var(--normalBold-font-size);
+    margin: 5px 0;
     font-size: var(--spacing-6);
+    font-weight: var(--normalBold-font-size);
     line-height: 130%;
     color: var(--font-color-base);
-    margin: 5px 0;
   }
 
   &__subtitle {
-    font-weight:  var(--normalRegular-font-size);
+    margin: 20px 0;
     font-size: 20px;
+    font-weight: var(--normalRegular-font-size);
     line-height: 150%;
     color: var(--font-color-base);
-    margin: 20px 0;
   }
 
   &__avatar {
@@ -41,59 +42,60 @@
   &__subtitle {
     font-size: 20px;
     font-weight: var(--normalBold-font-size);
-    color: #777;
+    color: #777777;
   }
 
   &__input {
-    opacity: 0;
     position: absolute;
     z-index: -1;
+    opacity: 0;
   }
 
   &__button {
-    cursor: pointer;
-    font-weight: var(--normalRegular-font-size);
-    font-size: 20px;
-    line-height: 150%;
     margin: 5px;
+    font-size: 20px;
+    font-weight: var(--normalRegular-font-size);
+    line-height: 150%;
+    cursor: pointer;
   }
 
   &__icon {
+    margin: 15px;
+    cursor: pointer;
     background: url('../../assets/icons/uploaded.svg');
     background-size: cover;
-    cursor: pointer;
-    margin: 15px;
   }
 }
 
 .form {
-  font-weight: var(--normalRegular-font-size);
   font-size: var(--spacing-7);
+  font-weight: var(--normalRegular-font-size);
   line-height: 145%;
-  color: #333;
+  color: #333333;
 
   &__title {
     padding: 5px 0;
     margin-top: 15px;
-    font-weight: var(--normalRegular-font-size);
     font-size: var(--spacing-7);
+    font-weight: var(--normalRegular-font-size);
     line-height: 145%;
-    color: #333;
+    color: #333333;
   }
 
   &__button {
     width: 240px;
     height: 56px;
+    margin: 25px 0;
+    color: var(--background-color);
+    letter-spacing: .0002em;
     background: var(--font-color-base);
     border: none;
-    color: var(--background-color);
-    letter-spacing: 0.0002em;
-    margin: 25px 0;
+
     &:hover {
       cursor: pointer;
       background: var(--font-color-hover);
     }
-  
+
     &:disabled {
       background: var(--font-color-disabled);
     }
