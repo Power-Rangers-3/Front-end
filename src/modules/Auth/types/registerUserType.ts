@@ -3,4 +3,5 @@ export interface RegisterUserType {
   name: string;
   fullname: string;
   password: string;
-}
+};
+
