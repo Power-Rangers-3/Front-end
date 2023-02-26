@@ -1,12 +1,12 @@
 import { yupResolver } from '@hookform/resolvers/yup';
-import { Input } from 'modules/Auth/UI';
 import { isFormFilled } from 'modules/Auth/utils/isFormFilled';
 
 import { SubmitHandler, useForm } from 'react-hook-form';
 
 import { schema } from '../data/changePasswordScheme';
 import styles from '../styles/styles.module.scss';
-import { ChangePasswordType } from '../types/changePasswordType';
+import { ChangePasswordType } from '../types';
+import { Input } from '../UI';
 
 export const NewPasswordForm = () => {
   const {
