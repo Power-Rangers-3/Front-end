@@ -1,4 +1,4 @@
-import { SignInForm } from 'modules';
+import { SignInForm } from 'modules/Auth';
 
 import { Link } from 'react-router-dom';
 

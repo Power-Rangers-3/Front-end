@@ -1,15 +1,17 @@
-import { HomePage, SettingsPage } from 'pages';
-import { MainLayout } from 'pages/MainLayout/MainLayout';
-import { RegistrationPage } from 'pages/Auth/RegistrationPage/RegistrationPage';
+import {
+  HomePage,
+  MainLayout,
+  NewPasswordPage,
+  ProfileLayout,
+  RegistrationPage,
+  ResetPasswordPage,
+  SettingsPage,
+  SignInPage,
+} from 'pages';
 
 import { createBrowserRouter, createRoutesFromElements, Route } from 'react-router-dom';
-import { ResetPasswordPage } from 'pages/Auth/ResetPasswordPage/ResetPasswordPage';
-import { NewPasswordPage } from 'pages/Auth/NewPasswordPage/NewPasswordPage';
-import { ProfileLayout } from 'pages/ProfileLayout/ProfileLayout';
 
 import { ROUTE } from './routes';
-
-import { SignInPage } from '../pages/Auth/SignInPage/SignInPage';
 
 export const router = createBrowserRouter(
   createRoutesFromElements(

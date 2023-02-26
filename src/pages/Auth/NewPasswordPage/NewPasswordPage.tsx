@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 
 import { ROUTE } from 'router';
 
-import { NewPasswordForm } from 'modules/Auth/NewPasswordForm/NewPasswordForm';
+import { NewPasswordForm } from 'modules/Auth';
 
 import styles from '../styles.module.scss';
 

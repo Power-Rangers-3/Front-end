@@ -1,17 +1,17 @@
 import { Link } from 'react-router-dom';
 
-import styles from './styles.mainSection.module.scss';
+import { ROUTE } from 'router';
+
+import styles from './styles.module.scss';
 
 import blogging from './assets/blogging.jpg';
 
 import chat from './assets/chat.svg';
 
-import { ROUTE } from '../../../../router';
-
 import buttonStyle from '../../../../styles/button.style.module.scss';
 
 export const MainSection = () => (
-  <section className={styles.mainSection}>
+  <section className={styles.section}>
     <div className={styles.wrapper}>
       <div className={styles.info}>
         <div className={styles.infoText}>

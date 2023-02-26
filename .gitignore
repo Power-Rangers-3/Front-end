@@ -29,3 +29,4 @@ yarn-error.log*
 .production.env
 
 /.vscode
+/.idea

@@ -38,6 +38,7 @@ export const NewPasswordForm = () => {
       .catch((error) => setErrorPassword(error.response.data.message));
   };
 
+
   return (
     <form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
       <div className={styles.inputGroupWrapper}>
