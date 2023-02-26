@@ -18,8 +18,9 @@
     cursor: pointer;
   }
 }
+
 .profile {
   display: flex;
-  align-items: center;
   gap: var(--spacing-5);
+  align-items: center;
 }

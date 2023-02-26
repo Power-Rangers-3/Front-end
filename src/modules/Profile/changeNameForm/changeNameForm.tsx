@@ -1,9 +1,11 @@
 import { yupResolver } from '@hookform/resolvers/yup';
 import { Input } from 'modules/Auth/UI';
 import { isFormFilled } from 'modules/Auth/utils/isFormFilled';
+import { useState } from 'react';
 import { SubmitHandler, useForm } from 'react-hook-form';
 import { getUser, useAppSelector } from 'store';
 
+// import { renameAction } from 'store/actions/renameAction';
 import { userRename } from '../api/userRename';
 
 import { schema } from '../data/changeNameScheme';
@@ -20,10 +22,17 @@ export const ChangeNameForm = () => {
     mode: 'onChange',
     resolver: yupResolver(schema),
   });
+  const { name, fullname, id } = useAppSelector(getUser);
+  // const dispatch = useAppDispatch();
+  const [isNameChanged, setIsNameChanged] = useState(false);
 
-  const onSubmit: SubmitHandler<ChangeNameType> = (data) => userRename(data).then(() => console.log(data));
-
-  const { name, fullname } = useAppSelector(getUser);
+  const onSubmit: SubmitHandler<any> = (data) => {
+    const requestParams = { id, ...data };
+    // dispatch(renameAction(requestParams));
+    userRename(requestParams)
+      .then(() => setIsNameChanged(true))
+      .catch((error) => console.log(error.data.message));
+  };
 
   return (
     <form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
@@ -50,6 +59,7 @@ export const ChangeNameForm = () => {
       >
         Сохранить
       </button>
+      {isNameChanged && <p className={styles.success}>Имя и фамилия пользователя успешно изменены</p>}
     </form>
   );
 };

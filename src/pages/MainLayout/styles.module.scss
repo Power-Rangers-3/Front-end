@@ -13,7 +13,6 @@
   @include breakpoint(xl) {
     width: 1170px;
   }
-
   display: flex;
   flex-direction: column;
   gap: var(--spacing-5);

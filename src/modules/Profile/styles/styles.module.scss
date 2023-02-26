@@ -41,4 +41,12 @@
   .span {
     margin: 20px;
   }
+
+  .error {
+    color: var(--font-color-error);
+  }
+
+  .success {
+    color: rgb(0, 255, 0, 0);
+  }
 }

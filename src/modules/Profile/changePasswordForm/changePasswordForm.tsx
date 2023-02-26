@@ -1,8 +1,12 @@
 import { yupResolver } from '@hookform/resolvers/yup';
 import { Input } from 'modules/Auth/UI';
 import { isFormFilled } from 'modules/Auth/utils/isFormFilled';
+import { useState } from 'react';
 
 import { SubmitHandler, useForm } from 'react-hook-form';
+import { getUser, useAppSelector } from 'store';
+
+import { changePassword } from '../api/changePassword';
 
 import { schema } from '../data/changePasswordScheme';
 import styles from '../styles/styles.module.scss';
@@ -19,7 +23,19 @@ export const NewPasswordForm = () => {
     resolver: yupResolver(schema),
   });
 
-  const onSubmit: SubmitHandler<ChangePasswordType> = (data) => console.log(data);
+  const { email } = useAppSelector(getUser);
+  const [isPasswordChanged, setIsPasswordChanged] = useState(false);
+  const [errorPassword, setErrorPassword] = useState<string>();
+
+  const onSubmit: SubmitHandler<ChangePasswordType> = (data) => {
+    const querryParams = { email: email || '', password: data.currentPassword, newPassword: data.password };
+    changePassword(querryParams)
+      .then((response) => {
+        setIsPasswordChanged(true);
+        console.log(response);
+      })
+      .catch((error) => setErrorPassword(error.response.data.message));
+  };
 
   return (
     <form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
@@ -47,12 +63,14 @@ export const NewPasswordForm = () => {
         />
       </div>
       <button
-        type="button"
+        type="submit"
         className={styles.button}
         disabled={!!(Object.keys(errors).length || isFormFilled(getValues()))}
       >
         Сохранить
       </button>
+      {isPasswordChanged && <p className={styles.success}>Пароль успешно изменен</p>}
+      {errorPassword && <p className={styles.error}>{errorPassword}</p>}
     </form>
   );
 };

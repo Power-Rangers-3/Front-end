@@ -1,13 +1,13 @@
 .menu {
   position: absolute;
   top: 50px;
-  background-color: white;
-  width: 100%;
-  height: 100%;
   display: flex;
   flex-direction: column;
-  padding: 15px;
   gap: var(--spacing-7);
+  width: 100%;
+  height: 100%;
+  padding: 15px;
+  background-color: rgb(250, 250, 250);
 }
 
 .menuButton {
@@ -21,7 +21,7 @@
   transform-origin: var(--spacing-7) 11px;
 
   span {
-    transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+    transition: all .3s cubic-bezier(.645, .045, .355, 1);
   }
 
   :focus {
