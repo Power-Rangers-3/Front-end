@@ -28,10 +28,9 @@ export const SettingsPage = () => {
     if (selectedFile) {
       const formData = new FormData();
       formData.append('file', selectedFile);
-      // Add logic to send the file to the server here
-      console.log('Sending file to server...');
+      // TODO Add logic to send the file to the server here
     } else {
-      console.log('Файл не выбран');
+      // TODO add logic
     }
   };
 
