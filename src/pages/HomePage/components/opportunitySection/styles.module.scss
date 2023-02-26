@@ -5,7 +5,7 @@ main {
 .section {
   display: flex;
   justify-content: center;
-  padding-bottom: var(--spacing-3);
+  padding-bottom: var(--spacing-1);
 }
 
 .wrapper {
@@ -15,7 +15,6 @@ main {
   align-items: center;
   width: 100%;
   max-width: var(--max-width);
-  padding: 0 var(--spacing-7);
 }
 
 .card {
@@ -44,12 +43,6 @@ main {
     text-transform: uppercase;
   }
 }
-
-// .opportunityCardInfo p {
-//   font-size: var(--normalRegular-font-size);
-//   font-weight: var(--normalRegular-font-weight);
-//   line-height: var(--normalRegular-line-height);
-// }
 
 @media (max-width: 980px) {
   .opportunityCard {
