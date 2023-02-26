@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-import { LocalStorage } from 'shared/localStorage/loalStorage';
+import { LocalStorage } from 'shared/localStorage/localStorage';
 
 export const authAxiosInstance = axios.create();
 
