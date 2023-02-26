@@ -1,15 +1,19 @@
 import { useWindowSise } from 'hooks';
-import { BurgerMenu } from 'components/BurgerMenu/BurgerMenu';
-import { MenuNav } from 'components/MenuNav/MenuNav';
 import { ROUTE } from 'router';
 import { logoIcon } from 'assets';
 
 import { Link } from 'react-router-dom';
 
+import { BurgerMenu, MenuNav, Profile } from 'components';
+
+import { getUser, useAppSelector } from 'store';
+
 import styles from './styles.module.scss';
 
 export const Header = () => {
   const { width } = useWindowSise();
+  const { isAuth, email, name } = useAppSelector(getUser);
+
   return (
     <header className={styles.header}>
       {width && width <= 768 ? (
@@ -20,7 +24,7 @@ export const Header = () => {
           <BurgerMenu />
         </div>
       ) : (
-        <MenuNav />
+        <MenuNav>{isAuth && <Profile name={name || 'User'} email={email || ''} />}</MenuNav>
       )}
     </header>
   );

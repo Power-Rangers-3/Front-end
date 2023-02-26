@@ -1,13 +1,24 @@
-import { burgerIcon, cancelIcon } from 'assets';
-import { MenuNav } from 'components/MenuNav/MenuNav';
-import { Portal } from 'components/Portal/Portal';
+import { burgerIcon, cancelIcon, girl } from 'assets';
+import { MenuNav, Portal } from 'components';
 import { TargetPortal } from 'config';
 import { useToogle } from 'hooks';
+
+import { useEffect } from 'react';
 
 import styles from './styles.module.scss';
 
 export const BurgerMenu = () => {
   const [isOpen, toogleMenu] = useToogle();
+
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden';
+    } else document.body.style.overflow = '';
+
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [isOpen]);
 
   return (
     <div className={styles.burgerMenu}>
@@ -21,7 +32,10 @@ export const BurgerMenu = () => {
 
       {isOpen && (
         <Portal target={TargetPortal.BURGER_MENU}>
-          <MenuNav />
+          <div className={styles.menu}>
+            <MenuNav />
+            <img src={girl} alt="girl with notebook" />
+          </div>
         </Portal>
       )}
     </div>

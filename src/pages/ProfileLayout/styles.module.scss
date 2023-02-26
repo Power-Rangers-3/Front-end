@@ -1,3 +1,5 @@
+@import '/src/styles/shared/breakpoints.scss';
+
 .nav {
   display: flex;
   flex-direction: column;
@@ -28,15 +30,24 @@
     &:hover {
       cursor: pointer;
       fill: #3c42bd;
-      transition: fill .3s ease;
+      transition: fill 0.3s ease;
     }
   }
 }
 
 .header {
+  @include breakpoint(md) {
+    padding-right: 50px;
+  }
+  @include breakpoint(lg) {
+    padding-right: 100px;
+  }
+
   display: flex;
   grid-area: header;
+  justify-content: flex-end;
   border-bottom: 1px solid var(--font-color-disabled);
+  padding-right: 15px;
 }
 
 .wrapper {
@@ -46,9 +57,10 @@
     'nav Outlet'
     'nav Outlet';
   // stylelint-disable-next-line declaration-block-no-redundant-longhand-properties
-  grid-template-rows: 50px 1fr;
+  grid-template-rows: 80px 1fr;
   // stylelint-disable-next-line declaration-block-no-redundant-longhand-properties
   grid-template-columns: 320px 1fr;
+  min-height: 100vh;
 }
 
 .logo {

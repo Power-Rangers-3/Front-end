@@ -1,17 +1,20 @@
 import { logoIcon, materialsIcon, myHistoryIcon, myPageIcon, ratesIcon, settingsIcon, walletIcon } from 'assets';
-import { Profile } from 'components/Profile/Profile';
 import { Link, Outlet } from 'react-router-dom';
 import { ROUTE } from 'router';
 import { getUser, useAppSelector } from 'store';
 
+import { ProfileIcon } from './ProfileIcon/ProfileIcon';
+
 import styles from './styles.module.scss';
 
 export const ProfileLayout = () => {
-  const { isAuth, email, name } = useAppSelector(getUser);
+  const { name, fullname } = useAppSelector(getUser);
 
   return (
     <div className={styles.wrapper}>
-      <div className={styles.header}>{isAuth && <Profile name={name || ''} email={email || ''} />}</div>
+      <div className={styles.header}>
+        <ProfileIcon name={name || 'User'} fullname={fullname || ''} />
+      </div>
       <nav className={styles.nav}>
         <Link to={ROUTE.HOME}>
           <img src={logoIcon} className={styles.logo} alt="Townsend logo" />
