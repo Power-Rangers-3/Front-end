@@ -2,11 +2,12 @@ import { Link } from 'react-router-dom';
 
 import { ROUTE } from 'router';
 
-import { ResetPasswordForms } from 'modules/Auth/ResetPassword/ResetPasswordForms';
+import { logoIcon } from 'assets';
+
+import { ResetPasswordForms } from 'modules/Auth';
 
 import styles from '../styles.module.scss';
 
-import { logoIcon } from '../../../assets';
 import { CatIcon } from '../assets';
 
 export const ResetPasswordPage = () => (
