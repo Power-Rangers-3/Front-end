@@ -23,14 +23,12 @@ export const ChangeNameForm = () => {
   });
 
   const { name, fullname } = useAppSelector(getUser);
-  const [isNameChanged, setIsNameChanged] = useState(false);
 
   const dispatch = useAppDispatch();
   const onSubmit: SubmitHandler<ChangeNameType> = (data) => {
     dispatch(renameAction(data))
       .unwrap()
       .then(() => {
-        setIsNameChanged(true);
         reset();
       });
   };
@@ -55,7 +53,6 @@ export const ChangeNameForm = () => {
       <button type="submit" className={styles.button}>
         Сохранить
       </button>
-      {isNameChanged && <p className={styles.success}>Имя и фамилия пользователя успешно изменены</p>}
     </form>
   );
 };
