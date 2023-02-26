@@ -21,7 +21,7 @@ export const ChangeNameForm = () => {
     resolver: yupResolver(schema),
   });
 
-  const onSubmit: SubmitHandler<ChangeNameType> = (data) => userRename(data).then(() => console.log(data));
+  const onSubmit: SubmitHandler<ChangeNameType> = (data) => userRename(data).then(() => console.log(data)); // TODO add submit logic
 
   const { name, fullname } = useAppSelector(getUser);
 
