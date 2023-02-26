@@ -3,15 +3,11 @@
 /* eslint-disable react/require-default-props */
 import { useState } from 'react';
 
-// import { UseFormRegister } from 'react-hook-form';
-
 import styles from './input.styles.module.scss';
 
 import { InputType } from './input.type';
 
 import { WarningIcon, VisibilityIcon, VisibilityOffIcon } from '../../assets';
-
-// import { RegisterUserType } from '../registrationForm.types';
 
 export const Input = ({
   children,
