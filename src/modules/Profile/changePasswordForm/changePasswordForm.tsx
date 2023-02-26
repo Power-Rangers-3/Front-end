@@ -19,7 +19,7 @@ export const NewPasswordForm = () => {
     resolver: yupResolver(schema),
   });
 
-  const onSubmit: SubmitHandler<ChangePasswordType> = (data) => console.log(data);
+  const onSubmit: SubmitHandler<ChangePasswordType> = (data) => console.log(data); // TODO add logic on submit
 
   return (
     <form className={styles.form} onSubmit={handleSubmit(onSubmit)}>

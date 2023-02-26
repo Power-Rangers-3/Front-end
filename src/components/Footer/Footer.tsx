@@ -3,7 +3,7 @@ import styles from './Styles.module.scss';
 import { telegramLight, facebookLight, instagramLight, vkLight, youTubeLight } from '../../assets';
 
 export const Footer = () => (
-  <div className={styles.footer_container}>
+  <footer className={styles.footer_container}>
     <div className={styles.footer_container_left}>
       <h1 className={styles.social_block__title}>TOWNSEND</h1>
       <ul className={styles.social_block__container}>
@@ -138,5 +138,5 @@ export const Footer = () => (
         </ul>
       </div>
     </div>
-  </div>
+  </footer>
 );

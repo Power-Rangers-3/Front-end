@@ -1,12 +1,12 @@
 import { Link } from 'react-router-dom';
 
+import { ROUTE } from 'router';
+
 import { dataArray } from './data/dataArray';
 
-import styles from './styles.opportunitySection.module.scss';
+import styles from './styles.module.scss';
 
 import { DataOpportunityType } from './types/dataOpportunityType';
-
-import { ROUTE } from '../../../../router';
 
 import buttonStyle from '../../../../styles/button.style.module.scss';
 

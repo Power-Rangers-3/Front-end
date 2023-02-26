@@ -1,11 +1,11 @@
-.mainSection {
+.section {
   display: flex;
   justify-content: center;
 }
 
 .wrapper {
   display: flex;
-  gap: var(--spacing-6);
+  gap: var(--spacing-4);
   width: 100%;
   max-width: var(--max-width);
 }
@@ -22,8 +22,7 @@
 }
 
 .infoText h1 {
-  padding-right: var(--spacing-7);
-  padding-bottom: var(--spacing-7);
+  margin-bottom: var(--spacing-7);
   font-size: var(--H1-font-size);
   font-weight: var(--H1-font-weight);
   line-height: var(--H1-line-height);
