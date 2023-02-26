@@ -1,6 +1,6 @@
 import axios, { AxiosError } from 'axios';
 
-import { LocalStorage } from 'shared/localStorage/loalStorage';
+import { LocalStorage } from 'shared/localStorage/localStorage';
 
 import { refreshToken } from './refreshToken';
 
