@@ -1,12 +1,16 @@
 import { yupResolver } from '@hookform/resolvers/yup';
 import { Input } from 'modules/Auth/UI';
 import { isFormFilled } from 'modules/Auth/utils/isFormFilled';
+import { useState } from 'react';
 
 import { SubmitHandler, useForm } from 'react-hook-form';
+import { getUser, useAppSelector } from 'store';
 
-import { schema } from '../data/changePasswordScheme';
+import { changePassword } from '../api';
+
+import { changePasswordScheme } from '../data';
 import styles from '../styles/styles.module.scss';
-import { ChangePasswordType } from '../types/changePasswordType';
+import { ChangePasswordType } from '../types';
 
 export const NewPasswordForm = () => {
   const {
@@ -14,12 +18,26 @@ export const NewPasswordForm = () => {
     handleSubmit,
     formState: { errors },
     getValues,
+    reset,
   } = useForm<ChangePasswordType>({
     mode: 'onChange',
-    resolver: yupResolver(schema),
+    resolver: yupResolver(changePasswordScheme),
   });
 
-  const onSubmit: SubmitHandler<ChangePasswordType> = (data) => console.log(data); // TODO add logic on submit
+  const { email } = useAppSelector(getUser);
+  const [isPasswordChanged, setIsPasswordChanged] = useState(false);
+  const [errorPassword, setErrorPassword] = useState<string>();
+
+  const onSubmit: SubmitHandler<ChangePasswordType> = (data) => {
+    const querryParams = { email: email || '', password: data.currentPassword, newPassword: data.password };
+    changePassword(querryParams)
+      .then(() => {
+        setIsPasswordChanged(true);
+        reset();
+      })
+      .catch((error) => setErrorPassword(error.response.data.message));
+  };
+
 
   return (
     <form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
@@ -47,12 +65,14 @@ export const NewPasswordForm = () => {
         />
       </div>
       <button
-        type="button"
+        type="submit"
         className={styles.button}
         disabled={!!(Object.keys(errors).length || isFormFilled(getValues()))}
       >
         Сохранить
       </button>
+      {isPasswordChanged && <p className={styles.success}>Пароль успешно изменен</p>}
+      {errorPassword && <p className={styles.error}>{errorPassword}</p>}
     </form>
   );
 };

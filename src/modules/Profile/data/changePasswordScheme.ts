@@ -1,6 +1,6 @@
 import * as Yup from 'yup';
 
-export const schema = Yup.object().shape({
+export const changePasswordScheme = Yup.object().shape({
   currentPassword: Yup.string().min(4, 'Число символов должно быть не менее 4').required('Введите старый пароль'),
   password: Yup.string()
     .required('Введите новый пароль')
