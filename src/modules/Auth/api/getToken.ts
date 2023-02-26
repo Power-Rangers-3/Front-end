@@ -1,21 +1,21 @@
 import axios from 'axios';
-import { LocalStorage } from 'shared/localStorage/loalStorage';
+import { LocalStorage } from 'shared/localStorage/localStorage';
 
-const apiToken = `${process.env.REACT_APP_API_AUTH}/auth/login`;
+import { endpoints } from './endpoints';
 
 interface QuerryParamsType {
   email: string;
   password: string;
 }
 
-export async function getToken(querryParams: QuerryParamsType): Promise<string> {
+export const getToken = async (querryParams: QuerryParamsType): Promise<string> => {
   const params = {
     email: querryParams.email.trim(),
     password: querryParams.password.trim(),
   };
 
-  const token: string = await axios.post(apiToken, params).then((response) => response.data.value);
+  const token: string = await axios.post(endpoints.signIn, params).then((response) => response.data.value);
   localStorage.setItem(LocalStorage.AccessToken, token);
 
   return token;
-}
+};

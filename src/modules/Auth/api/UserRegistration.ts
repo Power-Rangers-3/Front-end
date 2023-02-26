@@ -1,6 +1,6 @@
 import axios, { AxiosResponse } from 'axios';
 
-const apiPath = `${process.env.REACT_APP_API_AUTH}/auth/registration`;
+import { endpoints } from './endpoints';
 
 export interface UserRegistrationType {
   email: string;
@@ -9,7 +9,7 @@ export interface UserRegistrationType {
   password: string;
 }
 
-export async function userRegistration(querryParams: UserRegistrationType): Promise<AxiosResponse> {
+export const userRegistration = async (querryParams: UserRegistrationType): Promise<AxiosResponse> => {
   const params = {
     email: querryParams.email.trim(),
     name: querryParams.name.trim(),
@@ -17,5 +17,5 @@ export async function userRegistration(querryParams: UserRegistrationType): Prom
     password: querryParams.password.trim(),
   };
 
-  return axios.post(apiPath, params);
-}
+  return axios.post(endpoints.signUp, params);
+};
