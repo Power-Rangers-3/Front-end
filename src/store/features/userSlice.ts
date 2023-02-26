@@ -1,7 +1,6 @@
 /* eslint-disable no-param-reassign */
 import { createSlice, SerializedError } from '@reduxjs/toolkit';
-
-import { signInAction } from '../actions/signInAction';
+import { renameAction, signInAction } from 'store/actions';
 
 interface IUserSlice {
   email: string | null;
@@ -64,6 +63,19 @@ const userSlice = createSlice({
       .addCase(signInAction.rejected, (state, action) => {
         state.loadingState = action.meta.requestStatus;
         state.error = action.error;
+      });
+    builder
+      .addCase(renameAction.pending, (state, action) => {
+        state.loadingState = action.meta.requestStatus;
+      })
+      .addCase(renameAction.fulfilled, (state, { payload, meta }) => {
+        state.loadingState = meta.requestStatus;
+        state.fullname = payload.fullname;
+        state.name = payload.name;
+      })
+      .addCase(renameAction.rejected, (state, { error, meta }) => {
+        state.loadingState = meta.requestStatus;
+        state.error = error;
       });
   },
 });
