@@ -24,7 +24,7 @@
     height: 56px;
     margin: 25px 0;
     color: var(--background-color);
-    letter-spacing: .0002em;
+    letter-spacing: 0.0002em;
     background: var(--font-color-base);
     border: none;
 
@@ -47,6 +47,6 @@
   }
 
   .success {
-    color: rgb(0, 255, 0, 0);
+    color: rgba(0, 255, 0, 0);
   }
 }

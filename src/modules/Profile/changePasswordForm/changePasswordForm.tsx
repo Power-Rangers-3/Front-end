@@ -6,11 +6,11 @@ import { useState } from 'react';
 import { SubmitHandler, useForm } from 'react-hook-form';
 import { getUser, useAppSelector } from 'store';
 
-import { changePassword } from '../api/changePassword';
+import { changePassword } from '../api';
 
-import { schema } from '../data/changePasswordScheme';
+import { changePasswordScheme } from '../data';
 import styles from '../styles/styles.module.scss';
-import { ChangePasswordType } from '../types/changePasswordType';
+import { ChangePasswordType } from '../types';
 
 export const NewPasswordForm = () => {
   const {
@@ -18,9 +18,10 @@ export const NewPasswordForm = () => {
     handleSubmit,
     formState: { errors },
     getValues,
+    reset,
   } = useForm<ChangePasswordType>({
     mode: 'onChange',
-    resolver: yupResolver(schema),
+    resolver: yupResolver(changePasswordScheme),
   });
 
   const { email } = useAppSelector(getUser);
@@ -30,9 +31,9 @@ export const NewPasswordForm = () => {
   const onSubmit: SubmitHandler<ChangePasswordType> = (data) => {
     const querryParams = { email: email || '', password: data.currentPassword, newPassword: data.password };
     changePassword(querryParams)
-      .then((response) => {
+      .then(() => {
         setIsPasswordChanged(true);
-        console.log(response);
+        reset();
       })
       .catch((error) => setErrorPassword(error.response.data.message));
   };
