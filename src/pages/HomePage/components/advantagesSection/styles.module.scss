@@ -44,11 +44,9 @@
   img {
     @include breakpoint(md) {
       width: 100%;
-      height: auto;
       object-fit: cover;
     }
     width: 50%;
-    height: auto;
     object-fit: cover;
   }
 }
