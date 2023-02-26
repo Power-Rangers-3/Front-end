@@ -1,14 +1,14 @@
-import { RegistrationForm } from 'modules';
-
 import { Link } from 'react-router-dom';
 
 import { ROUTE } from 'router';
 
+import { RegistrationForm } from 'modules/Auth';
+
+import { logoIcon } from 'assets';
+
 import styles from '../styles.module.scss';
 
 import { icons } from '../data/icons';
-
-import { logoIcon } from '../../../assets';
 
 export const RegistrationPage = () => (
   <main className={styles.main}>

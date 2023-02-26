@@ -1,6 +1,5 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
-
-import { userSignIn } from '../../modules';
+import { userSignIn } from 'modules/Auth';
 
 interface UserInfo {
   email: string;
