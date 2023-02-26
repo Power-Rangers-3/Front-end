@@ -19,11 +19,11 @@ export const ChangeNameForm = () => {
     mode: 'onChange',
     resolver: yupResolver(scheme),
   });
-  const { name, fullname, id } = useAppSelector(getUser);
+  const { name, fullname } = useAppSelector(getUser);
   const [isNameChanged, setIsNameChanged] = useState(false);
 
-  const onSubmit: SubmitHandler<any> = (data) => {
-    const requestParams = { id, ...data };
+  const onSubmit: SubmitHandler<any> = () => {
+    setIsNameChanged(true);
   };
 
   return (
