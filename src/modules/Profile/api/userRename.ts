@@ -1,23 +1,14 @@
-import { LocalStorage } from 'shared/localStorage/loalStorage';
+import { LocalStorage } from 'shared/localStorage/localStorage';
 
 import { authAxiosInstance } from './authAxiosInstance';
 
-const apiPath = `${process.env.REACT_APP_API_AUTH}/users/1/update/`;
-
-interface UserRenameType {
-  email?: string;
-  password?: string;
-  name?: string;
-  fullname?: string;
-  phone?: string;
-  telegram?: string;
+interface UserData {
+  name: string;
+  fullname: string;
 }
 
-export async function userRename(user: any): Promise<UserRenameType> {
-  const params = {
-    name: user.name,
-    fullname: user.fullname,
-  };
+export const userRename = async (user: UserData, id: number | string | null) => {
+  const apiPath = `${process.env.REACT_APP_API_AUTH}/users/${id}/update/`;
   const accessToken = localStorage.getItem(LocalStorage.AccessToken);
-  return accessToken ? authAxiosInstance.patch(apiPath, params).then(({ data }) => data) : null;
-}
+  return accessToken && authAxiosInstance.patch(apiPath, user).then(({ data }) => data);
+};
