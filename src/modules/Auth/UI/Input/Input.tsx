@@ -46,17 +46,17 @@ export const Input = ({
           {...register(id || { email: '', username: '', password: '' })}
         />
         {Icon && !iconStart && <span className={styles.marginLeft}>{Icon}</span>}
-        {type === 'password' ? (
+        {type === 'password' && (
           <span className={`${styles.iconEnd} ${styles.iconColor}`} onMouseDown={handleClick} onMouseUp={handleClick}>
             {isShowPassword ? <VisibilityIcon /> : <VisibilityOffIcon />}
           </span>
-        ) : null}
+        )}
 
-        {error ? (
+        {error && (
           <span className={styles.warningText} onClick={handleClick}>
             <WarningIcon /> {error}
           </span>
-        ) : null}
+        )}
       </div>
     </div>
   );
