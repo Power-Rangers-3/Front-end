@@ -1,5 +1,4 @@
 import { yupResolver } from '@hookform/resolvers/yup';
-import { Input } from 'modules/Auth/UI';
 import { isFormFilled } from 'modules/Auth/utils/isFormFilled';
 import { useState } from 'react';
 
@@ -11,6 +10,7 @@ import { changePassword } from '../api';
 import { changePasswordScheme } from '../data';
 import styles from '../styles/styles.module.scss';
 import { ChangePasswordType } from '../types';
+import { Input } from '../UI';
 
 export const NewPasswordForm = () => {
   const {
@@ -37,7 +37,6 @@ export const NewPasswordForm = () => {
       })
       .catch((error) => setErrorPassword(error.response.data.message));
   };
-
 
   return (
     <form className={styles.form} onSubmit={handleSubmit(onSubmit)}>

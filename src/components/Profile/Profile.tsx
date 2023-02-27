@@ -1,7 +1,7 @@
 import { useToogle } from 'hooks';
 import { Link } from 'react-router-dom';
 import { ROUTE } from 'router';
-import { LocalStorage } from 'shared/localStorage/loalStorage';
+import { LocalStorage } from 'shared/localStorage/localStorage';
 import { logout, useAppDispatch } from 'store';
 
 import styles from './styles.module.scss';

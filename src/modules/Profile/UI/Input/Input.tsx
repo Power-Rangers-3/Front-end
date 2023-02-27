@@ -1,13 +1,12 @@
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable react/require-default-props */
+import { VisibilityIcon, VisibilityOffIcon, WarningIcon } from 'modules/Profile/assets';
 import { useState } from 'react';
 
 import styles from './input.styles.module.scss';
 
 import { InputType } from './input.type';
-
-import { WarningIcon, VisibilityIcon, VisibilityOffIcon } from '../../assets';
 
 export const Input = ({
   children,

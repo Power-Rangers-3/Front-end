@@ -1,4 +1,4 @@
-import { LocalStorage } from 'shared/localStorage/loalStorage';
+import { LocalStorage } from 'shared/localStorage/localStorage';
 
 import { authAxiosInstance } from './authAxiosInstance';
 
@@ -12,7 +12,7 @@ interface UserInfo {
   roles: [] | null;
 }
 
-export async function userSignIn(): Promise<UserInfo> {
+export const userSignIn = async (): Promise<UserInfo> => {
   const accessToken = localStorage.getItem(LocalStorage.AccessToken);
-  return accessToken ? authAxiosInstance.get(apiPath).then(({ data }) => data) : null;
-}
+  return accessToken && authAxiosInstance.get(apiPath).then(({ data }) => data);
+};

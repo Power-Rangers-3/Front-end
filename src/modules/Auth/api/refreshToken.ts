@@ -1,10 +1,10 @@
 import axios from 'axios';
-import { LocalStorage } from 'shared/localStorage/loalStorage';
+import { LocalStorage } from 'shared/localStorage/localStorage';
 
-const apiToken = `${process.env.REACT_APP_API_AUTH}/auth/refresh/`;
+import { endpoints } from './endpoints';
 
-export async function refreshToken(): Promise<void> {
-  await axios.get(apiToken).then(({ data }) => {
+export const refreshToken = async (): Promise<void> => {
+  await axios.get(endpoints.refreshToken).then(({ data }) => {
     localStorage.setItem(LocalStorage.AccessToken, data);
   });
-}
+};
