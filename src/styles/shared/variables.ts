@@ -106,14 +106,14 @@ export const TYPOGRAPHY = {
       lineHeight: '1rem',
     },
     extraLargeBold: {
-      fontSize: '1.125rem',
+      fontSize: '1.25rem',
       fontWeight: FontWeight.Bold,
-      lineHeight: '1.63rem',
+      lineHeight: '1.875rem',
     },
     extraLargeRegular: {
-      fontSize: '1.125rem',
+      fontSize: '1.25rem',
       fontWeight: FontWeight.Regular,
-      lineHeight: '1.63rem',
+      lineHeight: '1.875rem',
     },
     largeBold: {
       fontSize: '1rem',

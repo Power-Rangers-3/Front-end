@@ -19,7 +19,7 @@ export function ProtectedAdminPage({
   // }
 
   // удалить после реализации ролей
-  if (true || user?.isAuth) {
+  if (user?.isAuth) {
     return children;
   }
 

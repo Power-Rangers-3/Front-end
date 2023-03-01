@@ -42,7 +42,9 @@ export const router = (user: IUserSlice) => {
               <AdminPageLayout />
             </ProtectedAdminPage>
           }
-        />
+        >
+          <Route path={`${ROUTE.ADMIN}/:PAGE`} element={<div>Страница</div>} />
+        </Route>
       </>,
     ),
   );

@@ -19,14 +19,16 @@ export const MenuNavAdmin = () => (
       <img src={logoIcon} className={styles.logo} alt="Townsend logo" />
     </Link>
     <ul className={styles.linksWrapper}>
-      {menuList.map(({ url, id, img, text }) => (
-        <Link to={url} key={id} className={styles.links}>
-          <img src={img} alt={img} />
-          {text}
-        </Link>
-      ))}
+      {menuList.map(({ url, id, image, text }) => {
+        const Image = image;
+        return (
+          <Link to={url} key={id} className={styles.links}>
+            <Image /> {text}
+          </Link>
+        );
+      })}
     </ul>
-    <Link to={ROUTE.HOME}>
+    <Link to={ROUTE.HOME} className={styles.exit}>
       <img src={exit} alt="Exit logo" />
       <span>Выйти</span>
     </Link>
