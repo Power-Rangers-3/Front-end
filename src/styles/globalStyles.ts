@@ -34,6 +34,7 @@ export const getGlobalStyles = () => css`
     --border-color-focused: ${colors.borderFocused};
     --border-color-disabled: ${colors.borderDisabled};
     --border-color-warning: ${colors.borderWarning};
+    --border-color-grid: ${colors.borderGrid};
     --additional-color: ${colors.additional};
     --body-font-family: var(--font-family);
 

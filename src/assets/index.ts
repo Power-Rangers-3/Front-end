@@ -16,6 +16,8 @@ import avatarIcon from './icons/avatar.svg';
 import uploadedIcon from './icons/uploaded.svg';
 import girl from './images/girl.png';
 import dashboardIcon from './icons/dashboard-icon.svg';
+import exit from './icons/exit.svg';
+import avatar from './images/avatar.jpg';
 
 export {
   girl,
@@ -36,4 +38,6 @@ export {
   avatarIcon,
   uploadedIcon,
   dashboardIcon,
+  exit,
+  avatar,
 };

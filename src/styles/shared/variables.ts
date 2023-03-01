@@ -217,6 +217,7 @@ export const colors = {
   borderFocused: '#556EFE',
   borderWarning: '#FFAA00',
   borderDisabled: '#B3B3B3',
+  borderGrid: '#B3B3B3',
   additional: '#556EFE',
 };
 

@@ -1,17 +1,9 @@
 /* eslint-disable no-param-reassign */
-import { createSlice, SerializedError } from '@reduxjs/toolkit';
+import { createSlice } from '@reduxjs/toolkit';
+
 import { renameAction, signInAction } from 'store/actions';
 
-interface IUserSlice {
-  email: string | null;
-  name: string | null;
-  fullname: string | null;
-  id: number | null | string;
-  roles: [] | null;
-  isAuth: boolean;
-  loadingState: 'idle' | 'pending' | 'fulfilled' | 'rejected';
-  error: SerializedError | null;
-}
+import { IUserSlice } from 'store/types';
 
 const initialState: IUserSlice = {
   email: null,
