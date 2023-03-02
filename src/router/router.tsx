@@ -12,13 +12,13 @@ import { AdminPageLayout } from 'pages/AdminPage/AdminPageLayout/AdminPageLayout
 import { ProfileDashboardPage } from 'pages/ProfileDashboardPage/ProfileDashboardPage';
 
 import { createBrowserRouter, createRoutesFromElements, Route } from 'react-router-dom';
-import { IUserSlice } from 'store/types';
+import { IUser } from 'store/types';
 
 import { ProtectedAdminPage } from './ProtectedAdminPage';
 
 import { ROUTE } from './routes';
 
-export const router = (user: IUserSlice) =>
+export const router = (user: IUser) =>
   createBrowserRouter(
     createRoutesFromElements(
       <>
@@ -45,9 +45,7 @@ export const router = (user: IUserSlice) =>
               <AdminPageLayout />
             </ProtectedAdminPage>
           }
-        >
-          <Route path={`${ROUTE.ADMIN}/:PAGE`} element={<div>Страница</div>} />
-        </Route>
+        />
       </>,
     ),
   );
