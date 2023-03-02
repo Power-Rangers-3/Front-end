@@ -1,2 +1,2 @@
-export * from './IUserSlice';
+export * from './IUser';
 export * from './types';

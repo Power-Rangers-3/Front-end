@@ -3,14 +3,26 @@ import { createSlice } from '@reduxjs/toolkit';
 
 import { renameAction, signInAction } from 'store/actions';
 
-import { IUserSlice } from 'store/types';
+import { IUser } from 'store/types';
 
-const initialState: IUserSlice = {
+const initialState: IUser = {
+  id: null,
   email: null,
+  password: null,
   name: null,
   fullname: null,
-  id: null,
-  roles: null,
+  telegram: null,
+  phone: null,
+  idRole: null,
+  createAt: null,
+  updateAt: null,
+  role: {
+    id: null,
+    role: null,
+    description: null,
+    createAt: null,
+    updateAt: null,
+  },
   isAuth: false,
   loadingState: 'idle',
   error: null,
@@ -24,6 +36,8 @@ const userSlice = createSlice({
       state.email = null;
       state.name = null;
       state.fullname = null;
+      state.role.id = null;
+      state.role.role = null;
       state.isAuth = false;
     },
   },
@@ -35,19 +49,20 @@ const userSlice = createSlice({
         state.name = null;
         state.fullname = null;
         state.id = null;
-        state.roles = null;
+        state.role.id = null;
+        state.role.role = null;
         state.isAuth = false;
         state.error = null;
       })
       .addCase(signInAction.fulfilled, (state, action) => {
         state.loadingState = action.meta.requestStatus;
         if (action?.payload?.email) {
-          const { email, name, fullname, id, roles } = action.payload;
+          const { email, name, fullname, id, role } = action.payload;
           state.email = email;
           state.name = name;
           state.fullname = fullname;
           state.id = id;
-          state.roles = roles;
+          state.role.role = role.role;
           state.isAuth = true;
           state.error = null;
         }

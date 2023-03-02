@@ -3,7 +3,7 @@ import { getUser, useAppSelector } from 'store';
 import { MenuNavAdmin } from 'components';
 
 import { avatar } from 'assets';
-// import { Outlet } from 'react-router';
+
 import { Outlet } from 'react-router';
 
 import styles from './styles.module.scss';
@@ -16,7 +16,7 @@ export const AdminPageLayout = () => {
         <MenuNavAdmin />
         <header className={styles.header}>
           <p>{name || 'UserName'}</p>
-          <img src={avatar} alt="" />
+          <img src={avatar} alt="avatar" />
         </header>
         <div className={styles.main}>
           Main

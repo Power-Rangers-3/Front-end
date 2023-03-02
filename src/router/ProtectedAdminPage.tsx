@@ -1,6 +1,6 @@
 import { Navigate } from 'react-router-dom';
 
-import { IUserSlice } from 'store/types';
+import { IUser } from 'store/types';
 
 import { ROUTE } from './routes';
 
@@ -10,16 +10,10 @@ export function ProtectedAdminPage({
   children,
 }: {
   redirectPage?: string;
-  user?: IUserSlice;
+  user?: IUser;
   children: JSX.Element;
 }) {
-  // раскомментировать после реализации ролей
-  // if (user?.isAuth && user?.roles?.includes('admin')) {
-  //   return children;
-  // }
-
-  // удалить после реализации ролей
-  if (user?.isAuth) {
+  if (user?.isAuth && user?.role?.role === 'SuperAdmin') {
     return children;
   }
 

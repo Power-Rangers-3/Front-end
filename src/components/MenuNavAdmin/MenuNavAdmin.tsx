@@ -8,11 +8,6 @@ import { menuList } from './menuList';
 
 import styles from './styles.module.scss';
 
-// interface IProps {
-//   // eslint-disable-next-line react/require-default-props
-//   children?: ReactNode;
-// }
-
 export const MenuNavAdmin = () => (
   <nav className={styles.nav}>
     <Link to={ROUTE.HOME}>
