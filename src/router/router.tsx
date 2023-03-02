@@ -9,6 +9,7 @@ import {
   SignInPage,
 } from 'pages';
 import { AdminPageLayout } from 'pages/AdminPage/AdminPageLayout/AdminPageLayout';
+import { ProfileDashboardPage } from 'pages/ProfileDashboardPage/ProfileDashboardPage';
 
 import { createBrowserRouter, createRoutesFromElements, Route } from 'react-router-dom';
 import { IUserSlice } from 'store/types';
@@ -17,16 +18,18 @@ import { ProtectedAdminPage } from './ProtectedAdminPage';
 
 import { ROUTE } from './routes';
 
-export const router = (user: IUserSlice) => {
-  console.log(user);
-  return createBrowserRouter(
+export const router = (user: IUserSlice) =>
+  createBrowserRouter(
     createRoutesFromElements(
       <>
         <Route path={ROUTE.HOME} element={<MainLayout />}>
           <Route index element={<HomePage />} />
         </Route>
         <Route path={ROUTE.PROFILE} element={<ProfileLayout />}>
-          <Route index element={<div />} />
+          <Route path={ROUTE.PROFILE} element={<ProfileDashboardPage />}>
+            <Route path={ROUTE.PROFILE_FAVORITE} element={<div>Избранное</div>} />
+            <Route path={ROUTE.PROFILE_HISTORY} element={<div>История поиска</div>} />
+          </Route>
           <Route path={ROUTE.PROFILE_SETTINGS} element={<SettingsPage />} />
         </Route>
         <Route path={ROUTE.SIGN_UP} element={<RegistrationPage />} />
@@ -48,4 +51,3 @@ export const router = (user: IUserSlice) => {
       </>,
     ),
   );
-};

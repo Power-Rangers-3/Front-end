@@ -487,4 +487,72 @@ export const getGlobalStyles = () => css`
   [hidden] {
     display: none !important;
   }
+
+  .button {
+    padding: var(--spacing-7) var(--spacing-5);
+    font-size: var(--normalRegular-font-size);
+    font-weight: var(--normalRegular-font-weight);
+    line-height: var(--normalRegular-line-height);
+    color: var(--font-color-base);
+    background-color: var(--background-color-base);
+    border: 1px solid var(--border-color);
+
+    &:hover {
+      color: var(--font-color-hover);
+      border-color: var(--border-color-hover);
+    }
+
+    &:active {
+      border-color: var(--border-color);
+    }
+
+    &:focus {
+      color: var(--font-color-focused);
+      border-color: var(--border-color);
+    }
+
+    &:disabled {
+      background-color: var(--background-color-button-disabled);
+      border-color: var(--border-color-disabled);
+    }
+  }
+
+  .buttonDark {
+    color: var(--font-color-invert);
+    background-color: var(--background-color-button-invert);
+
+    &:hover {
+      color: var(--font-color-invert);
+      background-color: var(--background-color-button-hover);
+    }
+
+    &:focus {
+      color: var(--font-color-invert);
+    }
+
+    &:disabled {
+      color: var(--font-color-invert);
+      background-color: var(--background-color-button-disabled);
+    }
+  }
+
+  .buttonBright {
+    color: var(--font-color-invert);
+    background-color: var(--background-color-bright);
+    border: 1px solid var(--background-color-bright);
+
+    &:hover {
+      color: var(--font-color-invert);
+      background-color: var(--background-color-button-hover);
+    }
+
+    &:focus {
+      color: var(--font-color-invert);
+    }
+
+    &:disabled {
+      color: var(--font-color-invert);
+      background-color: var(--background-color-button-disabled);
+    }
+  }
 `;
