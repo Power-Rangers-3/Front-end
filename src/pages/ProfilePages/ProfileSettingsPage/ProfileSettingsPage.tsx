@@ -6,7 +6,7 @@ import { useState } from 'react';
 
 import styles from './styles.module.scss';
 
-export const SettingsPage = () => {
+export const ProfileSettingsPage = () => {
   const [selectedFile, setSelectedFile] = useState<File | null>(null);
   const [imageUrl, setImageUrl] = useState('');
 

@@ -106,14 +106,14 @@ export const TYPOGRAPHY = {
       lineHeight: '1rem',
     },
     extraLargeBold: {
-      fontSize: '1.125rem',
+      fontSize: '1.25rem',
       fontWeight: FontWeight.Bold,
-      lineHeight: '1.63rem',
+      lineHeight: '1.875rem',
     },
     extraLargeRegular: {
-      fontSize: '1.125rem',
+      fontSize: '1.25rem',
       fontWeight: FontWeight.Regular,
-      lineHeight: '1.63rem',
+      lineHeight: '1.875rem',
     },
     largeBold: {
       fontSize: '1rem',
@@ -217,6 +217,7 @@ export const colors = {
   borderFocused: '#556EFE',
   borderWarning: '#FFAA00',
   borderDisabled: '#B3B3B3',
+  borderGrid: '#B3B3B3',
   additional: '#556EFE',
 };
 
