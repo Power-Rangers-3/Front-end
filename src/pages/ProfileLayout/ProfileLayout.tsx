@@ -20,31 +20,33 @@ export const ProfileLayout = () => {
           <img src={logoIcon} className={styles.logo} alt="Townsend logo" />
         </Link>
         <Link to={ROUTE.PROFILE} className={styles.nav__link}>
-          <img src={myPageIcon} className={styles.nav__logo} alt="Моя страница" />
-          Моя страница
+          <img src={myPageIcon} className={styles.nav__logo} alt="Дашборд" />
+          Дашборд
         </Link>
         <Link to={ROUTE.PROFILE} className={styles.nav__link}>
-          <img src={materialsIcon} className={styles.nav__logo} alt="Обучающие материалы" />
-          Обучающие материалы
+          <img src={materialsIcon} className={styles.nav__logo} alt="Подобрать решение" />
+          Подобрать решение
         </Link>
         <Link to={ROUTE.PROFILE} className={styles.nav__link}>
-          <img src={myHistoryIcon} className={styles.nav__logo} alt="История операций" />
-          История операций
+          <img src={myHistoryIcon} className={styles.nav__logo} alt="Подобрать платформу" />
+          Подобрать платформу
         </Link>
         <Link to={ROUTE.PROFILE} className={styles.nav__link}>
-          <img src={walletIcon} className={styles.nav__logo} alt="Кошелёк" />
-          Кошелёк
+          <img src={walletIcon} className={styles.nav__logo} alt="Профиль" />
+          Профиль
         </Link>
         <Link to={ROUTE.PROFILE} className={styles.nav__link}>
           <img src={ratesIcon} className={styles.nav__logo} alt="Тарифы" />
-          Тарифы
+          Избранное
         </Link>
         <Link to={ROUTE.PROFILE_SETTINGS} className={styles.nav__link}>
           <img src={settingsIcon} className={styles.nav__logo} alt="Настройки" />
           Настройки
         </Link>
       </nav>
-      <Outlet />
+      <div className={styles.outlet}>
+        <Outlet />
+      </div>
     </div>
   );
 };
