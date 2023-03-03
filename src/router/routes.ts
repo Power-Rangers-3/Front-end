@@ -5,8 +5,8 @@ export enum ROUTE {
   SIGN_IN = '/sign-in',
   RESET_PASSWORD = '/reset-password',
   NEW_PASSWORD = '/new-password',
-  PROFILE_SETTINGS = '/profile/settings',
-  PROFILE_FAVORITE = '/profile/favorite',
-  PROFILE_HISTORY = '/profile/history',
+  PROFILE_SETTINGS = 'settings',
+  PROFILE_FAVORITE = 'favorite',
+  PROFILE_HISTORY = 'history',
   ADMIN = '/admin',
 }
