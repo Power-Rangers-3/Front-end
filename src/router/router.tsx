@@ -9,6 +9,8 @@ import {
   SignInPage,
 } from 'pages';
 
+import { PlatformsPage } from 'pages/PlatformsPage/PlatformsPage';
+
 import { createBrowserRouter, createRoutesFromElements, Route } from 'react-router-dom';
 
 import { ROUTE } from './routes';
@@ -18,6 +20,7 @@ export const router = createBrowserRouter(
     <>
       <Route path={ROUTE.HOME} element={<MainLayout />}>
         <Route index element={<HomePage />} />
+        <Route path={ROUTE.PLATFORMS} element={<PlatformsPage />} />
       </Route>
       <Route path={ROUTE.PROFILE} element={<ProfileLayout />}>
         <Route index element={<div />} />
