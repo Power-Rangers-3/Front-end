@@ -1,0 +1,72 @@
+@import '/src/styles/shared/breakpoints.scss';
+
+.nav {
+  display: flex;
+  flex-direction: column;
+  grid-area: nav;
+  padding: 0 var(--spacing-7);
+  border-right: 1px solid var(--font-color-disabled);
+
+  &__link {
+    margin: 20px 0;
+    font-size: 20px;
+    font-weight: var(--normalRegular-font-size);
+    line-height: 150%;
+
+    &:hover,
+    &:active {
+      color: #3c42bd;
+      cursor: pointer;
+    }
+  }
+
+  &__logo {
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
+    cursor: pointer;
+    fill: var(--font-color-base);
+
+    &:hover {
+      cursor: pointer;
+      fill: #3c42bd;
+      transition: fill .3s ease;
+    }
+  }
+}
+
+.header {
+  @include breakpoint(md) {
+    padding-right: 50px;
+  }
+
+  @include breakpoint(lg) {
+    padding-right: 100px;
+  }
+  display: flex;
+  grid-area: header;
+  justify-content: flex-end;
+  padding-right: 15px;
+  border-bottom: 1px solid var(--font-color-disabled);
+}
+
+.wrapper {
+  display: grid;
+  grid-template-areas:
+    'nav header'
+    'nav Outlet'
+    'nav Outlet';
+  // stylelint-disable-next-line declaration-block-no-redundant-longhand-properties
+  grid-template-rows: 80px 1fr;
+  // stylelint-disable-next-line declaration-block-no-redundant-longhand-properties
+  grid-template-columns: 320px 1fr;
+  min-height: 100vh;
+}
+
+.logo {
+  margin: 27px 0;
+}
+
+.outlet {
+  padding: var(--spacing-6);
+}

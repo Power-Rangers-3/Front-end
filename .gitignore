@@ -4,8 +4,6 @@
 /node_modules
 /.pnp
 .pnp.js
-package-lock.json
-package.json
 
 
 # testing
@@ -31,3 +29,4 @@ yarn-error.log*
 .production.env
 
 /.vscode
+/.idea

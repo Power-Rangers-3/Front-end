@@ -8,7 +8,7 @@ export const getGlobalStyles = () => css`
   :root {
     --font-family: 'Monstserrat', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
       'Liberation Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
-    --max-width: ${Breakpoints.Desktop};
+    --max-width: ${Breakpoints.xxl};
     --font-color-base: ${colors.fontBase};
     --font-color-hover: ${colors.fontHover};
     --font-color-disabled: ${colors.fontDisabled};
@@ -20,6 +20,7 @@ export const getGlobalStyles = () => css`
     --background-color-invert: ${colors.backgroundInvert};
     --background-color-bright: ${colors.backgroundBright};
     --background-color-fields: ${colors.backgroundFields};
+    --background-color-reset: ${colors.backgroundReset};
     --background-color-warning: ${colors.backgroundWarning};
     --background-color-button: ${colors.backgroundButton};
     --background-color-button-invert: ${colors.backgroundButtonInvert};
@@ -33,6 +34,7 @@ export const getGlobalStyles = () => css`
     --border-color-focused: ${colors.borderFocused};
     --border-color-disabled: ${colors.borderDisabled};
     --border-color-warning: ${colors.borderWarning};
+    --border-color-grid: ${colors.borderGrid};
     --additional-color: ${colors.additional};
     --body-font-family: var(--font-family);
 
@@ -89,10 +91,64 @@ export const getGlobalStyles = () => css`
     --spacing-8: ${SPACING.desktop.L8};
     --spacing-9: ${SPACING.desktop.L9};
     --spacing-10: ${SPACING.desktop.L10};
-  }
-  @media (max-width: ${Breakpoints.Tablet}) {
-  }
-  @media (max-width: ${Breakpoints.Mobile}) {
+
+    @media (max-width: ${Breakpoints.xl}) {
+      --H1-font-size: ${TYPOGRAPHY.tablet.heading1.fontSize};
+      --H1-line-height: ${TYPOGRAPHY.tablet.heading1.lineHeight};
+      --H1-font-weight: ${TYPOGRAPHY.tablet.heading1.fontWeight};
+      --H2-font-size: ${TYPOGRAPHY.tablet.heading2.fontSize};
+      --H2-line-height: ${TYPOGRAPHY.tablet.heading2.lineHeight};
+      --H2-font-weight: ${TYPOGRAPHY.tablet.heading2.fontWeight};
+      --H3-font-size: ${TYPOGRAPHY.tablet.heading3.fontSize};
+      --H3-line-height: ${TYPOGRAPHY.tablet.heading3.lineHeight};
+      --H3-font-weight: ${TYPOGRAPHY.tablet.heading3.fontWeight};
+      --H4-font-size: ${TYPOGRAPHY.tablet.heading4.fontSize};
+      --H4-line-height: ${TYPOGRAPHY.tablet.heading4.lineHeight};
+      --H4-font-weight: ${TYPOGRAPHY.tablet.heading4.fontWeight};
+      --H5-font-size: ${TYPOGRAPHY.tablet.heading5.fontSize};
+      --H5-line-height: ${TYPOGRAPHY.tablet.heading5.lineHeight};
+      --H5-font-weight: ${TYPOGRAPHY.tablet.heading5.fontWeight};
+      --H6-font-size: ${TYPOGRAPHY.tablet.heading6.fontSize};
+      --H6-line-height: ${TYPOGRAPHY.tablet.heading6.lineHeight};
+      --H6-font-weight: ${TYPOGRAPHY.tablet.heading6.fontWeight};
+      --extraLargeBold-font-size: ${TYPOGRAPHY.tablet.extraLargeBold.fontSize};
+      --extraLargeBold-line-height: ${TYPOGRAPHY.tablet.extraLargeBold.lineHeight};
+      --extraLargeBold-font-weight: ${TYPOGRAPHY.tablet.extraLargeBold.fontWeight};
+      --extraLargeRegular-font-size: ${TYPOGRAPHY.tablet.extraLargeRegular.fontSize};
+      --extraLargeRegular-line-height: ${TYPOGRAPHY.tablet.extraLargeRegular.lineHeight};
+      --extraLargeRegular-font-weight: ${TYPOGRAPHY.tablet.extraLargeRegular.fontWeight};
+      --largeBold-font-size: ${TYPOGRAPHY.tablet.largeBold.fontSize};
+      --largeBold-line-height: ${TYPOGRAPHY.tablet.largeBold.lineHeight};
+      --largeBold-font-weight: ${TYPOGRAPHY.tablet.largeBold.fontWeight};
+      --largeRegular-font-size: ${TYPOGRAPHY.tablet.largeRegular.fontSize};
+      --largeRegular-line-height: ${TYPOGRAPHY.tablet.largeRegular.lineHeight};
+      --largeRegular-font-weight: ${TYPOGRAPHY.tablet.largeRegular.fontWeight};
+      --normalBold-font-size: ${TYPOGRAPHY.tablet.normalBold.fontSize};
+      --normalBold-line-height: ${TYPOGRAPHY.tablet.normalBold.lineHeight};
+      --normalBold-font-weight: ${TYPOGRAPHY.tablet.normalBold.fontWeight};
+      --normalRegular-font-size: ${TYPOGRAPHY.tablet.normalRegular.fontSize};
+      --normalRegular-line-height: ${TYPOGRAPHY.tablet.normalRegular.lineHeight};
+      --normalRegular-font-weight: ${TYPOGRAPHY.tablet.normalRegular.fontWeight};
+      --smallBold-font-size: ${TYPOGRAPHY.tablet.smallBold.fontSize};
+      --smallBold-line-height: ${TYPOGRAPHY.tablet.smallBold.lineHeight};
+      --smallBold-font-weight: ${TYPOGRAPHY.tablet.smallBold.fontWeight};
+      --smallRegular-font-size: ${TYPOGRAPHY.tablet.smallRegular.fontSize};
+      --smallRegular-line-height: ${TYPOGRAPHY.tablet.smallRegular.lineHeight};
+      --smallRegular-font-weight: ${TYPOGRAPHY.tablet.smallRegular.fontWeight};
+
+      --spacing-1: ${SPACING.tablet.L1};
+      --spacing-2: ${SPACING.tablet.L2};
+      --spacing-3: ${SPACING.tablet.L3};
+      --spacing-4: ${SPACING.tablet.L4};
+      --spacing-5: ${SPACING.tablet.L5};
+      --spacing-6: ${SPACING.tablet.L6};
+      --spacing-7: ${SPACING.tablet.L7};
+      --spacing-8: ${SPACING.tablet.L8};
+      --spacing-9: ${SPACING.tablet.L9};
+      --spacing-10: ${SPACING.tablet.L10};
+    }
+    @media (max-width: ${Breakpoints.md}) {
+    }
   }
   *,
   *::before,
@@ -117,6 +173,12 @@ export const getGlobalStyles = () => css`
     height: 100%;
     margin: 0;
   }
+
+  main {
+    display: flex;
+    justify-content: center;
+  }
+
   hr {
     margin: 0;
     color: inherit;
@@ -139,7 +201,7 @@ export const getGlobalStyles = () => css`
   h1 {
     font-size: var(--H1-font-size);
     font-weight: var(--H1-font-weight);
-    line-height: var(--H1-1-line-height);
+    line-height: var(--H1-line-height);
   }
   h2 {
     font-size: var(--H2-font-size);
@@ -189,6 +251,12 @@ export const getGlobalStyles = () => css`
     font-size: var(--largeRegular-font-size);
     font-weight: var(--largeRegular-font-weight);
     line-height: var(--largeRegular-line-height);
+  }
+
+  input:-internal-autofill-selected {
+    appearance: menulist-button;
+    background-image: none !important;
+    color: #ffffff !important;
   }
 
   input::placeholder {
@@ -418,5 +486,73 @@ export const getGlobalStyles = () => css`
   }
   [hidden] {
     display: none !important;
+  }
+
+  .button {
+    padding: var(--spacing-7) var(--spacing-5);
+    font-size: var(--normalRegular-font-size);
+    font-weight: var(--normalRegular-font-weight);
+    line-height: var(--normalRegular-line-height);
+    color: var(--font-color-base);
+    background-color: var(--background-color-base);
+    border: 1px solid var(--border-color);
+
+    &:hover {
+      color: var(--font-color-hover);
+      border-color: var(--border-color-hover);
+    }
+
+    &:active {
+      border-color: var(--border-color);
+    }
+
+    &:focus {
+      color: var(--font-color-focused);
+      border-color: var(--border-color);
+    }
+
+    &:disabled {
+      background-color: var(--background-color-button-disabled);
+      border-color: var(--border-color-disabled);
+    }
+  }
+
+  .buttonDark {
+    color: var(--font-color-invert);
+    background-color: var(--background-color-button-invert);
+
+    &:hover {
+      color: var(--font-color-invert);
+      background-color: var(--background-color-button-hover);
+    }
+
+    &:focus {
+      color: var(--font-color-invert);
+    }
+
+    &:disabled {
+      color: var(--font-color-invert);
+      background-color: var(--background-color-button-disabled);
+    }
+  }
+
+  .buttonBright {
+    color: var(--font-color-invert);
+    background-color: var(--background-color-bright);
+    border: 1px solid var(--background-color-bright);
+
+    &:hover {
+      color: var(--font-color-invert);
+      background-color: var(--background-color-button-hover);
+    }
+
+    &:focus {
+      color: var(--font-color-invert);
+    }
+
+    &:disabled {
+      color: var(--font-color-invert);
+      background-color: var(--background-color-button-disabled);
+    }
   }
 `;

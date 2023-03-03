@@ -1,3 +1,5 @@
+@import '/src/styles/shared/breakpoints.scss';
+
 ul {
   padding: 0;
   margin: 0;
@@ -18,15 +20,21 @@ a {
 }
 
 .footer_container {
+  @include breakpoint(md) {
+    flex-direction: row;
+  }
   display: flex;
+  flex-direction: column;
+  gap: var(--spacing-2);
   justify-content: space-between;
-  max-width: 1440px;
-  padding: 46.5px 100px;
-  margin: auto;
+  padding-bottom: var(--spacing-6);
 }
 
 .footer_container_left {
-  margin-top: 102.5px;
+  // margin-top: 102.5px;
+  display: flex;
+  flex-basis: 25%;
+  flex-direction: column;
 }
 
 .social_block__title {
@@ -39,14 +47,21 @@ a {
 
 .social_block__container {
   display: flex;
-  gap: 23px;
+  flex-direction: row;
+  gap: var(--spacing-7);
   padding: 0;
   margin-top: 31.67px;
 }
 
 .right_info_container {
+  @include breakpoint(md) {
+    justify-content: space-around;
+  }
   display: flex;
-  gap: 184.5px;
+  flex: 1;
+  flex-flow: row wrap;
+  gap: var(--spacing-7);
+  justify-content: space-between;
 }
 
 .info_container__titles {
@@ -109,7 +124,6 @@ a {
     background: url('../../assets/icons/footer_language.svg') no-repeat left center;
   }
 }
-
 
 /* Links inside the dropdown */
 .dropdown_content a {

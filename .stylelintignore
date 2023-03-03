@@ -4,6 +4,8 @@
 *.js
 *.md
 *.svg
+*.jpg
+*.png
 *.map
 *.json
 *.html

@@ -1,6 +1,7 @@
 import { useToogle } from 'hooks';
 import { Link } from 'react-router-dom';
 import { ROUTE } from 'router';
+import { LocalStorage } from 'shared/localStorage/localStorage';
 import { logout, useAppDispatch } from 'store';
 
 import styles from './styles.module.scss';
@@ -16,19 +17,19 @@ export const Profile = ({ name, email }: IProps) => {
   const handleName = () => toogleDropDown();
   const handleLogout = () => {
     dispatch(logout());
+    localStorage.removeItem(LocalStorage.AccessToken);
     toogleDropDown();
   };
   return (
-    <div className={styles.profile}>
-      <div className={styles.icon} onClick={handleName}>
-        {name[0]}
-      </div>
+    <div className={`${styles.profile} ${dropDownIsActive && styles.open}`}>
       {dropDownIsActive && (
         <p className={styles.email} onClick={handleName}>
-          {' '}
-          {email}
+          {name || email}
         </p>
       )}
+      <div className={styles.icon} onClick={handleName}>
+        {name[0].toUpperCase()}
+      </div>
       {dropDownIsActive && (
         <div className={styles.dropdown}>
           <Link className={styles.link} to={ROUTE.PROFILE}>

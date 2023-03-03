@@ -1,0 +1,42 @@
+.header {
+  display: flex;
+  gap: var(--spacing-6);
+}
+
+.headerText {
+  flex: 1;
+  margin-left: var(--spacing-7);
+  color: #3c42bd;
+}
+
+.nav {
+  display: flex;
+}
+
+.item {
+  display: inline-block;
+  padding: var(--spacing-6) var(--spacing-7);
+  cursor: pointer;
+
+  &:active,
+  &:hover {
+    background-color: rgba($color: #000000, $alpha: .05);
+  }
+
+  &::after {
+    position: relative;
+    left: 50%;
+    display: block;
+    width: 0;
+    height: 2px;
+    content: '';
+    background-color: var(--background-color-button-invert);
+    transition: width .3s ease-in-out;
+    transform: translateX(-50%);
+  }
+
+  &:hover::after,
+  &:active::after {
+    width: 100%;
+  }
+}

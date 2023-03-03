@@ -1,0 +1,58 @@
+main {
+  flex-direction: column;
+}
+
+.section {
+  display: flex;
+  justify-content: center;
+  padding-bottom: var(--spacing-1);
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-1);
+  align-items: center;
+  width: 100%;
+  max-width: var(--max-width);
+}
+
+.card {
+  display: flex;
+  justify-content: center;
+}
+
+.cardImage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  img {
+    width: 100%;
+    object-fit: cover;
+  }
+}
+
+.cardInfo {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+
+  h4 {
+    text-transform: uppercase;
+  }
+}
+
+@media (max-width: 980px) {
+  .opportunityCard {
+    flex-direction: column;
+  }
+
+  .opportunityCardImage {
+    order: 1;
+  }
+
+  .opportunityCardInfo {
+    text-align: center;
+  }
+}

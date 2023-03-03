@@ -1,10 +1,16 @@
-import { Provider } from 'react-redux';
 import { RouterProvider } from 'react-router';
 import { router } from 'router';
-import { store } from 'store';
+import { getUser, useAppSelector } from 'store';
+import { Global } from '@emotion/react';
+import { getGlobalStyles } from 'styles/globalStyles';
 
-export const App = () => (
-  <Provider store={store}>
-    <RouterProvider router={router} />
-  </Provider>
-);
+export const App = () => {
+  const user = useAppSelector(getUser);
+
+  return (
+    <>
+      <Global styles={getGlobalStyles()} />
+      <RouterProvider router={router(user)} />
+    </>
+  );
+};

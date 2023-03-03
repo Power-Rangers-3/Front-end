@@ -1,15 +1,10 @@
 {
   "customSyntax": "postcss-scss",
-  "plugins": [
-    "stylelint-order",
-    "stylelint-scss",
-    "stylelint-high-performance-animation",
-    "stylelint-group-selectors"
-  ],
+  "plugins": ["stylelint-order", "stylelint-scss", "stylelint-high-performance-animation", "stylelint-group-selectors"],
   "ignoreFiles": ["**/*.js", "**/*.jsx", "**/*.ts", "**/*.tsx"],
   "rules": {
     "plugin/stylelint-group-selectors": true,
-    "plugin/no-low-performance-animation-properties": true,
+    "plugin/no-low-performance-animation-properties": null,
     "at-rule-empty-line-before": [
       "always",
       {
@@ -261,31 +256,13 @@
         "properties": ["all"]
       },
       {
-        "properties": [
-          "position",
-          "inset",
-          "inset-block",
-          "inset-inline",
-          "top",
-          "right",
-          "bottom",
-          "left",
-          "z-index"
-        ]
+        "properties": ["position", "inset", "inset-block", "inset-inline", "top", "right", "bottom", "left", "z-index"]
       },
       {
         "properties": ["box-sizing", "display"]
       },
       {
-        "properties": [
-          "flex",
-          "flex-basis",
-          "flex-direction",
-          "flex-flow",
-          "flex-grow",
-          "flex-shrink",
-          "flex-wrap"
-        ]
+        "properties": ["flex", "flex-basis", "flex-direction", "flex-flow", "flex-grow", "flex-shrink", "flex-wrap"]
       },
       {
         "properties": [
@@ -673,7 +650,7 @@
       "always",
       {
         "except": ["first-nested"],
-        "ignore": ["between-comments","stylelint-commands"]
+        "ignore": ["between-comments", "stylelint-commands"]
       }
     ],
     "scss/double-slash-comment-inline": null,
