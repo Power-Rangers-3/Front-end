@@ -16,19 +16,13 @@ export const ProfileDashboardPage = () => (
       </Link>
     </div>
     <nav className={styles.nav}>
-      <NavLink to={ROUTE.PROFILE_FAVORITE} className={styles.navItem}>
+      <NavLink to={ROUTE.PROFILE_FAVORITE} className={styles.item}>
         Избранное
       </NavLink>
-      <NavLink to={ROUTE.PROFILE_HISTORY} className={styles.navItem}>
+      <NavLink to={ROUTE.PROFILE_HISTORY} className={styles.item}>
         История поиска
       </NavLink>
     </nav>
-    <div className={styles.platformWrapper}>
-      <p className={styles.platformItem}>Платформа</p>
-      <p className={styles.platformItem}>Шаблон</p>
-      <p className={styles.platformItem}>Описание</p>
-      {/* сюда маппить платформы */}
-    </div>
     <Outlet />
   </div>
 );

@@ -5,11 +5,13 @@ import {
   ProfileLayout,
   RegistrationPage,
   ResetPasswordPage,
-  SettingsPage,
+  ProfileSettingsPage,
   SignInPage,
+  AdminPageLayout,
+  ProfileDashboardPage,
+  ProfileFavoritePage,
+  ProfileHistoryPage,
 } from 'pages';
-import { AdminPageLayout } from 'pages/AdminPage/AdminPageLayout/AdminPageLayout';
-import { ProfileDashboardPage } from 'pages/ProfileDashboardPage/ProfileDashboardPage';
 
 import { createBrowserRouter, createRoutesFromElements, Route } from 'react-router-dom';
 import { IUser } from 'store/types';
@@ -27,10 +29,11 @@ export const router = (user: IUser) =>
         </Route>
         <Route path={ROUTE.PROFILE} element={<ProfileLayout />}>
           <Route path={ROUTE.PROFILE} element={<ProfileDashboardPage />}>
-            <Route path={ROUTE.PROFILE_FAVORITE} element={<div>Избранное</div>} />
-            <Route path={ROUTE.PROFILE_HISTORY} element={<div>История поиска</div>} />
+            <Route index element={<ProfileFavoritePage />} />
+            <Route path={ROUTE.PROFILE_FAVORITE} element={<ProfileFavoritePage />} />
+            <Route path={ROUTE.PROFILE_HISTORY} element={<ProfileHistoryPage />} />
           </Route>
-          <Route path={ROUTE.PROFILE_SETTINGS} element={<SettingsPage />} />
+          <Route path={ROUTE.PROFILE_SETTINGS} element={<ProfileSettingsPage />} />
         </Route>
         <Route path={ROUTE.SIGN_UP} element={<RegistrationPage />} />
         <Route path={ROUTE.SIGN_IN} element={<SignInPage />} />
