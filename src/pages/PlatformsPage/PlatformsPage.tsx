@@ -1,8 +1,12 @@
+import { PlatformList } from 'components';
+import { platformsData } from 'mocks';
+
 import styles from './styles.module.scss';
-import { PlatformsSection } from './components/platformsSection';
 
 export const PlatformsPage = () => (
-  <main className={styles.main}>
-    <PlatformsSection />
-  </main>
+  <section className={styles.section}>
+    <div className={styles.wrapper}>
+      <PlatformList platforms={platformsData} />
+    </div>
+  </section>
 );
