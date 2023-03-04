@@ -18,6 +18,8 @@ import girl from './images/girl.png';
 import { ReactComponent as DashboardIcon } from './icons/dashboard-icon.svg';
 import exit from './icons/exit.svg';
 import avatar from './images/avatar.jpg';
+import arrow_backIcon from './icons/arrow_back.svg';
+import arrow_forwardIcon from './icons/arrow_forward.svg';
 
 export {
   girl,
@@ -40,4 +42,6 @@ export {
   DashboardIcon,
   exit,
   avatar,
+  arrow_backIcon,
+  arrow_forwardIcon
 };
