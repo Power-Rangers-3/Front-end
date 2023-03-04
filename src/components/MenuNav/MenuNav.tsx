@@ -6,9 +6,9 @@ import { getUser, useAppSelector } from 'store';
 import { ROUTE } from 'router';
 
 import styles from './styles.module.scss';
+import { routes } from './config/routes';
 
 interface IProps {
-  // eslint-disable-next-line react/require-default-props
   children?: ReactNode;
 }
 
@@ -31,21 +31,13 @@ export const MenuNav = ({ children }: IProps) => {
           </Link>
         )}
         <ul>
-          <li>
-            <Link to={ROUTE.SIGN_UP} className={styles.links}>
-              О сервисе
-            </Link>
-          </li>
-          <li>
-            <Link to={ROUTE.SIGN_UP} className={styles.links}>
-              Тарифы
-            </Link>
-          </li>
-          <li>
-            <Link to={ROUTE.SIGN_UP} className={styles.links}>
-              Статьи
-            </Link>
-          </li>
+          {routes.map(({ to, text }) => (
+            <li key={text}>
+              <Link to={to} className={styles.links}>
+                {text}
+              </Link>
+            </li>
+          ))}
         </ul>
       </nav>
       {!isAuth && (
