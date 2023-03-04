@@ -8,8 +8,8 @@ const initialState: IPlatformsState = {
   visitedPlatforms: [],
 };
 
-const platformSlice = createSlice({
-  name: 'platform',
+const platformsSlice = createSlice({
+  name: 'platforms',
   initialState,
   reducers: {
     setPlatforms: (state, { payload }: PayloadAction<IPlatform[]>) => {
@@ -25,6 +25,6 @@ const platformSlice = createSlice({
 });
 
 export const {
-  reducer: platformReducer,
+  reducer: platformsReducer,
   actions: { setPlatforms, addFavoritePlatforms, addVisitedPlatforms },
-} = platformSlice;
+} = platformsSlice;
