@@ -1,13 +1,11 @@
+import { AdminLayout, MainLayout, ProfileLayout } from 'layouts';
 import {
   HomePage,
-  MainLayout,
   NewPasswordPage,
-  ProfileLayout,
   RegistrationPage,
   ResetPasswordPage,
   ProfileSettingsPage,
   SignInPage,
-  AdminPageLayout,
   ProfileDashboardPage,
   ProfileFavoritePage,
   ProfileHistoryPage,
@@ -48,7 +46,7 @@ export const router = (user: IUser) =>
           path={ROUTE.ADMIN}
           element={
             <ProtectedAdminPage user={user}>
-              <AdminPageLayout />
+              <AdminLayout />
             </ProtectedAdminPage>
           }
         />
