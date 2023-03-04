@@ -10,3 +10,4 @@ export * from './ProfilePages/ProfileHistoryPage/ProfileHistoryPage';
 export * from './ProfilePages/ProfileFavoritePage/ProfileFavoritePage';
 export * from './ProfilePages/ProfileDashboardPage/ProfileDashboardPage';
 export * from './AdminPage/AdminPageLayout/AdminPageLayout';
+export * from './PlatformsPage/PlatformsPage';

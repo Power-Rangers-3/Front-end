@@ -1,4 +1,3 @@
-/* eslint-disable no-param-reassign */
 import { createSlice } from '@reduxjs/toolkit';
 
 import { renameAction, signInAction } from 'store/actions';
@@ -13,16 +12,9 @@ const initialState: IUser = {
   fullname: null,
   telegram: null,
   phone: null,
-  idRole: null,
   createAt: null,
   updateAt: null,
-  role: {
-    id: null,
-    role: null,
-    description: null,
-    createAt: null,
-    updateAt: null,
-  },
+  role: null,
   isAuth: false,
   loadingState: 'idle',
   error: null,
@@ -36,8 +28,7 @@ const userSlice = createSlice({
       state.email = null;
       state.name = null;
       state.fullname = null;
-      state.role.id = null;
-      state.role.role = null;
+      state.role = null;
       state.isAuth = false;
     },
   },
@@ -49,23 +40,29 @@ const userSlice = createSlice({
         state.name = null;
         state.fullname = null;
         state.id = null;
-        state.role.id = null;
-        state.role.role = null;
+        state.role = null;
         state.isAuth = false;
         state.error = null;
+        state.createAt = null;
+        state.updateAt = null;
       })
       .addCase(signInAction.fulfilled, (state, action) => {
         state.loadingState = action.meta.requestStatus;
-        if (action?.payload?.email) {
-          const { email, name, fullname, id, role } = action.payload;
-          state.email = email;
-          state.name = name;
-          state.fullname = fullname;
-          state.id = id;
-          state.role.role = role.role;
-          state.isAuth = true;
-          state.error = null;
+        const { email, name, fullname, id, role, createAt, updateAt } = action.payload;
+        state.email = email;
+        state.name = name;
+        state.fullname = fullname;
+        state.id = id;
+        if (role) {
+          state.role = {
+            id: role.id,
+            type: role.role,
+          };
         }
+        state.createAt = createAt;
+        state.updateAt = updateAt;
+        state.isAuth = true;
+        state.error = null;
       })
       .addCase(signInAction.rejected, (state, action) => {
         state.loadingState = action.meta.requestStatus;

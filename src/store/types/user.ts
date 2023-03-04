@@ -1,5 +1,12 @@
 import { SerializedError } from '@reduxjs/toolkit';
 
+type Role = 'User' | 'SuperAdmin' | 'Admin';
+
+interface IRole {
+  id: string;
+  type: Role;
+}
+
 export interface IUser {
   id: string | null;
   email: string | null;
@@ -8,16 +15,9 @@ export interface IUser {
   fullname: string | null;
   telegram: string | null;
   phone: string | null;
-  idRole: string | null;
   createAt: string | null;
   updateAt: string | null;
-  role: {
-    id: string | null;
-    role: 'User' | 'SuperAdmin' | null;
-    description: string | null;
-    createAt: string | null;
-    updateAt: string | null;
-  };
+  role: IRole | null;
   isAuth: boolean;
   loadingState: 'idle' | 'pending' | 'fulfilled' | 'rejected';
   error: SerializedError | null;

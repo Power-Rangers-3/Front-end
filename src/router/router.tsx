@@ -11,6 +11,7 @@ import {
   ProfileDashboardPage,
   ProfileFavoritePage,
   ProfileHistoryPage,
+  PlatformsPage,
 } from 'pages';
 
 import { createBrowserRouter, createRoutesFromElements, Route } from 'react-router-dom';
@@ -26,11 +27,11 @@ export const router = (user: IUser) =>
       <>
         <Route path={ROUTE.HOME} element={<MainLayout />}>
           <Route index element={<HomePage />} />
+          <Route path={ROUTE.PLATFORMS} element={<PlatformsPage />} />
         </Route>
         <Route path={ROUTE.PROFILE} element={<ProfileLayout />}>
           <Route path={ROUTE.PROFILE} element={<ProfileDashboardPage />}>
-            <Route index element={<ProfileFavoritePage />} />
-            <Route path={ROUTE.PROFILE_FAVORITE} element={<ProfileFavoritePage />} />
+            <Route index path={ROUTE.PROFILE_FAVORITE} element={<ProfileFavoritePage />} />
             <Route path={ROUTE.PROFILE_HISTORY} element={<ProfileHistoryPage />} />
           </Route>
           <Route path={ROUTE.PROFILE_SETTINGS} element={<ProfileSettingsPage />} />
