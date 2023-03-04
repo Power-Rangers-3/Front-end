@@ -1,3 +1,5 @@
+export * from './ProtectedAdmin/ProtectedAdmin';
+export * from './ProtectedAuth/ProtectedAuth';
 export * from './Portal/Portal';
 export * from './Profile/Profile';
 export * from './PlatformCard/PlatformCard';
