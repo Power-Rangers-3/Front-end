@@ -18,8 +18,10 @@ import girl from './images/girl.png';
 import { ReactComponent as DashboardIcon } from './icons/dashboard-icon.svg';
 import exit from './icons/exit.svg';
 import avatar from './images/avatar.jpg';
+import { ReactComponent as FavoriteIcon } from './icons/favorite.svg';
 
 export {
+  FavoriteIcon,
   girl,
   telegramLight,
   facebookLight,
