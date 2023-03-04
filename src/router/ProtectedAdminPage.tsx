@@ -13,7 +13,7 @@ export function ProtectedAdminPage({
   user?: IUser;
   children: JSX.Element;
 }) {
-  if (user?.isAuth && user?.role?.role === 'SuperAdmin') {
+  if (user?.isAuth && user?.role?.type === 'SuperAdmin') {
     return children;
   }
 

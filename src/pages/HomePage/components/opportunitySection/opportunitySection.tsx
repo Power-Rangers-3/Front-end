@@ -45,7 +45,7 @@ export const OpportunitySection = () => (
         ),
       )}
       <div className={styles.infoButton}>
-        <Link to={ROUTE.SIGN_UP} className={buttonStyle.buttonBright} type="button">
+        <Link to={ROUTE.PLATFORMS} className={buttonStyle.buttonBright} type="button">
           Подобрать решение
         </Link>
       </div>
