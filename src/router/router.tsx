@@ -12,6 +12,7 @@ import {
   ProfileFavoritePage,
   ProfileHistoryPage,
   PlatformsPage,
+  ProfilePlatforms,
 } from 'pages';
 
 import { createBrowserRouter, createRoutesFromElements, Route } from 'react-router-dom';
@@ -34,6 +35,7 @@ export const router = (user: IUser) =>
             <Route index path={ROUTE.PROFILE_FAVORITE} element={<ProfileFavoritePage />} />
             <Route path={ROUTE.PROFILE_HISTORY} element={<ProfileHistoryPage />} />
           </Route>
+          <Route path={ROUTE.PROFILE_PLATFORMS} element={<ProfilePlatforms />} />
           <Route path={ROUTE.PROFILE_SETTINGS} element={<ProfileSettingsPage />} />
         </Route>
         <Route path={ROUTE.SIGN_UP} element={<RegistrationPage />} />
