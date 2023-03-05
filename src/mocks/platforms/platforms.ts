@@ -14,6 +14,7 @@ export interface IPlatform {
   text: string;
   link: string;
   id: string;
+  isFavorite: boolean;
 }
 
 export const platformsData: IPlatform[] = [
@@ -23,6 +24,7 @@ export const platformsData: IPlatform[] = [
     text: 'Мультиканальная платформа для создания чат- ботов с искусственным интеллектом и голосовых ботов.',
     link: 'https://townsend.pro/',
     id: '1',
+    isFavorite: false,
   },
   {
     title: 'Buisnessbot',
@@ -30,6 +32,7 @@ export const platformsData: IPlatform[] = [
     text: 'Мультиканальная платформа для создания чат-ботов.',
     link: 'https://townsend.pro/',
     id: '2',
+    isFavorite: false,
   },
   {
     title: 'Botvsem',
@@ -37,6 +40,7 @@ export const platformsData: IPlatform[] = [
     text: 'Мультиканальная платформа для создания чат-ботов.',
     link: 'https://townsend.pro/',
     id: '3',
+    isFavorite: false,
   },
   {
     title: 'Artsend',
@@ -44,6 +48,7 @@ export const platformsData: IPlatform[] = [
     text: 'Сервис массовых рассылок сообщений и автоворонок',
     link: 'https://townsend.pro/',
     id: '4',
+    isFavorite: false,
   },
 
   {
@@ -52,6 +57,7 @@ export const platformsData: IPlatform[] = [
     text: 'Мультиканальная платформа для автоматизации общения с клиентами в социальных сетях и мессенджерах.',
     link: 'https://townsend.pro/',
     id: '5',
+    isFavorite: false,
   },
   {
     title: 'Botmaker',
@@ -59,6 +65,7 @@ export const platformsData: IPlatform[] = [
     text: 'Одноканальная платформа для создания чат-ботов.',
     link: 'https://townsend.pro/',
     id: '6',
+    isFavorite: false,
   },
   {
     title: 'Botsify',
@@ -66,6 +73,7 @@ export const platformsData: IPlatform[] = [
     text: 'Мультиканальная платформа для автоматизации общения с клиентами в мессенджерах.',
     link: 'https://townsend.pro/',
     id: '7',
+    isFavorite: false,
   },
   {
     title: 'Sberbb',
@@ -73,6 +81,7 @@ export const platformsData: IPlatform[] = [
     text: 'Мультиканальная платформа для создания чат-ботов с "искусственным интеллектом" и голосовых ботов.',
     link: 'https://townsend.pro/',
     id: '8',
+    isFavorite: false,
   },
   {
     title: 'BotHelp1',
@@ -80,6 +89,7 @@ export const platformsData: IPlatform[] = [
     text: 'Мультиканальная платформа.',
     link: 'https://townsend.pro/',
     id: '9',
+    isFavorite: false,
   },
   {
     title: 'Aimylogic',
@@ -87,6 +97,7 @@ export const platformsData: IPlatform[] = [
     text: 'Мультиканальная платформа для создания чат- ботов с искусственным интеллектом и голосовых ботов.',
     link: 'https://townsend.pro/',
     id: '10',
+    isFavorite: false,
   },
   {
     title: 'Buisnessbot',
@@ -94,6 +105,7 @@ export const platformsData: IPlatform[] = [
     text: 'Мультиканальная платформа для создания чат-ботов.',
     link: 'https://townsend.pro/',
     id: '11',
+    isFavorite: false,
   },
   {
     title: 'Botvsem',
@@ -101,6 +113,7 @@ export const platformsData: IPlatform[] = [
     text: 'Мультиканальная платформа для создания чат-ботов.',
     link: 'https://townsend.pro/',
     id: '12',
+    isFavorite: false,
   },
   {
     title: 'Artsend',
@@ -108,6 +121,7 @@ export const platformsData: IPlatform[] = [
     text: 'Сервис массовых рассылок сообщений и автоворонок',
     link: 'https://townsend.pro/',
     id: '13',
+    isFavorite: false,
   },
 
   {
@@ -116,6 +130,7 @@ export const platformsData: IPlatform[] = [
     text: 'Мультиканальная платформа для автоматизации общения с клиентами в социальных сетях и мессенджерах.',
     link: 'https://townsend.pro/',
     id: '14',
+    isFavorite: false,
   },
   {
     title: 'Botmaker',
@@ -123,5 +138,6 @@ export const platformsData: IPlatform[] = [
     text: 'Одноканальная платформа для создания чат-ботов.',
     link: 'https://townsend.pro/',
     id: '15',
+    isFavorite: false,
   },
 ];
