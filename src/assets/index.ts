@@ -24,8 +24,10 @@ import { ReactComponent as ProfileIcon } from './icons/profile.svg';
 import { ReactComponent as SettingsIcon } from './icons/settings.svg';
 import arrow_backIcon from './icons/arrow_back.svg';
 import arrow_forwardIcon from './icons/arrow_forward.svg';
+import { ReactComponent as VerticalDotsIcon } from './icons/vertical-dots.svg';
 
 export {
+  VerticalDotsIcon,
   ProfileIcon,
   HeartIcon,
   SearchIcon,
