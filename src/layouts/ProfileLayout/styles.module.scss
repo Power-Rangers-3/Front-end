@@ -11,6 +11,9 @@
 }
 
 .link {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-8);
   font-size: 20px;
   font-weight: var(--normalRegular-font-size);
   line-height: 150%;
@@ -19,35 +22,17 @@
   &:active {
     color: #3c42bd;
     cursor: pointer;
-  }
-}
-
-.icon {
-  width: 24px;
-  height: 24px;
-  margin-right: 10px;
-  cursor: pointer;
-  fill: var(--font-color-base);
-
-  &:hover {
-    cursor: pointer;
-    fill: #3c42bd;
-    transition: fill 0.3s ease;
+    path {
+      fill: #3c42bd;
+    }
   }
 }
 
 .header {
-  @include breakpoint(md) {
-    padding-right: 50px;
-  }
-
-  @include breakpoint(lg) {
-    padding-right: 100px;
-  }
   display: flex;
   grid-area: header;
   justify-content: flex-end;
-  padding-right: 15px;
+  padding-right: 24px;
   border-bottom: 1px solid var(--font-color-disabled);
 }
 

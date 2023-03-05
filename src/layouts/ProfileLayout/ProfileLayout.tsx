@@ -1,4 +1,4 @@
-import { logoIcon, materialsIcon, myHistoryIcon, myPageIcon, ratesIcon, settingsIcon, walletIcon } from 'assets';
+import { logoIcon, MaterialsIcon, MyHistoryIcon, MyPageIcon, RatesIcon, SettingsIcon, WalletIcon } from 'assets';
 import { Link, Outlet } from 'react-router-dom';
 import { ROUTE } from 'router';
 import { getUser, useAppSelector } from 'store';
@@ -10,38 +10,32 @@ import styles from './styles.module.scss';
 const routes = [
   {
     to: ROUTE.PROFILE_FAVORITE,
-    img: myPageIcon,
-    className: styles.link,
+    icon: MyPageIcon,
     text: 'Дашборд',
   },
   {
     to: ROUTE.PROFILE,
-    img: materialsIcon,
-    className: styles.link,
+    icon: MaterialsIcon,
     text: 'Подобрать решение',
   },
   {
     to: ROUTE.PROFILE_PLATFORMS,
-    img: myHistoryIcon,
-    className: styles.link,
+    icon: MyHistoryIcon,
     text: 'Подобрать платформу',
   },
   {
     to: ROUTE.PROFILE,
-    img: walletIcon,
-    className: styles.link,
+    icon: WalletIcon,
     text: 'Профиль',
   },
   {
     to: ROUTE.PROFILE,
-    img: ratesIcon,
-    className: styles.link,
+    icon: RatesIcon,
     text: 'Тарифы',
   },
   {
     to: ROUTE.PROFILE_SETTINGS,
-    img: settingsIcon,
-    className: styles.link,
+    icon: SettingsIcon,
     text: 'Настройки',
   },
 ];
@@ -58,12 +52,15 @@ export const ProfileLayout = () => {
         <Link to={ROUTE.HOME}>
           <img src={logoIcon} className={styles.logo} alt="Townsend logo" />
         </Link>
-        {routes.map(({ to, img, className, text }) => (
-          <Link to={to} className={className}>
-            <img src={img} className={styles.icon} alt={text} />
-            {text}
-          </Link>
-        ))}
+        {routes.map(({ to, icon, text }) => {
+          const Icon = icon;
+          return (
+            <Link to={to} className={styles.link} key={text}>
+              <Icon width="24" height="24" />
+              {text}
+            </Link>
+          );
+        })}
       </nav>
       <div className={styles.outlet}>
         <Outlet />
