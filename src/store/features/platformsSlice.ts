@@ -15,16 +15,32 @@ const platformsSlice = createSlice({
     setPlatforms: (state, { payload }: PayloadAction<IPlatform[]>) => {
       state.platforms = payload;
     },
-    addFavoritePlatforms: (state, { payload }: PayloadAction<IPlatform>) => {
-      state.favoritePlatforms.push(payload);
+    addFavoritePlatform: (state, { payload }: PayloadAction<string>) => {
+      const favoritePlatform = state.platforms.find((platform) => platform.id === payload);
+      if (favoritePlatform) {
+        favoritePlatform.isFavorite = true;
+        state.favoritePlatforms.push(favoritePlatform);
+        state.platforms = state.platforms.map((item) => {
+          if (item.id === favoritePlatform.id) item.isFavorite = true;
+          return item;
+        });
+      }
     },
-    addVisitedPlatforms: (state, { payload }: PayloadAction<IPlatform>) => {
-      state.visitedPlatforms.push(payload);
+    deleteFavoritePlatform: (state, { payload }: PayloadAction<string>) => {
+      state.favoritePlatforms = state.favoritePlatforms.filter((platform) => platform.id !== payload);
+      state.platforms = state.platforms.map((platform) => {
+        if (platform.id === payload) platform.isFavorite = false;
+        return platform;
+      });
+    },
+    addVisitedPlatform: (state, { payload }: PayloadAction<string>) => {
+      const visitedPlatform = state.platforms.find((platform) => platform.id === payload);
+      if (visitedPlatform) state.visitedPlatforms.push(visitedPlatform);
     },
   },
 });
 
 export const {
   reducer: platformsReducer,
-  actions: { setPlatforms, addFavoritePlatforms, addVisitedPlatforms },
+  actions: { setPlatforms, addFavoritePlatform, addVisitedPlatform, deleteFavoritePlatform },
 } = platformsSlice;
