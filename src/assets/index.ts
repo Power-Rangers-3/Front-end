@@ -6,21 +6,27 @@ import youTubeLight from './icons/footer_youtube-light.svg';
 import logoIcon from './icons/logo.svg';
 import burgerIcon from './icons/burger_menu.svg';
 import cancelIcon from './icons/cancel.svg';
-import myPageIcon from './icons/my-page.svg';
-import myHistoryIcon from './icons/my-history.svg';
-import materialsIcon from './icons/materials.svg';
-import ratesIcon from './icons/rates.svg';
-import settingsIcon from './icons/settings.svg';
-import walletIcon from './icons/wallet.svg';
-import avatarIcon from './icons/avatar.svg';
+import { ReactComponent as MyPageIcon } from './icons/my-page.svg';
+import { ReactComponent as MyHistoryIcon } from './icons/my-history.svg';
+import { ReactComponent as MaterialsIcon } from './icons/materials.svg';
+import { ReactComponent as RatesIcon } from './icons/rates.svg';
+import { ReactComponent as WalletIcon } from './icons/wallet.svg';
+import { ReactComponent as AvatarIcon } from './icons/avatar.svg';
 import uploadedIcon from './icons/uploaded.svg';
 import girl from './images/girl.png';
 import { ReactComponent as DashboardIcon } from './icons/dashboard-icon.svg';
-import exit from './icons/exit.svg';
+import { ReactComponent as ExitIcon } from './icons/exit.svg';
 import avatar from './images/avatar.jpg';
 import { ReactComponent as FavoriteIcon } from './icons/favorite.svg';
+import { ReactComponent as HeartIcon } from './icons/heart.svg';
+import { ReactComponent as SearchIcon } from './icons/search.svg';
+import { ReactComponent as ProfileIcon } from './icons/profile.svg';
+import { ReactComponent as SettingsIcon } from './icons/settings.svg';
 
 export {
+  ProfileIcon,
+  HeartIcon,
+  SearchIcon,
   FavoriteIcon,
   girl,
   telegramLight,
@@ -31,15 +37,15 @@ export {
   logoIcon,
   burgerIcon,
   cancelIcon,
-  myPageIcon,
-  myHistoryIcon,
-  materialsIcon,
-  ratesIcon,
-  settingsIcon,
-  walletIcon,
-  avatarIcon,
+  MyPageIcon,
+  MyHistoryIcon,
+  MaterialsIcon,
+  RatesIcon,
+  SettingsIcon,
+  WalletIcon,
+  AvatarIcon,
   uploadedIcon,
   DashboardIcon,
-  exit,
+  ExitIcon,
   avatar,
 };
