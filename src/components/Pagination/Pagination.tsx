@@ -32,7 +32,8 @@ export const Pagination = ({ currentPage, totalPages, onPageChange }: IProps) =>
           type="button"
           key={pageNumber}
           onClick={() => onPageChange(pageNumber)}
-          className={currentPage === pageNumber ? styles.currentPage : ''}
+          className={`${styles.currentPage} ${currentPage === pageNumber ? styles.active : ''}`}
+          disabled={currentPage < pageNumber}
           aria-label={styles.currentPage}
         >
           {pageNumber}
