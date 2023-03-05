@@ -1,8 +1,10 @@
+import { ExitIcon } from 'assets';
 import { useToogle } from 'hooks';
 import { Link } from 'react-router-dom';
-import { ROUTE } from 'router';
 import { LocalStorage } from 'shared/localStorage/localStorage';
 import { logout, useAppDispatch } from 'store';
+
+import { routes } from './config/routes';
 
 import styles from './styles.module.scss';
 
@@ -32,10 +34,17 @@ export const Profile = ({ name, email }: IProps) => {
       </div>
       {dropDownIsActive && (
         <div className={styles.dropdown}>
-          <Link className={styles.link} to={ROUTE.PROFILE}>
-            Личный кабинет
-          </Link>
+          {routes.map(({ icon, text, to }) => {
+            const Icon = icon;
+            return (
+              <Link className={styles.link} to={to} key={text}>
+                <Icon width="20" height="20" />
+                {text}
+              </Link>
+            );
+          })}
           <button className={styles.button} type="button" onClick={handleLogout}>
+            <ExitIcon width="20" height="20" />
             Выйти
           </button>
         </div>

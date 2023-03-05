@@ -42,11 +42,10 @@
   display: flex;
   flex-direction: column;
   gap: var(--spacing-8);
-  align-items: center;
   padding: var(--spacing-9);
   padding-right: var(--spacing-3);
   padding-left: var(--spacing-3);
-  background-color: #f5f5f5;
+  background-color: var(--background-color);
   border-radius: 5px;
 }
 
@@ -63,6 +62,8 @@
 
 .link {
   color: var(--font-color-base);
+  display: flex;
+  gap: var(--spacing-8);
 
   &:visited {
     color: var(--font-color-base);
@@ -70,6 +71,9 @@
 
   &:hover {
     color: var(--font-color-hover);
+    path {
+      fill: var(--font-color-hover);
+    }
   }
 }
 
@@ -79,8 +83,15 @@
   font-weight: var(--normalBold-font-weight);
   background-color: inherit;
   border: none;
+  color: var(--font-color-error);
+  display: flex;
+  gap: var(--spacing-8);
+  padding: 0;
 
   &:hover {
     color: var(--font-color-hover);
+    path {
+      stroke: var(--font-color-hover);
+    }
   }
 }
