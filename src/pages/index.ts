@@ -3,6 +3,7 @@ export * from './Auth/RegistrationPage/RegistrationPage';
 export * from './Auth/ResetPasswordPage/ResetPasswordPage';
 export * from './Auth/SignInPage/SignInPage';
 export * from './HomePage/HomePage';
+export * from './PlatformDetailsPage/PlatformDetailsPage';
 export * from './ProfilePages/ProfileSettingsPage/ProfileSettingsPage';
 export * from './ProfilePages/ProfileHistoryPage/ProfileHistoryPage';
 export * from './ProfilePages/ProfileFavoritePage/ProfileFavoritePage';
