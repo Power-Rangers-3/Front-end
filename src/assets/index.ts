@@ -22,6 +22,8 @@ import { ReactComponent as HeartIcon } from './icons/heart.svg';
 import { ReactComponent as SearchIcon } from './icons/search.svg';
 import { ReactComponent as ProfileIcon } from './icons/profile.svg';
 import { ReactComponent as SettingsIcon } from './icons/settings.svg';
+import arrow_backIcon from './icons/arrow_back.svg';
+import arrow_forwardIcon from './icons/arrow_forward.svg';
 
 export {
   ProfileIcon,
@@ -48,4 +50,6 @@ export {
   DashboardIcon,
   ExitIcon,
   avatar,
+  arrow_backIcon,
+  arrow_forwardIcon,
 };
