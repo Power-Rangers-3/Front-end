@@ -1,24 +1,25 @@
-import { PlatformList } from 'components';
+import { PlatformList, Pagination } from 'components';
 import { platformsData } from 'mocks';
 import { useState } from 'react';
-import { Pagination } from 'components';
 
 import styles from './styles.module.scss';
 
 export const PlatformsPage = () => {
-  const [currentPage, setCurrentPage] = useState(0);
+  const [currentPage, setCurrentPage] = useState(1);
 
   const handlePageChange = (pageNumber: number) => {
     setCurrentPage(pageNumber);
-  }
-  <section className={styles.section}>
-    <div className={styles.wrapper}>
-      <PlatformList platforms={platformsData} />
-      <Pagination
-        currentPage={currentPage}
-        totalPages={9}
-        onPageChange={handlePageChange}
-      />
-    </div>
-  </section>
+  };
+  return (
+    <section className={styles.section}>
+      <div className={styles.wrapper}>
+        <PlatformList platforms={platformsData} />
+        <Pagination
+          currentPage={currentPage}
+          totalPages={Math.ceil(platformsData.length / 10)}
+          onPageChange={handlePageChange}
+        />
+      </div>
+    </section>
+  );
 };
