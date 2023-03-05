@@ -23,9 +23,7 @@ export const Pagination = ({ currentPage, totalPages, onPageChange }: IProps) =>
         onClick={() => onPageChange(prevPage)}
         disabled={prevPage < 1}
         aria-label="Previous page"
-      >
-        {/* */}
-      </button>
+      />
 
       {pageNumbers.map((pageNumber) => (
         <button
@@ -33,7 +31,6 @@ export const Pagination = ({ currentPage, totalPages, onPageChange }: IProps) =>
           key={pageNumber}
           onClick={() => onPageChange(pageNumber)}
           className={`${styles.currentPage} ${currentPage === pageNumber ? styles.active : ''}`}
-          disabled={currentPage < pageNumber}
           aria-label={styles.currentPage}
         >
           {pageNumber}
@@ -45,9 +42,7 @@ export const Pagination = ({ currentPage, totalPages, onPageChange }: IProps) =>
         onClick={() => onPageChange(nextPage)}
         disabled={nextPage > totalPages}
         aria-label="Next page"
-      >
-        {/* */}
-      </button>
+      />
     </div>
   );
 };
