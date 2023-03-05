@@ -1,8 +1,7 @@
-
+import { PlatformList } from 'components';
+import { platformsData } from 'mocks';
 import { useState } from 'react';
 import { Pagination } from 'components';
-
-import { PlatformsSection } from './components/platformsSection';
 
 import styles from './styles.module.scss';
 
@@ -12,15 +11,14 @@ export const PlatformsPage = () => {
   const handlePageChange = (pageNumber: number) => {
     setCurrentPage(pageNumber);
   }
-
-  return (
-    <main className={styles.main}>
-      <PlatformsSection />
+  <section className={styles.section}>
+    <div className={styles.wrapper}>
+      <PlatformList platforms={platformsData} />
       <Pagination
         currentPage={currentPage}
         totalPages={9}
         onPageChange={handlePageChange}
       />
-    </main>
-  );
-}
+    </div>
+  </section>
+};

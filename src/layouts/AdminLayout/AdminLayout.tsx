@@ -8,7 +8,7 @@ import { Outlet } from 'react-router';
 
 import styles from './styles.module.scss';
 
-export const AdminPageLayout = () => {
+export const AdminLayout = () => {
   const { name } = useAppSelector(getUser);
   return (
     <div className={styles.wrapper}>

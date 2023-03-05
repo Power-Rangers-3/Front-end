@@ -1,5 +1,3 @@
-export * from './MainLayout/MainLayout';
-export * from './ProfileLayout/ProfileLayout';
 export * from './Auth/NewPasswordPage/NewPasswordPage';
 export * from './Auth/RegistrationPage/RegistrationPage';
 export * from './Auth/ResetPasswordPage/ResetPasswordPage';
@@ -9,5 +7,5 @@ export * from './ProfilePages/ProfileSettingsPage/ProfileSettingsPage';
 export * from './ProfilePages/ProfileHistoryPage/ProfileHistoryPage';
 export * from './ProfilePages/ProfileFavoritePage/ProfileFavoritePage';
 export * from './ProfilePages/ProfileDashboardPage/ProfileDashboardPage';
-export * from './AdminPage/AdminPageLayout/AdminPageLayout';
+export * from './ProfilePages/ProfilePlatforms/ProfilePlatforms';
 export * from './PlatformsPage/PlatformsPage';

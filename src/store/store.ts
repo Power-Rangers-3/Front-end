@@ -1,9 +1,11 @@
 import { configureStore } from '@reduxjs/toolkit';
 
-import { userReducer } from './features/userSlice';
+import { platformReducer, platformsReducer, userReducer } from './features';
 
 export const store = configureStore({
   reducer: {
     user: userReducer,
+    platforms: platformsReducer,
+    platform: platformReducer,
   },
 });

@@ -9,5 +9,6 @@ export enum ROUTE {
   PROFILE_SETTINGS = 'settings',
   PROFILE_FAVORITE = 'favorite',
   PROFILE_HISTORY = 'history',
+  PROFILE_PLATFORMS = 'platforms',
   ADMIN = '/admin',
 }
