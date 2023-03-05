@@ -15,6 +15,7 @@ export interface IPlatform {
   link: string;
   id: string;
   isFavorite: boolean;
+  date?: Date;
 }
 
 export const platformsData: IPlatform[] = [

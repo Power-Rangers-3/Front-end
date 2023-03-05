@@ -23,7 +23,8 @@ export const PlatformDetailsPage = () => {
       dispatch(setPlatform(platforms.find((item) => item.id === platformId)));
       dispatch(addVisitedPlatform(platformId));
     }
-  }, [dispatch, platformId, platforms]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [dispatch, platformId]);
   const addToFavorite = (id: string) => {
     dispatch(addFavoritePlatform(id));
   };

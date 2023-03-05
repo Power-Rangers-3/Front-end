@@ -1,5 +1,6 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { IPlatform } from 'mocks';
+import { LocalStorage } from 'shared/localStorage/localStorage';
 import { IPlatformsState } from 'store/types';
 
 const initialState: IPlatformsState = {
@@ -14,6 +15,9 @@ const platformsSlice = createSlice({
   reducers: {
     setPlatforms: (state, { payload }: PayloadAction<IPlatform[]>) => {
       state.platforms = payload;
+    },
+    setVisitedPlatforms: (state, { payload }: PayloadAction<IPlatform[]>) => {
+      state.visitedPlatforms = payload;
     },
     addFavoritePlatform: (state, { payload }: PayloadAction<string>) => {
       const favoritePlatform = state.platforms.find((platform) => platform.id === payload);
@@ -34,13 +38,18 @@ const platformsSlice = createSlice({
       });
     },
     addVisitedPlatform: (state, { payload }: PayloadAction<string>) => {
+      const currentDate = new Date();
       const visitedPlatform = state.platforms.find((platform) => platform.id === payload);
-      if (visitedPlatform) state.visitedPlatforms.push(visitedPlatform);
+      if (visitedPlatform) {
+        visitedPlatform.date = currentDate;
+        state.visitedPlatforms.push(visitedPlatform);
+        localStorage.setItem(LocalStorage.VisitedHistory, JSON.stringify(state.visitedPlatforms));
+      }
     },
   },
 });
 
 export const {
   reducer: platformsReducer,
-  actions: { setPlatforms, addFavoritePlatform, addVisitedPlatform, deleteFavoritePlatform },
+  actions: { setPlatforms, addFavoritePlatform, addVisitedPlatform, deleteFavoritePlatform, setVisitedPlatforms },
 } = platformsSlice;
