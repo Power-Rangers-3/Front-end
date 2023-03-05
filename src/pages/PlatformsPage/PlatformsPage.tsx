@@ -1,4 +1,3 @@
-
 import { getUser, useAppSelector, useAppDispatch, addFavoritePlatform, getPlatforms } from 'store';
 import { PlatformList, Pagination } from 'components';
 import { useState } from 'react';
@@ -11,6 +10,7 @@ export const PlatformsPage = () => {
   const dispatch = useAppDispatch();
   const addToFavorite = (id: string) => {
     dispatch(addFavoritePlatform(id));
+  };
   const [currentPage, setCurrentPage] = useState(1);
   const handlePageChange = (pageNumber: number) => {
     setCurrentPage(pageNumber);

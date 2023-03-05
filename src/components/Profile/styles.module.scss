@@ -61,9 +61,9 @@
 }
 
 .link {
-  color: var(--font-color-base);
   display: flex;
   gap: var(--spacing-8);
+  color: var(--font-color-base);
 
   &:visited {
     color: var(--font-color-base);
@@ -71,6 +71,7 @@
 
   &:hover {
     color: var(--font-color-hover);
+
     path {
       fill: var(--font-color-hover);
     }
@@ -78,18 +79,19 @@
 }
 
 .button {
-  font-family: var(--normalBold-font-family);
-  font-size: var(--normalBold-font-size);
-  font-weight: var(--normalBold-font-weight);
-  background-color: inherit;
-  border: none;
-  color: var(--font-color-error);
   display: flex;
   gap: var(--spacing-8);
   padding: 0;
+  font-family: var(--normalBold-font-family);
+  font-size: var(--normalBold-font-size);
+  font-weight: var(--normalBold-font-weight);
+  color: var(--font-color-error);
+  background-color: inherit;
+  border: none;
 
   &:hover {
     color: var(--font-color-hover);
+
     path {
       stroke: var(--font-color-hover);
     }

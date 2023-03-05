@@ -21,6 +21,7 @@
     }
   }
 }
+
 .flag {
   position: absolute;
   top: 1px;
@@ -34,21 +35,22 @@
 
 .notFavorite {
   path {
-    stroke: rgb(252, 180, 0);
     fill: var(--background-color);
+    stroke: rgb(252, 180, 0);
   }
 }
 
 .favorite {
+  justify-self: center;
+
   & > svg path {
     fill: rgb(252, 180, 0);
   }
-  justify-self: center;
 }
 
 .text {
-  max-width: 396px;
   align-self: center;
+  max-width: 396px;
 }
 
 .image {
@@ -67,8 +69,8 @@
 }
 
 .button {
-  padding: 10px 16px;
-  background-color: var(--background-color-button-invert);
-  color: var(--font-color-invert);
   justify-self: center;
+  padding: 10px 16px;
+  color: var(--font-color-invert);
+  background-color: var(--background-color-button-invert);
 }
