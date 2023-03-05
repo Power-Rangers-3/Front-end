@@ -3,6 +3,7 @@ import { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import {
   addFavoritePlatform,
+  addVisitedPlatform,
   getPlatform,
   getPlatforms,
   getUser,
@@ -18,7 +19,10 @@ export const PlatformDetailsPage = () => {
   const platform = useAppSelector(getPlatform);
   const dispatch = useAppDispatch();
   useEffect(() => {
-    dispatch(setPlatform(platforms.find((item) => item.id === platformId)));
+    if (platformId) {
+      dispatch(setPlatform(platforms.find((item) => item.id === platformId)));
+      dispatch(addVisitedPlatform(platformId));
+    }
   }, [dispatch, platformId, platforms]);
   const addToFavorite = (id: string) => {
     dispatch(addFavoritePlatform(id));
