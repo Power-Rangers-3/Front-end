@@ -6,32 +6,33 @@
   grid-area: nav;
   padding: 0 var(--spacing-7);
   border-right: 1px solid var(--font-color-disabled);
+  padding-top: 20px;
+  gap: 20px;
+}
 
-  &__link {
-    margin: 20px 0;
-    font-size: 20px;
-    font-weight: var(--normalRegular-font-size);
-    line-height: 150%;
+.link {
+  font-size: 20px;
+  font-weight: var(--normalRegular-font-size);
+  line-height: 150%;
 
-    &:hover,
-    &:active {
-      color: #3c42bd;
-      cursor: pointer;
-    }
-  }
-
-  &__logo {
-    width: 24px;
-    height: 24px;
-    margin-right: 10px;
+  &:hover,
+  &:active {
+    color: #3c42bd;
     cursor: pointer;
-    fill: var(--font-color-base);
+  }
+}
 
-    &:hover {
-      cursor: pointer;
-      fill: #3c42bd;
-      transition: fill .3s ease;
-    }
+.icon {
+  width: 24px;
+  height: 24px;
+  margin-right: 10px;
+  cursor: pointer;
+  fill: var(--font-color-base);
+
+  &:hover {
+    cursor: pointer;
+    fill: #3c42bd;
+    transition: fill 0.3s ease;
   }
 }
 
@@ -61,10 +62,6 @@
   // stylelint-disable-next-line declaration-block-no-redundant-longhand-properties
   grid-template-columns: 320px 1fr;
   min-height: 100vh;
-}
-
-.logo {
-  margin: 27px 0;
 }
 
 .outlet {

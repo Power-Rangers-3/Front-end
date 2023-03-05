@@ -1,15 +1,22 @@
-import AiMyLogic from '../assets/AiMyLogic.png';
-import Artsend from '../assets/Artsend_.jpg';
-import BotHelp1 from '../assets/BotHelp1.png';
-import BotKits from '../assets/botkits_.png';
-import Botmaker from '../assets/Botmaker.png';
-import Botsify from '../assets/botsify.png';
-import Buisnessbot from '../assets/businessbot.png';
-import Photo from '../assets/photo.png';
-import Sberbb from '../assets/sberbb.png';
-import { DataPlatformsType } from '../types/dataPlatformsType';
+import AiMyLogic from './assets/AiMyLogic.png';
+import Artsend from './assets/Artsend_.jpg';
+import BotHelp1 from './assets/BotHelp1.png';
+import BotKits from './assets/botkits_.png';
+import Botmaker from './assets/Botmaker.png';
+import Botsify from './assets/botsify.png';
+import Buisnessbot from './assets/businessbot.png';
+import Photo from './assets/photo.png';
+import Sberbb from './assets/sberbb.png';
 
-export const dataArray: Array<DataPlatformsType> = [
+export interface IPlatform {
+  title: string;
+  picture: string;
+  text: string;
+  link: string;
+  id: string;
+}
+
+export const platformsData: IPlatform[] = [
   {
     title: 'Aimylogic',
     picture: AiMyLogic,

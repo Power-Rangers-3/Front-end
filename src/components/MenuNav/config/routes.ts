@@ -11,7 +11,7 @@ export const routes = [
   },
   {
     to: ROUTE.SIGN_UP,
-    text: 'О сервисе',
+    text: 'Статьи',
   },
   {
     to: ROUTE.PLATFORMS,

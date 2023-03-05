@@ -1,6 +1,5 @@
 import { logoIcon } from 'assets';
 import { useWindowSise } from 'hooks';
-import { ReactNode } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { getUser, useAppSelector } from 'store';
 import { ROUTE } from 'router';
@@ -8,11 +7,7 @@ import { ROUTE } from 'router';
 import styles from './styles.module.scss';
 import { routes } from './config/routes';
 
-interface IProps {
-  children?: ReactNode;
-}
-
-export const MenuNav = ({ children }: IProps) => {
+export const MenuNav = () => {
   const { width } = useWindowSise();
   const { isAuth } = useAppSelector(getUser);
   const navigate = useNavigate();
@@ -40,7 +35,7 @@ export const MenuNav = ({ children }: IProps) => {
           ))}
         </ul>
       </nav>
-      {!isAuth && (
+      {!isAuth ? (
         <div className={styles.buttonsWrapper}>
           <button type="button" className={styles.enter} onClick={handleEnter}>
             Вход
@@ -49,8 +44,11 @@ export const MenuNav = ({ children }: IProps) => {
             Регистрация
           </button>
         </div>
+      ) : (
+        <Link to={ROUTE.PROFILE + ROUTE.PLATFORMS} className="button buttonBright" type="button">
+          Подобрать решение
+        </Link>
       )}
-      {children}
     </div>
   );
 };
