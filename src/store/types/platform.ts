@@ -1,7 +1,7 @@
 export interface IPlatformState {
-  title: string | null;
-  picture: string | null;
-  description: string | null;
-  link: string | null;
-  id: string | null;
+  title: string;
+  picture: string;
+  text: string;
+  link: string;
+  id: string;
 }
