@@ -45,5 +45,5 @@ export {
   exit,
   avatar,
   arrow_backIcon,
-  arrow_forwardIcon
+  arrow_forwardIcon,
 };
