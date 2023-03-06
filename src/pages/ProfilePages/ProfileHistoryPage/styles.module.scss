@@ -2,7 +2,7 @@
   display: grid;
   grid-template-columns: repeat(4, auto);
   margin-left: var(--spacing-7);
-
+  align-items: center;
   & > :nth-child(3) {
     grid-column: 3/5;
   }
@@ -13,4 +13,22 @@
   font-weight: var(--smallRegular-font-weight);
   line-height: var(--smallRegular-line-height);
   border-bottom: 1px solid #b3b3b3;
+}
+
+.image {
+  width: 70px;
+}
+
+.link {
+  font-size: var(--smallRegular-font-size);
+  font-weight: var(--smallRegular-font-weight);
+  line-height: var(--smallRegular-line-height);
+  text-decoration: underline;
+}
+
+.date {
+  font-size: var(--smallRegular-font-size);
+  font-weight: var(--smallRegular-font-weight);
+  line-height: var(--smallRegular-line-height);
+  color: #333;
 }

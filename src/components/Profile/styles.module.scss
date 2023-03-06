@@ -42,12 +42,12 @@
   display: flex;
   flex-direction: column;
   gap: var(--spacing-8);
-  align-items: center;
   padding: var(--spacing-9);
   padding-right: var(--spacing-3);
   padding-left: var(--spacing-3);
-  background-color: #f5f5f5;
+  background-color: var(--background-color);
   border-radius: 5px;
+  z-index: 999;
 }
 
 .email {
@@ -62,6 +62,8 @@
 }
 
 .link {
+  display: flex;
+  gap: var(--spacing-8);
   color: var(--font-color-base);
 
   &:visited {
@@ -70,17 +72,29 @@
 
   &:hover {
     color: var(--font-color-hover);
+
+    path {
+      fill: var(--font-color-hover);
+    }
   }
 }
 
 .button {
+  display: flex;
+  gap: var(--spacing-8);
+  padding: 0;
   font-family: var(--normalBold-font-family);
   font-size: var(--normalBold-font-size);
   font-weight: var(--normalBold-font-weight);
+  color: var(--font-color-error);
   background-color: inherit;
   border: none;
 
   &:hover {
     color: var(--font-color-hover);
+
+    path {
+      stroke: var(--font-color-hover);
+    }
   }
 }

@@ -1,4 +1,4 @@
-import { logoIcon, exit } from 'assets';
+import { logoIcon, ExitIcon } from 'assets';
 
 import { Link } from 'react-router-dom';
 
@@ -24,7 +24,7 @@ export const MenuNavAdmin = () => (
       })}
     </ul>
     <Link to={ROUTE.HOME} className={styles.exit}>
-      <img src={exit} alt="Exit logo" />
+      <ExitIcon />
       <span>Выйти</span>
     </Link>
   </nav>

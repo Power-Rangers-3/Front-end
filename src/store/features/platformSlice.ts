@@ -1,19 +1,28 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { IPlatform } from 'mocks';
 import { IPlatformState } from 'store/types';
 
 const initialState: IPlatformState = {
-  title: null,
-  id: null,
-  picture: null,
-  link: null,
-  description: null,
+  title: '',
+  id: '',
+  picture: '',
+  link: '',
+  text: '',
 };
 
 const platformSlice = createSlice({
   name: 'platform',
   initialState,
   reducers: {
-    setPlatform: (state, { payload }) => {},
+    setPlatform: (state, { payload }: PayloadAction<IPlatform | undefined>) => {
+      if (payload) {
+        state.text = payload.text;
+        state.id = payload.id;
+        state.link = payload.link;
+        state.picture = payload.picture;
+        state.title = payload.title;
+      }
+    },
   },
 });
 

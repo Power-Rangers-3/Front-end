@@ -1,4 +1,12 @@
 import { PlatformList } from 'components';
-import { platformsData } from 'mocks';
+import { addFavoritePlatform, getPlatforms, getUser, useAppDispatch, useAppSelector } from 'store';
 
-export const ProfilePlatforms = () => <PlatformList platforms={platformsData} />;
+export const ProfilePlatforms = () => {
+  const platforms = useAppSelector(getPlatforms);
+  const { isAuth } = useAppSelector(getUser);
+  const dispatch = useAppDispatch();
+  const addToFavorite = (id: string) => {
+    dispatch(addFavoritePlatform(id));
+  };
+  return <PlatformList platforms={platforms} onFavorite={addToFavorite} isAuth={isAuth} />;
+};
