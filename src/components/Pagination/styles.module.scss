@@ -15,10 +15,10 @@
   font-size: var(--spacing-7);
   font-style: normal;
   line-height: var(--normalMedium-line-height);
-  letter-spacing: 0.0002em;
+  color: var(--font-color-disabled);
+  letter-spacing: .0002em;
   background-color: transparent;
   border: none;
-  color: var(--font-color-disabled);
 
   &:disabled {
     color: var(--font-color-disabled);
@@ -27,8 +27,8 @@
 
 .currentPage.active {
   font-weight: 700;
-  border-bottom: 2px solid var(--border-color);
   color: var(--font-color-base);
+  border-bottom: 2px solid var(--border-color);
 }
 
 .prevArrow,

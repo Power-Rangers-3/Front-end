@@ -22,7 +22,6 @@
   @extend %bg;
 }
 
-
 .bgReset {
   @extend %bg;
   right: 0;
@@ -38,6 +37,7 @@
   display: flex;
   flex: 1;
   flex-direction: column;
+  gap: var(--spacing-7);
   max-width: var(--max-width);
   min-height: 100vh;
 }
@@ -66,7 +66,6 @@
   width: 100%;
 }
 
-
 .aboutContent {
   @include breakpoint(lg) {
     display: flex;
@@ -86,7 +85,6 @@
     transform: translateX(-50%);
   }
 }
-
 
 .logo {
   @include breakpoint(lg) {
