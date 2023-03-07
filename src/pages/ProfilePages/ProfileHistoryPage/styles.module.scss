@@ -1,8 +1,9 @@
 .wrapper {
   display: grid;
   grid-template-columns: repeat(4, auto);
-  margin-left: var(--spacing-7);
   align-items: center;
+  margin-left: var(--spacing-7);
+
   & > :nth-child(3) {
     grid-column: 3/5;
   }
@@ -30,5 +31,5 @@
   font-size: var(--smallRegular-font-size);
   font-weight: var(--smallRegular-font-weight);
   line-height: var(--smallRegular-line-height);
-  color: #333;
+  color: #333333;
 }

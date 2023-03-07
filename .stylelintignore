@@ -13,4 +13,6 @@
 *.ttf
 *.woff
 *.woff2
+*.yaml
+Dockerfile
 /node_modules
