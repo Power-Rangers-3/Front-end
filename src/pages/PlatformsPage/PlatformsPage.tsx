@@ -18,9 +18,8 @@ export const PlatformsPage = () => {
   const [activeTab, setActiveTab] = useState('en');
 
   useEffect(() => {
-    setSortedPlatforms(platforms.sort((a, b) => a.title.localeCompare(b.title, activeTab)));
+    setSortedPlatforms(platforms.slice().sort((a, b) => a.title.localeCompare(b.title, activeTab)));
   }, [activeTab, platforms]);
-
   const ELEMENT_FOR_PAGE = 10;
   const lastIndexElement = currentPage * ELEMENT_FOR_PAGE;
   const firstIndexElement = lastIndexElement - ELEMENT_FOR_PAGE;
@@ -31,7 +30,7 @@ export const PlatformsPage = () => {
   return (
     <section className={styles.section}>
       <div className={styles.wrapper}>
-        <Tabs onTabClick={onTabClick} activeTab={activeTab} />
+        {isAuth && <Tabs onTabClick={onTabClick} activeTab={activeTab} />}
         <PlatformList
           platforms={sortedPlatforms.slice(firstIndexElement, lastIndexElement)}
           isAuth={isAuth}
