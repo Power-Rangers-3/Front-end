@@ -7,5 +7,6 @@ export const store = configureStore({
     user: userReducer,
     platforms: platformsReducer,
     platform: platformReducer,
+    sortPlatforms: platformsReducer,
   },
 });
