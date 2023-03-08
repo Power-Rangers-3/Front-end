@@ -1,5 +1,6 @@
 export * from './ProtectedAdmin/ProtectedAdmin';
 export * from './ProtectedAuth/ProtectedAuth';
+export * from './Tabs/Tabs';
 export * from './Portal/Portal';
 export * from './Profile/Profile';
 export * from './PlatformCard/PlatformCard';
@@ -10,4 +11,3 @@ export * from './Header/Header';
 export * from './Footer/Footer';
 export * from './MenuNavAdmin/MenuNavAdmin';
 export * from './Pagination/Pagination';
-

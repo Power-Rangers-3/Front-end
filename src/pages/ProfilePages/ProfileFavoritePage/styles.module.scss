@@ -1,6 +1,7 @@
 .wrapper {
   display: grid;
   grid-template-columns: repeat(5, auto);
+  align-items: center;
   margin-left: var(--spacing-7);
 
   & > :nth-child(3) {

@@ -12,6 +12,7 @@ import {
   ProfileHistoryPage,
   PlatformsPage,
   ProfilePlatforms,
+  PlatformDetailsPage,
 } from 'pages';
 
 import { createBrowserRouter, createRoutesFromElements, Route } from 'react-router-dom';
@@ -36,6 +37,7 @@ export const router = (user: IUser) =>
             <Route path={ROUTE.PROFILE_PLATFORMS} element={<ProfilePlatforms />} />
             <Route path={ROUTE.PROFILE_SETTINGS} element={<ProfileSettingsPage />} />
           </Route>
+          <Route path={ROUTE.PLATFORMS_DETAILS} element={<PlatformDetailsPage />} />
         </Route>
         <Route path={ROUTE.SIGN_UP} element={<RegistrationPage />} />
         <Route path={ROUTE.SIGN_IN} element={<SignInPage />} />
@@ -43,14 +45,9 @@ export const router = (user: IUser) =>
           <Route path={`${ROUTE.RESET_PASSWORD}/:token`} element={<SignInPage />} />
         </Route>
         <Route path={ROUTE.NEW_PASSWORD} element={<NewPasswordPage />} />
-        <Route
-          path={ROUTE.ADMIN}
-          element={
-            <ProtectedAdmin user={user}>
-              <AdminLayout />
-            </ProtectedAdmin>
-          }
-        />
+        <Route element={<ProtectedAdmin user={user} />}>
+          <Route path={ROUTE.ADMIN} element={<AdminLayout />} />
+        </Route>
       </>,
     ),
   );

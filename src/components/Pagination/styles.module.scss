@@ -1,7 +1,7 @@
 .pagination {
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   margin-top: 20px;
 }
 
@@ -11,21 +11,24 @@
   justify-content: center;
   width: 10px;
   height: 24px;
-  letter-spacing: 0.0002em;
-  font-style: normal;
-  font-size: var(--spacing-7);
-  line-height: var(--normalMedium-line-height);
-  border: none;
   margin: 10px;
+  font-size: var(--spacing-7);
+  font-style: normal;
+  line-height: var(--normalMedium-line-height);
+  color: var(--font-color-disabled);
+  letter-spacing: .0002em;
   background-color: transparent;
+  border: none;
+
   &:disabled {
-    color: gray;
+    color: var(--font-color-disabled);
   }
 }
 
 .currentPage.active {
-  font-weight: bold;
-  border-bottom: 2px solid black;
+  font-weight: 700;
+  color: var(--font-color-base);
+  border-bottom: 2px solid var(--border-color);
 }
 
 .prevArrow,
@@ -40,14 +43,14 @@
   border: none;
 
   &:disabled {
-    color: gray;
+    color: var(--font-color-disabled);
   }
 }
 
-.prevArrow:before {
+.prevArrow::before {
   content: '<';
 }
 
-.nextArrow:before {
+.nextArrow::before {
   content: '>';
 }

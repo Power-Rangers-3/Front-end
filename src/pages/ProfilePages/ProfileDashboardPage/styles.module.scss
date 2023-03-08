@@ -36,7 +36,8 @@
   }
 
   &:hover::after,
-  &:active::after {
+  &:active::after,
+  &.active {
     width: 100%;
   }
 }

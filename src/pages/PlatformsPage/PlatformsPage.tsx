@@ -1,38 +1,42 @@
-import { PlatformList, Pagination } from 'components';
-import { platformsData } from 'mocks';
-import { Tabs } from 'pages';
+import { getUser, useAppSelector, useAppDispatch, addFavoritePlatform, getPlatforms } from 'store';
+import { PlatformList, Pagination, Tabs } from 'components';
 import { useState, useEffect } from 'react';
+
+import { IPlatform } from 'mocks';
 
 import styles from './styles.module.scss';
 
 export const PlatformsPage = () => {
+  const { isAuth } = useAppSelector(getUser);
+  const platforms = useAppSelector(getPlatforms);
+  const [sortedPlatforms, setSortedPlatforms] = useState<IPlatform[]>([]);
+  const dispatch = useAppDispatch();
+  const addToFavorite = (id: string) => {
+    dispatch(addFavoritePlatform(id));
+  };
   const [currentPage, setCurrentPage] = useState(1);
-  const [platforms, setPlatforms] = useState(platformsData);
-  const [activeTab, setActiveTab] = useState('a-z');
-  const [russianSort, setRussianSort] = useState(false);
+  const [activeTab, setActiveTab] = useState('en');
 
   useEffect(() => {
-    const sortedPlatforms = platformsData.slice().sort((a, b) => {
-      const locale = russianSort ? 'ru' : 'en';
-      return a.title.localeCompare(b.title, locale);
-    });
-    setPlatforms(sortedPlatforms);
-  }, [activeTab, russianSort]);
+    setSortedPlatforms(platforms.sort((a, b) => a.title.localeCompare(b.title, activeTab)));
+  }, [activeTab, platforms]);
 
-  const handlePageChange = (pageNumber: number) => {
-    setCurrentPage(pageNumber);
-  };
+  const ELEMENT_FOR_PAGE = 10;
+  const lastIndexElement = currentPage * ELEMENT_FOR_PAGE;
+  const firstIndexElement = lastIndexElement - ELEMENT_FOR_PAGE;
+  const handlePageChange = (pageNumber: number) => setCurrentPage(pageNumber);
 
-  const sortPlatforms = (tab: string) => {
-    setActiveTab(tab);
-    setRussianSort(tab === 'а-я');
-  };
+  const onTabClick = (tab: string) => setActiveTab(tab);
 
   return (
     <section className={styles.section}>
       <div className={styles.wrapper}>
-        <Tabs onTabClick={sortPlatforms} activeTab={activeTab} />
-        <PlatformList platforms={platforms} />
+        <Tabs onTabClick={onTabClick} activeTab={activeTab} />
+        <PlatformList
+          platforms={sortedPlatforms.slice(firstIndexElement, lastIndexElement)}
+          isAuth={isAuth}
+          onFavorite={addToFavorite}
+        />
         <Pagination
           currentPage={currentPage}
           totalPages={Math.ceil(platforms.length / 10)}

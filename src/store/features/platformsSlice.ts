@@ -1,5 +1,6 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { IPlatform } from 'mocks';
+import { LocalStorage } from 'shared/localStorage/localStorage';
 import { IPlatformsState } from 'store/types';
 
 const initialState: IPlatformsState = {
@@ -16,11 +17,35 @@ const platformsSlice = createSlice({
     setPlatforms: (state, { payload }: PayloadAction<IPlatform[]>) => {
       state.platforms = payload;
     },
-    addFavoritePlatforms: (state, { payload }: PayloadAction<IPlatform>) => {
-      state.favoritePlatforms.push(payload);
+    setVisitedPlatforms: (state, { payload }: PayloadAction<IPlatform[]>) => {
+      state.visitedPlatforms = payload;
     },
-    addVisitedPlatforms: (state, { payload }: PayloadAction<IPlatform>) => {
-      state.visitedPlatforms.push(payload);
+    addFavoritePlatform: (state, { payload }: PayloadAction<string>) => {
+      const favoritePlatform = state.platforms.find((platform) => platform.id === payload);
+      if (favoritePlatform) {
+        favoritePlatform.isFavorite = true;
+        state.favoritePlatforms.push(favoritePlatform);
+        state.platforms = state.platforms.map((item) => {
+          if (item.id === favoritePlatform.id) item.isFavorite = true;
+          return item;
+        });
+      }
+    },
+    deleteFavoritePlatform: (state, { payload }: PayloadAction<string>) => {
+      state.favoritePlatforms = state.favoritePlatforms.filter((platform) => platform.id !== payload);
+      state.platforms = state.platforms.map((platform) => {
+        if (platform.id === payload) platform.isFavorite = false;
+        return platform;
+      });
+    },
+    addVisitedPlatform: (state, { payload }: PayloadAction<string>) => {
+      const currentDate = new Date();
+      const visitedPlatform = state.platforms.find((platform) => platform.id === payload);
+      if (visitedPlatform) {
+        visitedPlatform.date = currentDate;
+        state.visitedPlatforms.push(visitedPlatform);
+        localStorage.setItem(LocalStorage.VisitedHistory, JSON.stringify(state.visitedPlatforms));
+      }
     },
     sortPlatforms: (state) => {
       state.platforms.sort((a, b) => a.title.localeCompare(b.title));
@@ -30,6 +55,5 @@ const platformsSlice = createSlice({
 
 export const {
   reducer: platformsReducer,
-  reducer: sortPlatformsReducer,
-  actions: { setPlatforms, addFavoritePlatforms, addVisitedPlatforms, sortPlatforms },
+  actions: { setPlatforms, addFavoritePlatform, addVisitedPlatform, deleteFavoritePlatform, setVisitedPlatforms },
 } = platformsSlice;

@@ -1,6 +1,7 @@
 .wrapper {
   display: grid;
   grid-template-columns: repeat(4, auto);
+  align-items: center;
   margin-left: var(--spacing-7);
 
   & > :nth-child(3) {
@@ -13,4 +14,22 @@
   font-weight: var(--smallRegular-font-weight);
   line-height: var(--smallRegular-line-height);
   border-bottom: 1px solid #b3b3b3;
+}
+
+.image {
+  width: 70px;
+}
+
+.link {
+  font-size: var(--smallRegular-font-size);
+  font-weight: var(--smallRegular-font-weight);
+  line-height: var(--smallRegular-line-height);
+  text-decoration: underline;
+}
+
+.date {
+  font-size: var(--smallRegular-font-size);
+  font-weight: var(--smallRegular-font-weight);
+  line-height: var(--smallRegular-line-height);
+  color: #333333;
 }

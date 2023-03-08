@@ -37,7 +37,6 @@ export const Input = ({
           className={styles.input}
           id={id}
           placeholder={placeholder}
-          autoComplete="on"
           type={
             // eslint-disable-next-line no-nested-ternary
             type !== 'password' ? type : isShowPassword ? 'text' : 'password'
