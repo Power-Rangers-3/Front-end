@@ -25,17 +25,16 @@ export const NewPasswordForm = () => {
   });
 
   const { email } = useAppSelector(getUser);
-  const [isPasswordChanged, setIsPasswordChanged] = useState(false);
-  const [errorPassword, setErrorPassword] = useState<string>();
+  const [messageResponse, setMessageResponse] = useState<string>('');
 
   const onSubmit: SubmitHandler<ChangePasswordType> = (data) => {
     const querryParams = { email: email || '', password: data.currentPassword, newPassword: data.password };
     changePassword(querryParams)
-      .then(() => {
-        setIsPasswordChanged(true);
+      .then(({ message }) => {
         reset();
+        setMessageResponse(message);
       })
-      .catch((error) => setErrorPassword(error.response.data.message));
+      .catch((error) => setMessageResponse(error.response.data.message));
   };
 
   return (
@@ -70,8 +69,9 @@ export const NewPasswordForm = () => {
       >
         Сохранить
       </button>
-      {isPasswordChanged && <p className={styles.success}>Пароль успешно изменен</p>}
-      {errorPassword && <p className={styles.error}>{errorPassword}</p>}
+      {messageResponse && (
+        <p className={messageResponse === 'success' ? styles.success : styles.error}>{messageResponse}</p>
+      )}
     </form>
   );
 };
