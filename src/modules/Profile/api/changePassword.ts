@@ -1,8 +1,9 @@
 import { LocalStorage } from 'shared/localStorage/localStorage';
+import { baseUrl } from 'config';
 
 import { authAxiosInstance } from './authAxiosInstance';
 
-const apiPath = `${process.env.REACT_APP_API_AUTH}/users/refresh-password/`;
+const apiPath = `${baseUrl}/users/refresh-password/`;
 
 interface ChangePasswordType {
   email?: string;
