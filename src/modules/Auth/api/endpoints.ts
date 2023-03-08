@@ -1,10 +1,12 @@
+import { baseUrl } from 'config';
+
 enum ENDPOINT {
   SIGN_IN = 'login',
   SIGN_UP = 'registration',
   REFRESH_TOKEN = 'refresh',
 }
 
-const api = `${process.env.REACT_APP_API_AUTH}/auth/`;
+const api = `${baseUrl}/auth/`;
 
 export const endpoints = {
   signIn: api + ENDPOINT.SIGN_IN,
