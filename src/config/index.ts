@@ -1,4 +1,5 @@
 export * from './portal';
 
-export const domain = window?.location?.hostname ?? process?.env?.REACT_APP_API_AUTH ?? '127.0.0.1';
-export const baseUrl = `${domain}/api`;
+export const isProduction = process.env.NODE_ENV !== 'development';
+export const pathPrefix = isProduction ? `/api` : '';
+export const domain = process.env.REACT_APP_API_AUTH ?? window?.location?.host ?? '127.0.0.1';
