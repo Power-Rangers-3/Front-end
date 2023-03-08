@@ -21,7 +21,7 @@ const platformsSlice = createSlice({
     },
     addFavoritePlatform: (state, { payload }: PayloadAction<string>) => {
       const favoritePlatform = state.platforms.find((platform) => platform.id === payload);
-      if (favoritePlatform) {
+      if (favoritePlatform && !favoritePlatform.isFavorite) {
         favoritePlatform.isFavorite = true;
         state.favoritePlatforms.push(favoritePlatform);
         state.platforms = state.platforms.map((item) => {
@@ -41,8 +41,12 @@ const platformsSlice = createSlice({
       const currentDate = new Date();
       const visitedPlatform = state.platforms.find((platform) => platform.id === payload);
       if (visitedPlatform) {
+        const existPlatformIndex = state.visitedPlatforms.findIndex((platform) => platform.id === visitedPlatform.id);
+        if (existPlatformIndex >= 0) {
+          state.visitedPlatforms.splice(existPlatformIndex, 1);
+        }
         visitedPlatform.date = currentDate;
-        state.visitedPlatforms.push(visitedPlatform);
+        state.visitedPlatforms.unshift(visitedPlatform);
         localStorage.setItem(LocalStorage.VisitedHistory, JSON.stringify(state.visitedPlatforms));
       }
     },
