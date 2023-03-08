@@ -9,3 +9,4 @@ export * from './ProfilePages/ProfileFavoritePage/ProfileFavoritePage';
 export * from './ProfilePages/ProfileDashboardPage/ProfileDashboardPage';
 export * from './ProfilePages/ProfilePlatforms/ProfilePlatforms';
 export * from './PlatformsPage/PlatformsPage';
+export * from './PlatformsPage/Tabs';

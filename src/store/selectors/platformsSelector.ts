@@ -7,3 +7,5 @@ export const getFavoritePlatforms = (state: RootState) => state.platforms.favori
 export const getVisitedPlatforms = (state: RootState) => state.platforms.visitedPlatforms;
 
 export const getPlatform = (state: RootState) => state.platform;
+
+export const getSortPlatforms = (state: RootState) => state.sortPlatforms;

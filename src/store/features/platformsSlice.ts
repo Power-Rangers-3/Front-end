@@ -6,6 +6,7 @@ const initialState: IPlatformsState = {
   platforms: [],
   favoritePlatforms: [],
   visitedPlatforms: [],
+  sortPlatforms: [],
 };
 
 const platformsSlice = createSlice({
@@ -21,10 +22,14 @@ const platformsSlice = createSlice({
     addVisitedPlatforms: (state, { payload }: PayloadAction<IPlatform>) => {
       state.visitedPlatforms.push(payload);
     },
+    sortPlatforms: (state) => {
+      state.platforms.sort((a, b) => a.title.localeCompare(b.title));
+    },
   },
 });
 
 export const {
   reducer: platformsReducer,
-  actions: { setPlatforms, addFavoritePlatforms, addVisitedPlatforms },
+  reducer: sortPlatformsReducer,
+  actions: { setPlatforms, addFavoritePlatforms, addVisitedPlatforms, sortPlatforms },
 } = platformsSlice;

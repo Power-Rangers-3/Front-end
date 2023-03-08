@@ -13,6 +13,7 @@ const platformSlice = createSlice({
   name: 'platform',
   initialState,
   reducers: {
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     setPlatform: (state, { payload }) => {},
   },
 });

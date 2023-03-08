@@ -2,7 +2,6 @@ import { IPlatform } from 'mocks';
 
 export interface IPlatformsState {
   platforms: IPlatform[];
-  favoritePlatforms: IPlatform[];
-  visitedPlatforms: IPlatform[];
-  sortPlatforms: IPlatform[];
+  sortKey: string;
+  sortDirection: 'asc' | 'desc';
 }
