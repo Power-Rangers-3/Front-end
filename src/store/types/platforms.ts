@@ -4,5 +4,4 @@ export interface IPlatformsState {
   platforms: IPlatform[];
   favoritePlatforms: IPlatform[];
   visitedPlatforms: IPlatform[];
-  sortPlatforms: IPlatform[];
 }

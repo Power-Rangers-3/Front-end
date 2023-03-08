@@ -7,7 +7,6 @@ const initialState: IPlatformsState = {
   platforms: [],
   favoritePlatforms: [],
   visitedPlatforms: [],
-  sortPlatforms: [],
 };
 
 const platformsSlice = createSlice({
@@ -46,9 +45,6 @@ const platformsSlice = createSlice({
         state.visitedPlatforms.push(visitedPlatform);
         localStorage.setItem(LocalStorage.VisitedHistory, JSON.stringify(state.visitedPlatforms));
       }
-    },
-    sortPlatforms: (state) => {
-      state.platforms.sort((a, b) => a.title.localeCompare(b.title));
     },
   },
 });
