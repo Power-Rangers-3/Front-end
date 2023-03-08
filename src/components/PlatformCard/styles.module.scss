@@ -2,10 +2,9 @@
   position: relative;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   gap: var(--spacing-7);
-  align-items: center;
   width: 200px;
-  padding: 0 var(--spacing-10);
 
   p {
     font-size: var(--smallRegular-font-size);
