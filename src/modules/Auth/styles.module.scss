@@ -1,7 +1,7 @@
 .form {
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-6);
+  gap: var(--spacing-5);
   width: 100%;
   min-width: 320px;
   max-width: 480px;
@@ -11,7 +11,7 @@
   .inputGroupWrapper {
     display: flex;
     flex-direction: column;
-    gap: var(--spacing-6);
+    gap: var(--spacing-5);
   }
 
   .remindPassword {
@@ -68,7 +68,7 @@
     }
   }
 
-  .registrationError {
+  .error {
     display: flex;
     gap: var(--spacing-9);
     align-items: center;
@@ -89,9 +89,9 @@
     justify-content: center;
     text-decoration: underline;
 
-    &:hover, &:focus {
+    &:hover,
+    &:focus {
       color: var(--font-color-hover);
     }
   }
 }
-

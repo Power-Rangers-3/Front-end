@@ -1,4 +1,5 @@
-import { ProtectedAdmin, ProtectedAuth } from 'components';
+import { ProtectedAdmin, ProtectedAuth, ProtectedUnAuth } from 'components';
+
 import { AdminLayout, MainLayout, ProfileLayout } from 'layouts';
 import {
   HomePage,
@@ -39,12 +40,14 @@ export const router = (user: IUser) =>
           </Route>
           <Route path={ROUTE.PLATFORMS_DETAILS} element={<PlatformDetailsPage />} />
         </Route>
-        <Route path={ROUTE.SIGN_UP} element={<RegistrationPage />} />
-        <Route path={ROUTE.SIGN_IN} element={<SignInPage />} />
-        <Route path={ROUTE.RESET_PASSWORD} element={<ResetPasswordPage />}>
-          <Route path={`${ROUTE.RESET_PASSWORD}/:token`} element={<SignInPage />} />
+        <Route element={<ProtectedUnAuth user={user} />}>
+          <Route path={ROUTE.SIGN_UP} element={<RegistrationPage />} />
+          <Route path={ROUTE.SIGN_IN} element={<SignInPage />} />
+          <Route path={ROUTE.RESET_PASSWORD} element={<ResetPasswordPage />}>
+            <Route path={`${ROUTE.RESET_PASSWORD}/:params`} element={<SignInPage />} />
+          </Route>
+          <Route path={ROUTE.NEW_PASSWORD} element={<NewPasswordPage />} />
         </Route>
-        <Route path={ROUTE.NEW_PASSWORD} element={<NewPasswordPage />} />
         <Route element={<ProtectedAdmin user={user} />}>
           <Route path={ROUTE.ADMIN} element={<AdminLayout />} />
         </Route>
