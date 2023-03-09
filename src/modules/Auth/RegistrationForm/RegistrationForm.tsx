@@ -98,7 +98,7 @@ export const RegistrationForm = () => {
         Зарегистрироваться
       </button>
       {registrationError && (
-        <p className={styles.registrationError}>
+        <p className={styles.error}>
           <ErrorIcon />
           {registrationError}
         </p>

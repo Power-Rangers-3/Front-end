@@ -10,17 +10,26 @@ import { useNavigate } from 'react-router';
 
 import { ROUTE } from 'router';
 
+import { useSearchParams } from 'react-router-dom';
+
 import styles from '../styles.module.scss';
 import buttonStyles from '../UI/buttonStyles/button.styles.module.scss';
 
-import { schema } from '../data/newPasswordScheme';
+import { scheme } from '../data/newPasswordScheme';
 
-import { NewPasswordType } from '../types';
+import { NewPasswordType, ResetPasswordRequestType } from '../types';
 import { Input } from '../UI/Input/Input';
 
 import { isFormFilled } from '../utils/isFormFilled';
 
+import { resetPassword } from '../api/resetPassword';
+
+import { ErrorIcon } from '../assets';
+
 export const NewPasswordForm = () => {
+  const [error, setError] = useState();
+  const [searchParams] = useSearchParams();
+
   const {
     register,
     handleSubmit,
@@ -28,7 +37,7 @@ export const NewPasswordForm = () => {
     getValues,
   } = useForm<NewPasswordType>({
     mode: 'onChange',
-    resolver: yupResolver(schema),
+    resolver: yupResolver(scheme),
   });
 
   const [isLoading, setIsLoading] = useState<boolean>(false);
@@ -36,7 +45,24 @@ export const NewPasswordForm = () => {
 
   const onSubmit: SubmitHandler<NewPasswordType> = () => {
     setIsLoading(true);
-    navigate(ROUTE.SIGN_IN);
+    const email = searchParams.get('email');
+    const secret = searchParams.get('code');
+    if (email && secret) {
+      const requestParams: ResetPasswordRequestType = {
+        email,
+        secret,
+        ...getValues(),
+      };
+      resetPassword(requestParams)
+        .then(() => {
+          navigate(ROUTE.SIGN_IN);
+          setIsLoading(false);
+        })
+        .catch((errorResponse) => {
+          setError(errorResponse.response.data.message);
+          setIsLoading(false);
+        });
+    }
   };
 
   return (
@@ -53,11 +79,11 @@ export const NewPasswordForm = () => {
         />
         <Input
           register={register}
-          id="confirmPassword"
+          id="newPassword"
           label="Подтвердите пароль"
           placeholder="******"
           type="password"
-          error={errors?.confirmPassword?.message || null}
+          error={errors?.newPassword?.message || null}
         />
       </div>
       <button
@@ -67,6 +93,12 @@ export const NewPasswordForm = () => {
       >
         Восстановить
       </button>
+      {error && (
+        <p className={styles.error}>
+          <ErrorIcon />
+          {error}
+        </p>
+      )}
     </form>
   );
 };

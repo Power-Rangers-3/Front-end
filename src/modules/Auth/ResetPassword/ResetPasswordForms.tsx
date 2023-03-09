@@ -2,9 +2,9 @@ import { SubmitHandler, useForm } from 'react-hook-form';
 
 import { yupResolver } from '@hookform/resolvers/yup';
 
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
-import { Link, useNavigate, useParams } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 import { ROUTE } from 'router';
 
@@ -18,33 +18,39 @@ import { isFormFilled } from '../utils/isFormFilled';
 
 import { schema } from '../data/emailScheme';
 
+import { SendEmailRequestType } from '../types';
+
+import { sendEmail } from '../api/sendEmail';
+
 export const ResetPasswordForms = () => {
   const {
     register,
     handleSubmit,
     formState: { errors },
     getValues,
-  } = useForm<{ email: string }>({
+    reset,
+  } = useForm<SendEmailRequestType>({
     mode: 'onChange',
     resolver: yupResolver(schema),
   });
 
-  const [tokenError, setTokenError] = useState<string>();
+  const [error, setError] = useState<string>();
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [isSuccess, setIsSuccess] = useState<boolean>(false);
-  const { token } = useParams<{ token: string }>();
-  const navigate = useNavigate();
 
-  useEffect(() => {
-    if (token) {
-      navigate(ROUTE.NEW_PASSWORD);
-    }
-  }, [token, navigate]);
-
-  const onSubmit: SubmitHandler<{ email: string }> = () => {
-    setIsLoading(false);
-    setIsSuccess(!isSuccess);
-    setTokenError('Тут будут отображаться ошибки');
+  const onSubmit: SubmitHandler<SendEmailRequestType> = () => {
+    const requestParams = getValues();
+    sendEmail(requestParams)
+      .then(() => {
+        setIsLoading(false);
+        setIsSuccess(true);
+        reset();
+      })
+      .catch((errorResponse) => {
+        setIsLoading(false);
+        setIsSuccess(false);
+        setError(errorResponse.response.data.message);
+      });
   };
 
   return !isSuccess ? (
@@ -74,17 +80,17 @@ export const ResetPasswordForms = () => {
           Войти в систему
         </Link>
       </div>
-      {tokenError && (
-        <p className={styles.registrationError}>
+      {error && (
+        <p className={styles.error}>
           <ErrorIcon />
-          {tokenError}
+          {error}
         </p>
       )}
     </form>
   ) : (
     <form className={styles.form}>
       <h3>Восстановление пароля</h3>
-      <p> Проверьте свою электронную почту для получения инструкций о том, как бросить пароль</p>
+      <p> Проверьте свою электронную почту для получения инструкций о том, как cбросить пароль</p>
       <p>
         <PlaneIcon /> {getValues().email}
       </p>
@@ -93,7 +99,7 @@ export const ResetPasswordForms = () => {
         <button
           className={`${buttonStyles.button} ${buttonStyles.invertButton}`}
           type="button"
-          onClick={handleSubmit(onSubmit)}
+          onClick={() => setIsSuccess(false)}
         >
           Не видишь этого? Попробовать снова
         </button>
