@@ -141,4 +141,20 @@ export const platformsData: IPlatform[] = [
     id: '15',
     isFavorite: false,
   },
+  {
+    title: 'Азбука',
+    picture: Botmaker,
+    text: 'Одноканальная платформа для создания чат-ботов.',
+    link: 'https://townsend.pro/',
+    id: '19',
+    isFavorite: false,
+  },
+  {
+    title: 'Яндекс',
+    picture: Botmaker,
+    text: 'Одноканальная платформа для создания чат-ботов.',
+    link: 'https://townsend.pro/',
+    id: '17',
+    isFavorite: false,
+  },
 ];
