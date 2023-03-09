@@ -20,6 +20,14 @@ export const PlatformsPage = () => {
   useEffect(() => {
     setSortedPlatforms(platforms.slice().sort((a, b) => a.title.localeCompare(b.title, activeTab)));
   }, [activeTab, platforms]);
+
+  useEffect(() => {
+    const handlePageChange = () => window.scrollTo(0, 0);
+    document.addEventListener('click', handlePageChange);
+
+    return () => document.removeEventListener('click', handlePageChange);
+  }, []);
+
   const ELEMENT_FOR_PAGE = 10;
   const lastIndexElement = currentPage * ELEMENT_FOR_PAGE;
   const firstIndexElement = lastIndexElement - ELEMENT_FOR_PAGE;
