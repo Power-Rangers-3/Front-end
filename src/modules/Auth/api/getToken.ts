@@ -1,5 +1,6 @@
-import axios from 'axios';
 import { LocalStorage } from 'shared/localStorage/localStorage';
+
+import { authAxiosInstance } from './authAxiosInstance';
 
 import { endpoints } from './endpoints';
 
@@ -14,7 +15,7 @@ export const getToken = async (querryParams: QuerryParamsType): Promise<string> 
     password: querryParams.password.trim(),
   };
 
-  const token: string = await axios.post(endpoints.signIn, params).then((response) => response.data.value);
+  const token: string = await authAxiosInstance.post(endpoints.signIn, params).then((response) => response.data.value);
   localStorage.setItem(LocalStorage.AccessToken, token);
 
   return token;

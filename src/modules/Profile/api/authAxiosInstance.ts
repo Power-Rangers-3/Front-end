@@ -1,8 +1,9 @@
 import axios from 'axios';
 
+import { domain } from 'config';
 import { LocalStorage } from 'shared/localStorage/localStorage';
 
-export const authAxiosInstance = axios.create();
+export const authAxiosInstance = axios.create({ baseURL: domain });
 
 authAxiosInstance.interceptors.request.use((requestConfigArgs) => {
   const requestConfig = requestConfigArgs;
