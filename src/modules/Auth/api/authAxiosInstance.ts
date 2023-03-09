@@ -1,11 +1,10 @@
 import axios, { AxiosError } from 'axios';
-import { domain } from 'config';
 
 import { LocalStorage } from 'shared/localStorage/localStorage';
 
 import { refreshToken } from './refreshToken';
 
-export const authAxiosInstance = axios.create({ baseURL: domain });
+export const authAxiosInstance = axios.create();
 
 authAxiosInstance.interceptors.request.use((requestConfigArgs) => {
   const requestConfig = requestConfigArgs;
