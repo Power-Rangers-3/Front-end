@@ -1,4 +1,4 @@
-import { domain, pathPrefix } from 'config';
+import { pathPrefix } from 'config';
 
 enum ENDPOINT {
   SIGN_IN = 'login',
@@ -6,7 +6,7 @@ enum ENDPOINT {
   REFRESH_TOKEN = 'refresh',
 }
 
-const api = `${pathPrefix}${domain}/auth/`;
+const api = `${pathPrefix}/auth/`;
 
 export const endpoints = {
   signIn: api + ENDPOINT.SIGN_IN,
