@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { LocalStorage } from 'shared/localStorage/localStorage';
+import { LocalStorage } from 'shared';
 
 import { endpoints } from './endpoints';
 

@@ -1,4 +1,4 @@
-import { TargetPortal } from 'config';
+import { TargetPortal } from 'shared';
 import { ReactNode } from 'react';
 import { createPortal } from 'react-dom';
 
