@@ -1,6 +1,6 @@
 import { burgerIcon, cancelIcon, girl } from 'assets';
 import { MenuNav, Portal } from 'components';
-import { TargetPortal } from 'config';
+import { TargetPortal } from 'shared';
 import { useToogle } from 'hooks';
 
 import { useEffect } from 'react';

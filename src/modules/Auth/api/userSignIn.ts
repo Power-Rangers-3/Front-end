@@ -1,4 +1,4 @@
-import { LocalStorage } from 'shared/localStorage/localStorage';
+import { LocalStorage } from 'shared';
 
 import { authAxiosInstance } from './authAxiosInstance';
 
