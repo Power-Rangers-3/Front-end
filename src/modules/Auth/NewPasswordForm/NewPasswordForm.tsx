@@ -59,7 +59,7 @@ export const NewPasswordForm = () => {
           setIsLoading(false);
         })
         .catch((errorResponse) => {
-          setError(errorResponse.response.data.message);
+          setError(errorResponse.response.data.error);
           setIsLoading(false);
         });
     }
