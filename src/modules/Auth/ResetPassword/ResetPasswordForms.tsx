@@ -49,7 +49,7 @@ export const ResetPasswordForms = () => {
       .catch((errorResponse) => {
         setIsLoading(false);
         setIsSuccess(false);
-        setError(errorResponse.response.data.message);
+        setError(errorResponse.response.data.error);
       });
   };
 
