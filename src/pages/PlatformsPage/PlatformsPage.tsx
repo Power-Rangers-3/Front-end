@@ -20,10 +20,15 @@ export const PlatformsPage = () => {
   useEffect(() => {
     setSortedPlatforms(platforms.slice().sort((a, b) => a.title.localeCompare(b.title, activeTab)));
   }, [activeTab, platforms]);
+
   const ELEMENT_FOR_PAGE = 10;
   const lastIndexElement = currentPage * ELEMENT_FOR_PAGE;
   const firstIndexElement = lastIndexElement - ELEMENT_FOR_PAGE;
-  const handlePageChange = (pageNumber: number) => setCurrentPage(pageNumber);
+
+  const handlePageChange = (pageNumber: number) => {
+    setCurrentPage(pageNumber);
+    window.scrollTo(0, 0);
+  };
 
   const onTabClick = (tab: string) => setActiveTab(tab);
 
